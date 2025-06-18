@@ -123,14 +123,22 @@
         <span class="contact-label">Telegram:</span>
         <a href="https://t.me/aliqgroup" target="_blank" class="contact-social"><i class="bi bi-telegram"></i> @aliqgroup</a>
       </div>
-      <div style="margin-top:18px;">
-        <a href="#" onclick="openModal();return false;" id="requestBtn2" class="hero-action">Оставить заявку</a>
-      </div>
+    <div style="margin-top:18px;">
+      <a href="#" onclick="openModal();return false;" id="requestBtn2" class="hero-action">Оставить заявку</a>
     </div>
+  </div>
 
-    <div class="footer">
-      © <span id="year"></span> AliQ Group — цифровые решения для бизнеса
+  <div class="section" id="qrSection" style="text-align:center; margin-top:20px;">
+    <div id="qrText">Сканируйте QR код или скопируйте ссылку на сайт:</div>
+    <img id="qrCode" alt="QR code" style="margin-top:10px; width:160px; height:160px;" />
+    <div style="margin-top:10px;">
+      <input id="siteLink" type="text" readonly style="width:90%;background:#222b34;border:1px solid #2ec2f9;color:#fff;border-radius:9px;padding:8px 10px;" />
     </div>
+  </div>
+
+  <div class="footer">
+    © <span id="year"></span> AliQ Group — цифровые решения для бизнеса
+  </div>
   </div>
 
   <!-- Всплывающая форма обратной связи -->
@@ -139,7 +147,6 @@
       <span class="modal-close" onclick="closeModal()">&times;</span>
       <form onsubmit="sendForm(event)">
         <input id="nameInput" type="text" placeholder="Ваше имя" required>
-        <input id="emailInput" type="email" placeholder="Email" required>
         <textarea id="questionInput" rows="3" placeholder="Ваш вопрос" required></textarea>
         <label id="messengerLabel" for="messengerSelect" style="display:block;margin-bottom:5px;color:#b2ebff;font-size:0.95rem"></label>
         <select id="messengerSelect" style="width:100%;background:#222b34;border:1px solid #2ec2f9;border-radius:9px;padding:10px 11px;color:#fff;margin-bottom:11px;">
@@ -189,11 +196,11 @@
         contactsTitle: "Контакты",
         phoneLabel: "Телефон (WhatsApp):",
         namePlaceholder: "Ваше имя",
-        emailPlaceholder: "Email",
         questionPlaceholder: "Ваш вопрос",
         messengerLabel: "Отправить через:",
         submitBtn: "Отправить",
         formSuccess: "Спасибо! Ваша заявка отправлена.",
+        qrText: "Сканируйте QR код или скопируйте ссылку на сайт:",
         langBtn: "Қазақша"
       },
       kz: {
@@ -230,11 +237,11 @@
         contactsTitle: "Байланыс",
         phoneLabel: "Телефон (WhatsApp):",
         namePlaceholder: "Атыңыз",
-        emailPlaceholder: "Email",
         questionPlaceholder: "Сұрағыңыз",
         messengerLabel: "Қай мессенджер арқылы жіберу:",
         submitBtn: "Жіберу",
         formSuccess: "Рақмет! Өтінішіңіз жіберілді.",
+        qrText: "QR кодын сканерлеңіз немесе сілтемені көшіріңіз:",
         langBtn: "Русский"
       }
     };
@@ -257,17 +264,20 @@
       document.getElementById('contactsTitle').innerText = l.contactsTitle;
       document.getElementById('phoneLabel').innerText = l.phoneLabel;
       document.getElementById('nameInput').placeholder = l.namePlaceholder;
-      document.getElementById('emailInput').placeholder = l.emailPlaceholder;
       document.getElementById('questionInput').placeholder = l.questionPlaceholder;
       document.getElementById('messengerLabel').innerText = l.messengerLabel;
       document.getElementById('submitBtn').innerText = l.submitBtn;
       document.getElementById('langBtn').innerText = l.langBtn;
       document.getElementById('formMsg').innerText = l.formSuccess;
+      document.getElementById('qrText').innerText = l.qrText;
     }
     document.getElementById('langBtn').onclick = function() {
       setLang(curLang==='ru' ? 'kz':'ru');
     };
-    document.getElementById('year').innerText = new Date().getFullYear();
+  document.getElementById('year').innerText = new Date().getFullYear();
+  document.getElementById('qrCode').src =
+    'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=' + encodeURIComponent(window.location.href);
+  document.getElementById('siteLink').value = window.location.href;
 
     // Модалка
     function openModal() {
@@ -284,10 +294,9 @@
     async function sendForm(e) {
       e.preventDefault();
       const name = document.getElementById('nameInput').value;
-      const email = document.getElementById('emailInput').value;
       const question = document.getElementById('questionInput').value;
       const messenger = document.getElementById('messengerSelect').value;
-      const text = `Имя: ${name}\nEmail: ${email}\nВопрос: ${question}`;
+      const text = `Имя: ${name}\nВопрос: ${question}`;
       let url = '';
       if (messenger === 'telegram') {
         url = 'https://t.me/aliqgroup?text=' + encodeURIComponent(text);
