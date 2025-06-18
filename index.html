@@ -272,11 +272,33 @@
     }
     window.openModal = openModal; window.closeModal = closeModal;
 
-    // Заглушка: просто показываем сообщение
-    function sendForm(e) {
+    // Отправка формы на внешний сервис
+    async function sendForm(e) {
       e.preventDefault();
-      document.getElementById('formMsg').style.display = 'block';
-      setTimeout(closeModal, 1800);
+      const data = {
+        name: document.getElementById('nameInput').value,
+        email: document.getElementById('emailInput').value,
+        question: document.getElementById('questionInput').value
+      };
+      try {
+        const res = await fetch('https://formspree.io/f/yourFormID', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (res.ok) {
+          document.getElementById('formMsg').style.display = 'block';
+          document.querySelector('#modalBg form').reset();
+          setTimeout(closeModal, 1800);
+        } else {
+          throw new Error('Network error');
+        }
+      } catch(err) {
+        const msg = document.getElementById('formMsg');
+        msg.style.display = 'block';
+        msg.style.color = '#ff5e5e';
+        msg.innerText = 'Ошибка отправки';
+      }
     }
     window.sendForm = sendForm;
 
