@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>AliQ Group — IT Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html,body{margin:0;padding:0;background:#0a0a0a;color:#f4f4f4;font-family:'Segoe UI',Arial,sans-serif;}
+    a{color:#1ec7f8;text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    .container{max-width:900px;margin:0 auto;padding:32px;}
+    .header{display:flex;align-items:center;justify-content:space-between;}
+    .logo{width:90px;margin-right:18px;}
+    .site-title{font-size:2.1rem;font-weight:700;color:#1ec7f8;letter-spacing:1px;}
+    .lang-btn{background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;border:none;border-radius:18px;padding:7px 20px;font-size:15px;cursor:pointer;}
+    .hero{margin:54px 0 36px 0;text-align:center;}
+    .hero-slogan{font-size:2.2rem;line-height:1.22;font-weight:700;color:#3cd3fc;margin-bottom:15px;}
+    .hero-desc{font-size:1.18rem;color:#b2ebff;margin-bottom:12px;}
+    .hero-action a{display:inline-block;background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;font-weight:500;padding:12px 34px;border-radius:16px;margin-top:18px;box-shadow:0 4px 16px #0cf4;}
+    .sections{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+    @media(max-width:900px){.sections{grid-template-columns:1fr;}}
+    .section{background:#141b24;border-radius:18px;padding:28px 20px 20px 28px;margin-bottom:20px;box-shadow:0 8px 40px #009ee91f;}
+    .section-title{color:#32d0ff;font-size:1.32rem;font-weight:600;margin-bottom:13px;}
+    ul{padding-left:20px;margin:0;}
+    li{margin-bottom:8px;font-size:1.08rem;}
+    .projects-list{margin:0;padding-left:18px;}
+    .adv-list{margin:0;padding-left:20px;}
+    .founder-block{margin-top:34px;text-align:center;}
+    .founder-name{font-weight:700;color:#30b4ff;font-size:1.15rem;}
+    .founder-desc{color:#b9e1fd;margin:7px 0;}
+    .contacts-section{text-align:center;margin-top:40px;}
+    .contact-label{color:#60e7fd;font-size:1.12rem;}
+    .contact-block{margin:9px 0;}
+    .contact-social{margin:0 7px;font-size:1.6rem;}
+    .footer{margin-top:40px;text-align:center;color:#454b55;font-size:.99rem;}
+    /* Всплывающая форма */
+    .modal-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;background:#0007;display:none;align-items:center;justify-content:center;z-index:1000;}
+    .modal{background:#181e23;padding:28px 24px 18px 24px;border-radius:17px;max-width:340px;width:94vw;box-shadow:0 8px 40px #009ee97f;}
+    .modal input,.modal textarea{width:100%;background:#222b34;border:1px solid #2ec2f9;border-radius:9px;padding:10px 11px;color:#fff;margin-bottom:11px;}
+    .modal button[type=submit]{background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;border:none;padding:10px 0;border-radius:9px;width:100%;font-size:1.04rem;font-weight:600;cursor:pointer;}
+    .modal-close{position:absolute;top:14px;right:20px;font-size:1.5rem;cursor:pointer;color:#fff;}
+    @media(max-width:600px){.container{padding:3vw;} .logo{width:70px;} .site-title{font-size:1.33rem;} .hero-slogan{font-size:1.18rem;} .sections{gap:12px;} .section{padding:14px 9px;}}
+  </style>
+  <!-- Иконки соцсетей через CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div style="display:flex;align-items:center;">
+        <img src="logo.png" alt="AliQ Group" class="logo">
+        <span class="site-title" id="siteTitle">AliQ Group</span>
+      </div>
+      <button class="lang-btn" id="langBtn">Қазақша</button>
+    </div>
+
+    <div class="hero">
+      <div class="hero-slogan" id="slogan">
+        IT-решения для бизнеса и безопасности.<br>Компетентность. Скорость. Надёжность.
+      </div>
+      <div class="hero-desc" id="heroDesc">
+        Молодая ИТ-компания. Запускаем цифровые продукты, интегрируем сервисы, делаем ваш бизнес защищённым и современным.<br>
+        <b>Первый собственный проект: AliGuard (MVP, платформа для поиска охранных услуг).</b>
+      </div>
+      <div class="hero-action">
+        <a href="#" onclick="openModal();return false;" id="requestBtn">Оставить заявку</a>
+      </div>
+    </div>
+
+    <div class="sections">
+      <div class="section">
+        <div class="section-title" id="servicesTitle">Наши услуги</div>
+        <ul id="servicesList">
+          <li>Разработка MVP (цифровых продуктов)</li>
+          <li>Интеграция сервисов (CRM, облако, чаты, API)</li>
+          <li>Создание современных сайтов и лендингов</li>
+          <li>IT-консалтинг и аудит</li>
+          <li>Автоматизация бизнес-процессов</li>
+          <li>Информбезопасность и защита данных</li>
+        </ul>
+      </div>
+      <div class="section">
+        <div class="section-title" id="projectsTitle">Проекты и опыт</div>
+        <ul class="projects-list" id="projectsList">
+          <li>AliGuard — цифровая платформа для охранных агентств (MVP)</li>
+          <li>Чат-боты для бизнеса (Telegram, WhatsApp)</li>
+          <li>Внедрение облачных сервисов и автоматизация</li>
+          <li>Сайты для учебных центров, сервисных компаний</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sections">
+      <div class="section">
+        <div class="section-title" id="advTitle">Почему выбирают нас?</div>
+        <ul class="adv-list" id="advList">
+          <li>Комплексный подход: от идеи до запуска</li>
+          <li>Гибкость, работа без бюрократии</li>
+          <li>Глубокое понимание ИТ и безопасности</li>
+          <li>Прозрачная коммуникация и честность</li>
+          <li>Реальный опыт работы в Казахстане и СНГ</li>
+        </ul>
+      </div>
+      <div class="section founder-block">
+        <div class="founder-name" id="founderTitle">Руководитель: Алибек Уразов</div>
+        <div class="founder-desc" id="founderDesc">Офицер запаса, инженер. 20+ лет в безопасности и ИТ. Эксперт в вопросах физической и цифровой защиты.</div>
+      </div>
+    </div>
+
+    <div class="section contacts-section">
+      <div class="section-title" id="contactsTitle">Контакты</div>
+      <div class="contact-block" id="phoneBlock">
+        <span class="contact-label" id="phoneLabel">Телефон (WhatsApp):</span>
+        <a href="https://wa.me/77052546613" target="_blank" rel="noopener" class="contact-social" title="WhatsApp">
+          <i class="bi bi-whatsapp"></i> +7 705 254 6613
+        </a>
+      </div>
+      <div class="contact-block">
+        <span class="contact-label">Email:</span>
+        <a href="mailto:aliguard.kz@gmail.com" class="contact-social"><i class="bi bi-envelope"></i> aliguard.kz@gmail.com</a>
+      </div>
+      <div class="contact-block">
+        <span class="contact-label">Telegram:</span>
+        <a href="https://t.me/aliqgroup" target="_blank" class="contact-social"><i class="bi bi-telegram"></i> @aligroup</a>
+      </div>
+      <div style="margin-top:18px;">
+        <a href="#" onclick="openModal();return false;" id="requestBtn2" class="hero-action">Оставить заявку</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      © <span id="year"></span> AliQ Group — цифровые решения для бизнеса
+    </div>
+  </div>
+
+  <!-- Всплывающая форма обратной связи -->
+  <div class="modal-bg" id="modalBg">
+    <div class="modal">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <form onsubmit="sendForm(event)">
+        <input id="nameInput" type="text" placeholder="Ваше имя" required>
+        <input id="emailInput" type="email" placeholder="Email" required>
+        <textarea id="questionInput" rows="3" placeholder="Ваш вопрос" required></textarea>
+        <button type="submit" id="submitBtn">Отправить</button>
+        <div id="formMsg" style="margin-top:10px;color:#37ff86;font-size:0.99rem;display:none"></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Языки
+    const langs = {
+      ru: {
+        siteTitle: "AliQ Group",
+        slogan: "IT-решения для бизнеса и безопасности.<br>Компетентность. Скорость. Надёжность.",
+        heroDesc: "Молодая ИТ-компания. Запускаем цифровые продукты, интегрируем сервисы, делаем ваш бизнес защищённым и современным.<br><b>Первый проект: AliGuard (MVP, платформа для охранных агентств).</b>",
+        requestBtn: "Оставить заявку",
+        servicesTitle: "Наши услуги",
+        services: [
+          "Разработка MVP (цифровых продуктов)",
+          "Интеграция сервисов (CRM, облако, чаты, API)",
+          "Создание современных сайтов и лендингов",
+          "IT-консалтинг и аудит",
+          "Автоматизация бизнес-процессов",
+          "Информбезопасность и защита данных"
+        ],
+        projectsTitle: "Проекты и опыт",
+        projects: [
+          "AliGuard — цифровая платформа для поиска охранных услуг (MVP)",
+          "Чат-боты для бизнеса (Telegram, WhatsApp)",
+          "Внедрение облачных сервисов и автоматизация",
+          "Сайты для учебных центров, сервисных компаний"
+        ],
+        advTitle: "Почему выбирают нас?",
+        adv: [
+          "Комплексный подход: от идеи до запуска",
+          "Гибкость, работа без бюрократии",
+          "Глубокое понимание ИТ и безопасности",
+          "Прозрачная коммуникация и честность",
+          "Реальный опыт работы в Казахстане и СНГ"
+        ],
+        founderTitle: "Руководитель: Алибек Уразов",
+        founderDesc: "Офицер запаса, инженер. 20+ лет в безопасности и ИТ. Эксперт в вопросах физической и цифровой защиты.",
+        contactsTitle: "Контакты",
+        phoneLabel: "Телефон (WhatsApp):",
+        namePlaceholder: "Ваше имя",
+        emailPlaceholder: "Email",
+        questionPlaceholder: "Ваш вопрос",
+        submitBtn: "Отправить",
+        formSuccess: "Спасибо! Ваша заявка отправлена.",
+        langBtn: "Қазақша"
+      },
+      kz: {
+        siteTitle: "AliQ Group",
+        slogan: "Бизнес пен қауіпсіздікке арналған IT-шешімдер.<br>Кәсібилік. Жылдамдық. Сенімділік.",
+        heroDesc: "Жас IT-компания. Цифрлық өнімдерді іске қосамыз, сервистерді біріктіреміз, бизнесіңізді заманауи әрі қорғалған етеміз.<br><b>Бірінші жоба: AliGuard (MVP, күзет агенттіктеріне арналған платформа).</b>",
+        requestBtn: "Өтініш қалдыру",
+        servicesTitle: "Қызметтеріміз",
+        services: [
+          "MVP әзірлеу (цифрлық өнімдер)",
+          "Сервистерді біріктіру (CRM, бұлт, чаттар, API)",
+          "Заманауи сайттар мен лендингтер жасау",
+          "IT-кеңес және аудит",
+          "Бизнес-процестерді автоматтандыру",
+          "Информқауіпсіздік және деректерді қорғау"
+        ],
+        projectsTitle: "Жобалар мен тәжірибе",
+        projects: [
+          "AliGuard — күзет агенттіктеріне арналған цифрлық платформа (MVP)",
+          "Бизнеске арналған чат-боттар (Telegram, WhatsApp)",
+          "Бұлттық сервистерді енгізу және автоматтандыру",
+          "Оқу орталықтарына, сервис компанияларға сайттар"
+        ],
+        advTitle: "Бізді не үшін таңдайды?",
+        adv: [
+          "Идеядан іске қосуға дейін толық цикл",
+          "Икемділік, бюрократиясыз жұмыс",
+          "IT және қауіпсіздікті терең түсіну",
+          "Ашық және әділ коммуникация",
+          "Қазақстан мен ТМД-дағы нақты тәжірибе"
+        ],
+        founderTitle: "Басшы: Әлібек Уразов",
+        founderDesc: "Запастағы офицер, инженер. 20+ жыл қауіпсіздік және IT саласында. Физикалық және цифрлық қорғаныс жөніндегі сарапшы.",
+        contactsTitle: "Байланыс",
+        phoneLabel: "Телефон (WhatsApp):",
+        namePlaceholder: "Атыңыз",
+        emailPlaceholder: "Email",
+        questionPlaceholder: "Сұрағыңыз",
+        submitBtn: "Жіберу",
+        formSuccess: "Рақмет! Өтінішіңіз жіберілді.",
+        langBtn: "Русский"
+      }
+    };
+    let curLang = 'ru';
+    function setLang(lang) {
+      curLang = lang;
+      const l = langs[lang];
+      document.getElementById('siteTitle').innerText = l.siteTitle;
+      document.getElementById('slogan').innerHTML = l.slogan;
+      document.getElementById('heroDesc').innerHTML = l.heroDesc;
+      document.querySelectorAll('#requestBtn, #requestBtn2').forEach(btn => btn.innerText = l.requestBtn);
+      document.getElementById('servicesTitle').innerText = l.servicesTitle;
+      document.getElementById('servicesList').innerHTML = l.services.map(s=>`<li>${s}</li>`).join('');
+      document.getElementById('projectsTitle').innerText = l.projectsTitle;
+      document.getElementById('projectsList').innerHTML = l.projects.map(p=>`<li>${p}</li>`).join('');
+      document.getElementById('advTitle').innerText = l.advTitle;
+      document.getElementById('advList').innerHTML = l.adv.map(a=>`<li>${a}</li>`).join('');
+      document.getElementById('founderTitle').innerText = l.founderTitle;
+      document.getElementById('founderDesc').innerText = l.founderDesc;
+      document.getElementById('contactsTitle').innerText = l.contactsTitle;
+      document.getElementById('phoneLabel').innerText = l.phoneLabel;
+      document.getElementById('nameInput').placeholder = l.namePlaceholder;
+      document.getElementById('emailInput').placeholder = l.emailPlaceholder;
+      document.getElementById('questionInput').placeholder = l.questionPlaceholder;
+      document.getElementById('submitBtn').innerText = l.submitBtn;
+      document.getElementById('langBtn').innerText = l.langBtn;
+      document.getElementById('formMsg').innerText = l.formSuccess;
+    }
+    document.getElementById('langBtn').onclick = function() {
+      setLang(curLang==='ru' ? 'kz':'ru');
+    };
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    // Модалка
+    function openModal() {
+      document.getElementById('modalBg').style.display = 'flex';
+      document.getElementById('formMsg').style.display = 'none';
+      document.querySelector('#modalBg form').reset();
+    }
+    function closeModal() {
+      document.getElementById('modalBg').style.display = 'none';
+    }
+    window.openModal = openModal; window.closeModal = closeModal;
+
+    // Заглушка: просто показываем сообщение
+    function sendForm(e) {
+      e.preventDefault();
+      document.getElementById('formMsg').style.display = 'block';
+      setTimeout(closeModal, 1800);
+    }
+    window.sendForm = sendForm;
+
+    // Первичная установка языка
+    setLang(curLang);
+  </script>
+</body>
+</html>
