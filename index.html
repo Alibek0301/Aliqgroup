@@ -121,7 +121,7 @@
       </div>
       <div class="contact-block">
         <span class="contact-label">Telegram:</span>
-        <a href="https://t.me/aliqgroup" target="_blank" class="contact-social"><i class="bi bi-telegram"></i> @aligroup</a>
+        <a href="https://t.me/aliqgroup" target="_blank" class="contact-social"><i class="bi bi-telegram"></i> @aliqgroup</a>
       </div>
       <div style="margin-top:18px;">
         <a href="#" onclick="openModal();return false;" id="requestBtn2" class="hero-action">Оставить заявку</a>
@@ -139,8 +139,12 @@
       <span class="modal-close" onclick="closeModal()">&times;</span>
       <form onsubmit="sendForm(event)">
         <input id="nameInput" type="text" placeholder="Ваше имя" required>
-        <input id="emailInput" type="email" placeholder="Email" required>
         <textarea id="questionInput" rows="3" placeholder="Ваш вопрос" required></textarea>
+        <label id="messengerLabel" for="messengerSelect" style="display:block;margin-bottom:5px;color:#b2ebff;font-size:0.95rem"></label>
+        <select id="messengerSelect" style="width:100%;background:#222b34;border:1px solid #2ec2f9;border-radius:9px;padding:10px 11px;color:#fff;margin-bottom:11px;">
+          <option value="whatsapp">WhatsApp</option>
+          <option value="telegram">Telegram</option>
+        </select>
         <button type="submit" id="submitBtn">Отправить</button>
         <div id="formMsg" style="margin-top:10px;color:#37ff86;font-size:0.99rem;display:none"></div>
       </form>
@@ -184,8 +188,8 @@
         contactsTitle: "Контакты",
         phoneLabel: "Телефон (WhatsApp):",
         namePlaceholder: "Ваше имя",
-        emailPlaceholder: "Email",
         questionPlaceholder: "Ваш вопрос",
+        messengerLabel: "Отправить через:",
         submitBtn: "Отправить",
         formSuccess: "Спасибо! Ваша заявка отправлена.",
         langBtn: "Қазақша"
@@ -224,8 +228,8 @@
         contactsTitle: "Байланыс",
         phoneLabel: "Телефон (WhatsApp):",
         namePlaceholder: "Атыңыз",
-        emailPlaceholder: "Email",
         questionPlaceholder: "Сұрағыңыз",
+        messengerLabel: "Қай мессенджер арқылы жіберу:",
         submitBtn: "Жіберу",
         formSuccess: "Рақмет! Өтінішіңіз жіберілді.",
         langBtn: "Русский"
@@ -250,8 +254,8 @@
       document.getElementById('contactsTitle').innerText = l.contactsTitle;
       document.getElementById('phoneLabel').innerText = l.phoneLabel;
       document.getElementById('nameInput').placeholder = l.namePlaceholder;
-      document.getElementById('emailInput').placeholder = l.emailPlaceholder;
       document.getElementById('questionInput').placeholder = l.questionPlaceholder;
+      document.getElementById('messengerLabel').innerText = l.messengerLabel;
       document.getElementById('submitBtn').innerText = l.submitBtn;
       document.getElementById('langBtn').innerText = l.langBtn;
       document.getElementById('formMsg').innerText = l.formSuccess;
@@ -272,33 +276,25 @@
     }
     window.openModal = openModal; window.closeModal = closeModal;
 
-    // Отправка формы на внешний сервис
+    // Отправка формы в выбранный мессенджер
     async function sendForm(e) {
       e.preventDefault();
-      const data = {
-        name: document.getElementById('nameInput').value,
-        email: document.getElementById('emailInput').value,
-        question: document.getElementById('questionInput').value
-      };
-      try {
-        const res = await fetch('https://formspree.io/f/yourFormID', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-        if (res.ok) {
-          document.getElementById('formMsg').style.display = 'block';
-          document.querySelector('#modalBg form').reset();
-          setTimeout(closeModal, 1800);
-        } else {
-          throw new Error('Network error');
-        }
-      } catch(err) {
-        const msg = document.getElementById('formMsg');
-        msg.style.display = 'block';
-        msg.style.color = '#ff5e5e';
-        msg.innerText = 'Ошибка отправки';
+      const name = document.getElementById('nameInput').value;
+      const question = document.getElementById('questionInput').value;
+      const messenger = document.getElementById('messengerSelect').value;
+      const text = `Имя: ${name}\nВопрос: ${question}`;
+      let url = '';
+      if (messenger === 'telegram') {
+        url = 'https://t.me/aliqgroup?text=' + encodeURIComponent(text);
+      } else {
+        url = 'https://wa.me/77052546613?text=' + encodeURIComponent(text);
       }
+      window.open(url, '_blank');
+      const msg = document.getElementById('formMsg');
+      msg.style.display = 'block';
+      msg.style.color = '#37ff86';
+      document.querySelector('#modalBg form').reset();
+      setTimeout(closeModal, 1800);
     }
     window.sendForm = sendForm;
 
