@@ -36,9 +36,10 @@
     /* Всплывающая форма */
     .modal-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;background:#0007;display:none;align-items:center;justify-content:center;z-index:1000;}
     .modal{background:#181e23;padding:28px 24px 18px 24px;border-radius:17px;max-width:340px;width:94vw;box-shadow:0 8px 40px #009ee97f;}
-    .modal input,.modal textarea{width:100%;background:#222b34;border:1px solid #2ec2f9;border-radius:9px;padding:10px 11px;color:#fff;margin-bottom:11px;}
-    .modal button[type=submit]{background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;border:none;padding:10px 0;border-radius:9px;width:100%;font-size:1.04rem;font-weight:600;cursor:pointer;}
     .modal-close{position:absolute;top:14px;right:20px;font-size:1.5rem;cursor:pointer;color:#fff;}
+    .messenger-btn{display:block;text-align:center;color:#fff;padding:10px 0;border-radius:9px;margin:8px 0;font-weight:600;text-decoration:none;}
+    .messenger-btn.whatsapp{background:#25d366;}
+    .messenger-btn.telegram{background:#0088cc;}
     @media(max-width:600px){.container{padding:3vw;} .logo{width:70px;} .site-title{font-size:1.33rem;} .hero-slogan{font-size:1.18rem;} .sections{gap:12px;} .section{padding:14px 9px;}}
   </style>
   <!-- Иконки соцсетей через CDN -->
@@ -133,17 +134,13 @@
     </div>
   </div>
 
-  <!-- Всплывающая форма обратной связи -->
+  <!-- Выбор мессенджера -->
   <div class="modal-bg" id="modalBg">
-    <div class="modal">
+    <div class="modal" style="position:relative;text-align:center;">
       <span class="modal-close" onclick="closeModal()">&times;</span>
-      <form onsubmit="sendForm(event)">
-        <input id="nameInput" type="text" placeholder="Ваше имя" required>
-        <input id="emailInput" type="email" placeholder="Email" required>
-        <textarea id="questionInput" rows="3" placeholder="Ваш вопрос" required></textarea>
-        <button type="submit" id="submitBtn">Отправить</button>
-        <div id="formMsg" style="margin-top:10px;color:#37ff86;font-size:0.99rem;display:none"></div>
-      </form>
+      <div id="chooseLabel" style="margin-bottom:12px;">Выберите мессенджер для связи</div>
+      <a href="https://wa.me/77052546613" target="_blank" class="messenger-btn whatsapp" id="waBtn">WhatsApp</a>
+      <a href="https://t.me/aliqgroup" target="_blank" class="messenger-btn telegram" id="tgBtn">Telegram</a>
     </div>
   </div>
 
@@ -183,11 +180,9 @@
         founderDesc: "Офицер запаса, инженер. 20+ лет в безопасности и ИТ. Эксперт в вопросах физической и цифровой защиты.",
         contactsTitle: "Контакты",
         phoneLabel: "Телефон (WhatsApp):",
-        namePlaceholder: "Ваше имя",
-        emailPlaceholder: "Email",
-        questionPlaceholder: "Ваш вопрос",
-        submitBtn: "Отправить",
-        formSuccess: "Спасибо! Ваша заявка отправлена.",
+        chooseMessenger: "Выберите мессенджер для связи",
+        whatsappBtn: "Написать в WhatsApp",
+        telegramBtn: "Написать в Telegram",
         langBtn: "Қазақша"
       },
       kz: {
@@ -223,11 +218,9 @@
         founderDesc: "Запастағы офицер, инженер. 20+ жыл қауіпсіздік және IT саласында. Физикалық және цифрлық қорғаныс жөніндегі сарапшы.",
         contactsTitle: "Байланыс",
         phoneLabel: "Телефон (WhatsApp):",
-        namePlaceholder: "Атыңыз",
-        emailPlaceholder: "Email",
-        questionPlaceholder: "Сұрағыңыз",
-        submitBtn: "Жіберу",
-        formSuccess: "Рақмет! Өтінішіңіз жіберілді.",
+        chooseMessenger: "Байланыс әдісін таңдаңыз",
+        whatsappBtn: "WhatsApp арқылы жазу",
+        telegramBtn: "Telegram арқылы жазу",
         langBtn: "Русский"
       }
     };
@@ -249,12 +242,10 @@
       document.getElementById('founderDesc').innerText = l.founderDesc;
       document.getElementById('contactsTitle').innerText = l.contactsTitle;
       document.getElementById('phoneLabel').innerText = l.phoneLabel;
-      document.getElementById('nameInput').placeholder = l.namePlaceholder;
-      document.getElementById('emailInput').placeholder = l.emailPlaceholder;
-      document.getElementById('questionInput').placeholder = l.questionPlaceholder;
-      document.getElementById('submitBtn').innerText = l.submitBtn;
+      document.getElementById('chooseLabel').innerText = l.chooseMessenger;
+      document.getElementById('waBtn').innerText = l.whatsappBtn;
+      document.getElementById('tgBtn').innerText = l.telegramBtn;
       document.getElementById('langBtn').innerText = l.langBtn;
-      document.getElementById('formMsg').innerText = l.formSuccess;
     }
     document.getElementById('langBtn').onclick = function() {
       setLang(curLang==='ru' ? 'kz':'ru');
@@ -264,21 +255,11 @@
     // Модалка
     function openModal() {
       document.getElementById('modalBg').style.display = 'flex';
-      document.getElementById('formMsg').style.display = 'none';
-      document.querySelector('#modalBg form').reset();
     }
     function closeModal() {
       document.getElementById('modalBg').style.display = 'none';
     }
     window.openModal = openModal; window.closeModal = closeModal;
-
-    // Заглушка: просто показываем сообщение
-    function sendForm(e) {
-      e.preventDefault();
-      document.getElementById('formMsg').style.display = 'block';
-      setTimeout(closeModal, 1800);
-    }
-    window.sendForm = sendForm;
 
     // Первичная установка языка
     setLang(curLang);
