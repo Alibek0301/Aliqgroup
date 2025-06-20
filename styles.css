@@ -26,6 +26,17 @@ li{margin-bottom:8px;font-size:1.08rem;}
 .contact-block{margin:9px 0;}
 .contact-social{margin:0 7px;font-size:1.6rem;}
 .footer{margin-top:40px;text-align:center;color:#454b55;font-size:.99rem;}
+/* Новые классы */
+.header-flex{display:flex;align-items:center;}
+.bottom-action{margin-top:18px;}
+.qr-section{text-align:center;margin-top:20px;}
+.qr-code{margin-top:10px;width:160px;height:160px;}
+.qr-input{margin-top:10px;}
+.site-link{width:90%;background:#222b34;border:1px solid #2ec2f9;color:#fff;border-radius:9px;padding:8px 10px;}
+.messenger-label{display:block;margin-bottom:5px;color:#b2ebff;font-size:0.95rem;}
+.messenger-select{width:100%;background:#222b34;border:1px solid #2ec2f9;border-radius:9px;padding:10px 11px;color:#fff;margin-bottom:11px;}
+.form-msg{margin-top:10px;color:#37ff86;font-size:0.99rem;display:none;}
+.privacy-section{font-size:0.9rem;color:#b9e1fd;margin-top:20px;line-height:1.4;}
 /* Всплывающая форма */
 .modal-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;background:#0007;display:none;align-items:center;justify-content:center;z-index:1000;}
 .modal{background:#181e23;padding:28px 24px 18px 24px;border-radius:17px;max-width:340px;width:94vw;box-shadow:0 8px 40px #009ee97f;}
