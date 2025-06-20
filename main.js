@@ -128,23 +128,28 @@
     }
     window.openModal = openModal; window.closeModal = closeModal;
 
-    // Отправка формы в выбранный мессенджер
+    // Отправка формы на сервер
     async function sendForm(e) {
       e.preventDefault();
       const name = document.getElementById('nameInput').value;
       const question = document.getElementById('questionInput').value;
       const messenger = document.getElementById('messengerSelect').value;
-      const text = `Имя: ${name}\nВопрос: ${question}`;
-      let url = '';
-      if (messenger === 'telegram') {
-        url = 'https://t.me/aliqgroup?text=' + encodeURIComponent(text);
-      } else {
-        url = 'https://wa.me/77052546613?text=' + encodeURIComponent(text);
+      const msgEl = document.getElementById('formMsg');
+      msgEl.style.display = 'block';
+      try {
+        const res = await fetch('/api/feedback', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, question, messenger })
+        });
+        if (!res.ok) throw new Error('fail');
+        msgEl.style.color = '#37ff86';
+      } catch (err) {
+        msgEl.style.color = 'red';
+        msgEl.innerText = 'Ошибка отправки';
+        return;
       }
-      window.open(url, '_blank');
-      const msg = document.getElementById('formMsg');
-      msg.style.display = 'block';
-      msg.style.color = '#37ff86';
+      msgEl.innerText = langs[curLang].formSuccess;
       document.querySelector('#modalBg form').reset();
       setTimeout(closeModal, 1800);
     }
