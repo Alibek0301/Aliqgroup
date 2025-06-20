@@ -1,0 +1,35 @@
+html,body{margin:0;padding:0;background:#0a0a0a;color:#f4f4f4;font-family:'Segoe UI',Arial,sans-serif;}
+a{color:#1ec7f8;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.container{max-width:900px;margin:0 auto;padding:32px;}
+.header{display:flex;align-items:center;justify-content:space-between;}
+.logo{width:90px;margin-right:18px;}
+.site-title{font-size:2.1rem;font-weight:700;color:#1ec7f8;letter-spacing:1px;}
+.lang-btn{background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;border:none;border-radius:18px;padding:7px 20px;font-size:15px;cursor:pointer;}
+.hero{margin:54px 0 36px 0;text-align:center;}
+.hero-slogan{font-size:2.2rem;line-height:1.22;font-weight:700;color:#3cd3fc;margin-bottom:15px;}
+.hero-desc{font-size:1.18rem;color:#b2ebff;margin-bottom:12px;}
+.hero-action a{display:inline-block;background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;font-weight:500;padding:12px 34px;border-radius:16px;margin-top:18px;box-shadow:0 4px 16px #0cf4;}
+.sections{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+@media(max-width:900px){.sections{grid-template-columns:1fr;}}
+.section{background:#141b24;border-radius:18px;padding:28px 20px 20px 28px;margin-bottom:20px;box-shadow:0 8px 40px #009ee91f;}
+.section-title{color:#32d0ff;font-size:1.32rem;font-weight:600;margin-bottom:13px;}
+ul{padding-left:20px;margin:0;}
+li{margin-bottom:8px;font-size:1.08rem;}
+.projects-list{margin:0;padding-left:18px;}
+.adv-list{margin:0;padding-left:20px;}
+.founder-block{margin-top:34px;text-align:center;}
+.founder-name{font-weight:700;color:#30b4ff;font-size:1.15rem;}
+.founder-desc{color:#b9e1fd;margin:7px 0;}
+.contacts-section{text-align:center;margin-top:40px;}
+.contact-label{color:#60e7fd;font-size:1.12rem;}
+.contact-block{margin:9px 0;}
+.contact-social{margin:0 7px;font-size:1.6rem;}
+.footer{margin-top:40px;text-align:center;color:#454b55;font-size:.99rem;}
+/* Всплывающая форма */
+.modal-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;background:#0007;display:none;align-items:center;justify-content:center;z-index:1000;}
+.modal{background:#181e23;padding:28px 24px 18px 24px;border-radius:17px;max-width:340px;width:94vw;box-shadow:0 8px 40px #009ee97f;}
+.modal input,.modal textarea{width:100%;background:#222b34;border:1px solid #2ec2f9;border-radius:9px;padding:10px 11px;color:#fff;margin-bottom:11px;}
+.modal button[type=submit]{background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;border:none;padding:10px 0;border-radius:9px;width:100%;font-size:1.04rem;font-weight:600;cursor:pointer;}
+.modal-close{position:absolute;top:14px;right:20px;font-size:1.5rem;cursor:pointer;color:#fff;}
+@media(max-width:600px){.container{padding:3vw;} .logo{width:70px;} .site-title{font-size:1.33rem;} .hero-slogan{font-size:1.18rem;} .sections{gap:12px;} .section{padding:14px 9px;}}
