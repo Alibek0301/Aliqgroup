@@ -247,7 +247,9 @@
     };
     let curLang = 'ru';
     function setLang(lang) {
+      lang = lang === 'kz' ? 'kz' : 'ru';
       curLang = lang;
+      document.documentElement.lang = lang;
       const l = langs[lang];
       document.getElementById('siteTitle').innerText = l.siteTitle;
       document.getElementById('slogan').innerHTML = l.slogan;
