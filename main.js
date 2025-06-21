@@ -142,6 +142,34 @@ const langs = {
     navSchedule: "Meeting"
   }
 };
+// Вопросы по услугам
+const serviceQuestions = {
+  ru: [
+    ['Описание проекта','Желаемые сроки','Предполагаемый бюджет','Контактное лицо','Дополнительная информация'],
+    ['Текущие системы','Планируемые интеграции','Сроки внедрения','Ответственный специалист','Комментарии'],
+    ['Тип сайта (корпоративный, лендинг и др.)','Предпочтительный дизайн','Примеры сайтов','Контакты и доп. пожелания'],
+    ['Область аудита (инфраструктура, процессы и др.)','Цели консультации','Желаемые результаты','Время для проведения'],
+    ['Основные задачи/процессы','Используемые инструменты','Проблемы, которые требуется решить','Сроки','Контактное лицо'],
+    ['Текущая IT‑инфраструктура','Приоритетные риски/угрозы','Требуемые меры защиты','Контакты для связи']
+  ],
+  kz: [
+    ['Жоба сипаттамасы','Қалаған мерзім','Болжамды бюджет','Байланыс тұлғасы','Қосымша ақпарат'],
+    ['Қолданыстағы жүйелер','Жоспарланған біріктірулер','Енгізу мерзімі','Жауапты маман','Пікірлер'],
+    ['Сайт түрі (корпоративтік, лендинг т.б.)','Қалаған дизайн','Сайт үлгілері','Байланыс және қосымша тілектер'],
+    ['Аудит саласы (инфрақұрылым, процестер және т.б.)','Консультация мақсаты','Күтілетін нәтиже','Өткізу уақыты'],
+    ['Негізгі міндеттер/процестер','Қолданылатын құралдар','Шешілуі тиіс мәселелер','Мерзімдер','Байланыс тұлғасы'],
+    ['Қолданыстағы IT-инфрақұрылым','Маңызды қауіп-қатерлер','Қажетті қорғау шаралары','Байланыс үшін деректер']
+  ],
+  en: [
+    ['Project description','Desired timeline','Estimated budget','Contact person','Additional info'],
+    ['Current systems','Planned integrations','Implementation timeframe','Responsible specialist','Comments'],
+    ['Type of site (corporate, landing, etc.)','Preferred design','Example sites','Contacts and wishes'],
+    ['Audit scope (infrastructure, processes, etc.)','Consultation goals','Desired results','Time for conducting'],
+    ['Key tasks/processes','Tools in use','Problems to solve','Timeline','Contact person'],
+    ['Current IT infrastructure','Priority risks/threats','Required protection measures','Contact details']
+  ]
+};
+
 let curLang = 'ru';
 function setElText(id, html){ const el = document.getElementById(id); if(el) el.innerHTML = html; }
 function setLang(lang) {
@@ -190,15 +218,37 @@ if(qrCodeEl){
   if(siteLink) siteLink.value = window.location.href;
 }
 
+function renderQuestions(service){
+  const fieldsEl = document.getElementById('dynamicFields');
+  const qInput = document.getElementById('questionInput');
+  fieldsEl.innerHTML = '';
+  if(!service){
+    qInput.style.display = 'block';
+    qInput.required = true;
+    return;
+  }
+  const idx = langs[curLang].services.indexOf(service);
+  const list = serviceQuestions[curLang][idx] || [];
+  if(list.length===0){
+    qInput.style.display = 'block';
+    qInput.required = true;
+    return;
+  }
+  qInput.style.display = 'none';
+  qInput.required = false;
+  fieldsEl.innerHTML = list.map(l=>`<input type="text" data-label="${l}" placeholder="${l}" class="dyn-field">`).join('');
+}
+
     // Модалка
-    function openModal(service) {
-      document.getElementById('modalBg').style.display = 'flex';
-      document.getElementById('formMsg').style.display = 'none';
-      const form = document.querySelector('#modalBg form');
-      form.reset();
-      document.getElementById('serviceName').innerText = service || '';
-      document.getElementById('serviceInput').value = service || '';
-    }
+function openModal(service) {
+  document.getElementById('modalBg').style.display = 'flex';
+  document.getElementById('formMsg').style.display = 'none';
+  const form = document.querySelector('#modalBg form');
+  form.reset();
+  document.getElementById('serviceName').innerText = service || '';
+  document.getElementById('serviceInput').value = service || '';
+  renderQuestions(service);
+}
     function closeModal() {
       document.getElementById('modalBg').style.display = 'none';
     }
@@ -211,7 +261,12 @@ if(qrCodeEl){
       const phone = document.getElementById('phoneInput').value;
       const email = document.getElementById('emailInput').value;
       const service = document.getElementById('serviceInput').value;
-      const question = document.getElementById('questionInput').value;
+      const questionInputEl = document.getElementById('questionInput');
+      const extra = Array.from(document.querySelectorAll('#dynamicFields .dyn-field'))
+        .map(f => `${f.dataset.label}: ${f.value}`)
+        .filter(Boolean)
+        .join('\n');
+      const question = [extra, questionInputEl.value].filter(Boolean).join('\n');
       const messenger = document.getElementById('messengerSelect').value;
       const msgEl = document.getElementById('formMsg');
       msgEl.style.display = 'block';
