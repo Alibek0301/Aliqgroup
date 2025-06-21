@@ -46,4 +46,6 @@ li{margin-bottom:8px;font-size:1.08rem;}
 .modal input,.modal textarea{width:100%;background:#222b34;border:1px solid #2ec2f9;border-radius:9px;padding:10px 11px;color:#fff;margin-bottom:11px;}
 .modal button[type=submit]{background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;border:none;padding:10px 0;border-radius:9px;width:100%;font-size:1.04rem;font-weight:600;cursor:pointer;}
 .modal-close{position:absolute;top:14px;right:20px;font-size:1.5rem;cursor:pointer;color:#fff;}
+.service-display{margin-bottom:10px;color:#b2ebff;font-size:0.95rem;}
+.service-btn{margin-left:10px;background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;border:none;border-radius:12px;padding:4px 12px;font-size:0.9rem;cursor:pointer;}
 @media(max-width:600px){.container{padding:3vw;} .logo{width:70px;} .site-title{font-size:1.33rem;} .hero-slogan{font-size:1.18rem;} .sections{gap:12px;} .section{padding:14px 9px;} .nav{display:none;}}
