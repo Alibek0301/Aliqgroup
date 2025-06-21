@@ -200,6 +200,7 @@ let curLang = 'ru';
 function setElText(id, html){ const el = document.getElementById(id); if(el) el.innerHTML = html; }
 function setLang(lang) {
   curLang = lang;
+  document.documentElement.lang = lang;
   const l = langs[lang];
   setElText('siteTitle', l.siteTitle);
   setElText('slogan', l.slogan);

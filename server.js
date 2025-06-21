@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
@@ -55,7 +56,11 @@ app.post('/api/feedback', async (req, res) => {
   }
 });
 
-app.use(express.static('.'));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+});
 
 if (require.main === module) {
   const PORT = process.env.PORT || 3000;
