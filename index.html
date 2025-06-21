@@ -8,8 +8,10 @@
   <meta name="keywords" content="IT, безопасность, разработка, интеграция, AliQ Group">
     <meta property="og:title" content="AliQ Group — IT Solutions">
     <meta property="og:description" content="Молодая ИТ‑компания, запускающая цифровые продукты и обеспечивающая безопасность бизнеса.">
-    <meta property="og:image" content="logo.png">
     <meta property="og:url" content="https://aliqgroup.kz/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   <!-- Иконки соцсетей через CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -35,19 +37,19 @@
   <div class="container">
       <header class="header">
         <div class="header-flex">
-          <img src="logo.png" alt="AliQ Group" class="logo">
           <span class="site-title" id="siteTitle">AliQ Group</span>
         </div>
         <nav class="nav">
           <a href="index.html" id="navHome">Главная</a>
           <a href="services.html" id="navServices">Услуги</a>
+          <a href="portfolio.html" id="navPortfolio">Портфолио</a>
           <a href="schedule.html" id="navSchedule">Встреча</a>
         </nav>
         <button class="lang-btn" id="langBtn">Қазақша</button>
       </header>
 
     <main>
-    <section class="hero">
+    <section class="hero fade-in">
       <div class="hero-slogan" id="slogan">
         IT-решения для бизнеса и безопасности.<br>Компетентность. Скорость. Надёжность.
       </div>
@@ -61,18 +63,18 @@
     </section>
 
     <section class="sections">
-      <section class="section">
+      <section class="section fade-in">
         <div class="section-title" id="servicesTitle">Наши услуги</div>
         <ul id="servicesList">
-          <li>Разработка MVP (цифровых продуктов)</li>
-          <li>Интеграция сервисов (CRM, облако, чаты, API)</li>
-          <li>Создание современных сайтов и лендингов</li>
-          <li>IT-консалтинг и аудит</li>
-          <li>Автоматизация бизнес-процессов</li>
-          <li>Информбезопасность и защита данных</li>
+          <li><i class="bi bi-lightning service-icon"></i> Разработка MVP (цифровых продуктов)</li>
+          <li><i class="bi bi-diagram-3 service-icon"></i> Интеграция сервисов (CRM, облако, чаты, API)</li>
+          <li><i class="bi bi-window service-icon"></i> Создание современных сайтов и лендингов</li>
+          <li><i class="bi bi-puzzle service-icon"></i> IT-консалтинг и аудит</li>
+          <li><i class="bi bi-gear service-icon"></i> Автоматизация бизнес-процессов</li>
+          <li><i class="bi bi-shield-lock service-icon"></i> Информбезопасность и защита данных</li>
         </ul>
       </section>
-      <section class="section">
+      <section class="section fade-in">
         <div class="section-title" id="projectsTitle">Проекты и опыт</div>
         <ul class="projects-list" id="projectsList">
           <li>AliGuard — цифровая платформа для охранных агентств (MVP)</li>
@@ -84,7 +86,7 @@
     </section>
 
     <section class="sections">
-      <section class="section">
+      <section class="section fade-in">
         <div class="section-title" id="advTitle">Почему выбирают нас?</div>
         <ul class="adv-list" id="advList">
           <li>Комплексный подход: от идеи до запуска</li>
@@ -94,13 +96,13 @@
           <li>Реальный опыт работы в Казахстане и СНГ</li>
         </ul>
       </section>
-      <section class="section founder-block">
+      <section class="section founder-block fade-in">
         <div class="founder-name" id="founderTitle">Руководитель: Алибек Уразов</div>
         <div class="founder-desc" id="founderDesc">Офицер запаса, инженер. 20+ лет в безопасности и ИТ. Эксперт в вопросах физической и цифровой защиты.</div>
       </section>
     </section>
 
-    <section class="section contacts-section">
+    <section class="section contacts-section fade-in">
       <div class="section-title" id="contactsTitle">Контакты</div>
       <div class="contact-block" id="phoneBlock">
         <span class="contact-label" id="phoneLabel">Телефон (WhatsApp):</span>
@@ -121,7 +123,7 @@
     </div>
   </section>
 
-  <section class="section qr-section" id="qrSection">
+  <section class="section qr-section fade-in" id="qrSection">
     <div id="qrText">Сканируйте QR код или скопируйте ссылку на сайт:</div>
     <img id="qrCode" alt="QR code" class="qr-code" />
     <div class="qr-input">
@@ -129,7 +131,7 @@
     </div>
   </section>
 
-  <section class="section privacy-section" id="privacy">
+  <section class="section privacy-section fade-in" id="privacy">
     Мы собираем имя, телефон, email (необязательно) и ответы на вопросы только для обратной связи. Информация не хранится на сайте и
     используется исключительно для связи через выбранный мессенджер. Аналитика собирается
     сервисом Yandex.Metrica.
@@ -166,10 +168,11 @@
   </div>
 
     <script src="main.js"></script>
+    <script src="config.js"></script>
     <!-- Онлайн-чат -->
     <script type="text/javascript">
       var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();
-      (function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];s1.async=true;s1.src='https://embed.tawk.to/YOUR_ID/default';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();
+      (function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];s1.async=true;s1.src='https://embed.tawk.to/'+(window.TAWK_ID||'YOUR_ID')+'/default';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();
     </script>
   </body>
 </html>
