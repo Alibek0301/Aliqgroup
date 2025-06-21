@@ -147,7 +147,11 @@
     <div class="modal">
       <span class="modal-close" onclick="closeModal()">&times;</span>
       <form onsubmit="sendForm(event)">
+        <div class="service-display"><span id="serviceLabel">Услуга:</span> <span id="serviceName"></span></div>
+        <input id="serviceInput" type="hidden">
         <input id="nameInput" type="text" placeholder="Ваше имя" required>
+        <input id="phoneInput" type="tel" placeholder="Телефон" required>
+        <input id="emailInput" type="email" placeholder="Email (необязательно)">
         <textarea id="questionInput" rows="3" placeholder="Ваш вопрос" required></textarea>
         <label id="messengerLabel" for="messengerSelect" class="messenger-label"></label>
           <select id="messengerSelect" class="messenger-select">

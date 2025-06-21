@@ -34,6 +34,9 @@ const langs = {
         contactsTitle: "Контакты",
         phoneLabel: "Телефон (WhatsApp):",
         namePlaceholder: "Ваше имя",
+        phonePlaceholder: "Телефон",
+        emailPlaceholder: "Email (необязательно)",
+        serviceLabelText: "Услуга:",
         questionPlaceholder: "Ваш вопрос",
         messengerLabel: "Отправить через:",
         submitBtn: "Отправить",
@@ -78,6 +81,9 @@ const langs = {
         contactsTitle: "Байланыс",
         phoneLabel: "Телефон (WhatsApp):",
         namePlaceholder: "Атыңыз",
+        phonePlaceholder: "Телефон",
+        emailPlaceholder: "Email (міндетті емес)",
+        serviceLabelText: "Қызмет:",
         questionPlaceholder: "Сұрағыңыз",
         messengerLabel: "Қай мессенджер арқылы жіберу:",
         submitBtn: "Жіберу",
@@ -122,6 +128,9 @@ const langs = {
     contactsTitle: "Contacts",
     phoneLabel: "Phone (WhatsApp):",
     namePlaceholder: "Your name",
+    phonePlaceholder: "Phone",
+    emailPlaceholder: "Email (optional)",
+    serviceLabelText: "Service:",
     questionPlaceholder: "Your question",
     messengerLabel: "Send via:",
     submitBtn: "Send",
@@ -144,7 +153,7 @@ function setLang(lang) {
   document.querySelectorAll('#requestBtn, #requestBtn2').forEach(btn => btn && (btn.innerText = l.requestBtn));
   setElText('servicesTitle', l.servicesTitle);
   const servicesEl = document.getElementById('servicesList');
-  if(servicesEl) servicesEl.innerHTML = l.services.map(s=>`<li>${s}</li>`).join('');
+  if(servicesEl) servicesEl.innerHTML = l.services.map(s=>`<li>${s} <button class="service-btn" onclick="openModal('${s}')">${l.requestBtn}</button></li>`).join('');
   setElText('projectsTitle', l.projectsTitle);
   const projectsEl = document.getElementById('projectsList');
   if(projectsEl) projectsEl.innerHTML = l.projects.map(p=>`<li>${p}</li>`).join('');
@@ -156,7 +165,10 @@ function setLang(lang) {
   setElText('contactsTitle', l.contactsTitle);
   setElText('phoneLabel', l.phoneLabel);
   const nameInput=document.getElementById('nameInput'); if(nameInput) nameInput.placeholder = l.namePlaceholder;
+  const phoneInput=document.getElementById('phoneInput'); if(phoneInput) phoneInput.placeholder = l.phonePlaceholder;
+  const emailInput=document.getElementById('emailInput'); if(emailInput) emailInput.placeholder = l.emailPlaceholder;
   const qInput=document.getElementById('questionInput'); if(qInput) qInput.placeholder = l.questionPlaceholder;
+  const servLabel=document.getElementById('serviceLabel'); if(servLabel) servLabel.innerText = l.serviceLabelText;
   setElText('messengerLabel', l.messengerLabel);
   const submit=document.getElementById('submitBtn'); if(submit) submit.innerText = l.submitBtn;
   const langBtn=document.getElementById('langBtn'); if(langBtn) langBtn.innerText = l.langBtn;
@@ -179,10 +191,13 @@ if(qrCodeEl){
 }
 
     // Модалка
-    function openModal() {
+    function openModal(service) {
       document.getElementById('modalBg').style.display = 'flex';
       document.getElementById('formMsg').style.display = 'none';
-      document.querySelector('#modalBg form').reset();
+      const form = document.querySelector('#modalBg form');
+      form.reset();
+      document.getElementById('serviceName').innerText = service || '';
+      document.getElementById('serviceInput').value = service || '';
     }
     function closeModal() {
       document.getElementById('modalBg').style.display = 'none';
@@ -193,6 +208,9 @@ if(qrCodeEl){
     async function sendForm(e) {
       e.preventDefault();
       const name = document.getElementById('nameInput').value;
+      const phone = document.getElementById('phoneInput').value;
+      const email = document.getElementById('emailInput').value;
+      const service = document.getElementById('serviceInput').value;
       const question = document.getElementById('questionInput').value;
       const messenger = document.getElementById('messengerSelect').value;
       const msgEl = document.getElementById('formMsg');
@@ -201,7 +219,7 @@ if(qrCodeEl){
         const res = await fetch('/api/feedback', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, question, messenger })
+          body: JSON.stringify({ name, phone, email, service, question, messenger })
         });
         if (!res.ok) throw new Error('fail');
         msgEl.style.color = '#37ff86';
@@ -211,7 +229,7 @@ if(qrCodeEl){
       }
       msgEl.innerText = langs[curLang].formSuccess;
 
-      const text = encodeURIComponent(`Имя: ${name}\nВопрос: ${question}`);
+      const text = encodeURIComponent(`Имя: ${name}\nТелефон: ${phone}\nEmail: ${email}\nУслуга: ${service}\nВопрос: ${question}`);
       let url = '';
       if (messenger === 'whatsapp') {
         url = `https://wa.me/77052546613?text=${text}`;

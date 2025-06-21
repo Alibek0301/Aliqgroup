@@ -21,9 +21,9 @@ app.use('/api/feedback', (req, res, next) => {
 });
 
 app.post('/api/feedback', async (req, res) => {
-  const { name, question, messenger } = req.body;
-  if (!name || !question) return res.status(400).json({error: 'missing'});
-  const text = `Имя: ${name}\nВопрос: ${question}\nМессенджер: ${messenger}`;
+  const { name, phone, email, service, question, messenger } = req.body;
+  if (!name || !phone || !question) return res.status(400).json({error: 'missing'});
+  const text = `Имя: ${name}\nТелефон: ${phone}\nEmail: ${email || ''}\nУслуга: ${service || ''}\nВопрос: ${question}\nМессенджер: ${messenger}`;
   try {
     const transporter = nodemailer.createTransport({ sendmail: true });
     await transporter.sendMail({
