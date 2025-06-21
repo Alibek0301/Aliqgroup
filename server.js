@@ -7,7 +7,6 @@ const rateMap = {};
 const LIMIT = 3;
 const WINDOW = 10 * 60 * 1000;
 
-const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET;
 
 app.use('/api/feedback', (req, res, next) => {
   const ip = req.ip;
@@ -20,22 +19,8 @@ app.use('/api/feedback', (req, res, next) => {
 });
 
 app.post('/api/feedback', async (req, res) => {
-  const { name, question, messenger, token } = req.body;
+  const { name, question, messenger } = req.body;
   if (!name || !question) return res.status(400).json({error: 'missing'});
-  if (RECAPTCHA_SECRET) {
-    try {
-      const r = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `secret=${RECAPTCHA_SECRET}&response=${token}`
-      });
-      const data = await r.json();
-      if (!data.success) return res.status(400).json({ error: 'captcha' });
-    } catch (e) {
-      console.error(e);
-      return res.status(500).json({ error: 'captcha' });
-    }
-  }
   const text = `Имя: ${name}\nВопрос: ${question}\nМессенджер: ${messenger}`;
   try {
     const transporter = nodemailer.createTransport({ sendmail: true });
