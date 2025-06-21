@@ -189,7 +189,7 @@ if(qrCodeEl){
     }
     window.openModal = openModal; window.closeModal = closeModal;
 
-    // Отправка формы на сервер
+    // Отправка формы и переход в мессенджер
     async function sendForm(e) {
       e.preventDefault();
       const name = document.getElementById('nameInput').value;
@@ -202,15 +202,24 @@ if(qrCodeEl){
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, question, messenger })
-          });
-          if (!res.ok) throw new Error('fail');
-          msgEl.style.color = '#37ff86';
-        } catch (err) {
-        msgEl.style.color = 'red';
-        msgEl.innerText = 'Ошибка отправки';
-        return;
+        });
+        if (!res.ok) throw new Error('fail');
+        msgEl.style.color = '#37ff86';
+      } catch (err) {
+        console.error(err);
+        msgEl.style.color = '#ffb347';
       }
-        msgEl.innerText = langs[curLang].formSuccess;
+      msgEl.innerText = langs[curLang].formSuccess;
+
+      const text = encodeURIComponent(`Имя: ${name}\nВопрос: ${question}`);
+      let url = '';
+      if (messenger === 'whatsapp') {
+        url = `https://wa.me/77052546613?text=${text}`;
+      } else {
+        url = `https://t.me/aliqgroup?text=${text}`;
+      }
+      window.open(url, '_blank');
+
       document.querySelector('#modalBg form').reset();
       setTimeout(closeModal, 1800);
     }
