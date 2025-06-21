@@ -47,6 +47,8 @@ li{margin-bottom:8px;font-size:1.08rem;}
 .modal-close{position:absolute;top:14px;right:20px;font-size:1.5rem;cursor:pointer;color:#fff;}
 .service-display{margin-bottom:10px;color:#b2ebff;font-size:0.95rem;}
 .service-btn{margin-left:10px;background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;border:none;border-radius:12px;padding:4px 12px;font-size:0.9rem;cursor:pointer;}
+.service-item{display:flex;justify-content:space-between;align-items:center;list-style:none;margin-bottom:8px;}
+#servicesList{padding-left:0;}
 .service-icon{margin-right:6px;color:#1ec7f8;font-size:1.1rem;vertical-align:middle;}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
 .fade-in.visible{opacity:1;transform:none;}
@@ -65,7 +67,5 @@ body.light .footer{color:#555;}
 .calc-btn{background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;border:none;border-radius:9px;padding:10px 20px;cursor:pointer;}
 #calcResult{margin-top:5px;color:#b2ebff;}
 
-/* Подписка */
-.subscribe-form{display:flex;gap:10px;flex-wrap:wrap;}
-.subscribe-input{flex:1;min-width:160px;background:#222b34;border:1px solid #2ec2f9;border-radius:9px;padding:10px 11px;color:#fff;}
-.subscribe-btn{background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;border:none;border-radius:9px;padding:10px 20px;cursor:pointer;}
+/* Калькулятор пример */
+.calc-example{margin-top:5px;color:#7ddaff;font-size:0.9rem;}

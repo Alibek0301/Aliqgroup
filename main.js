@@ -47,14 +47,12 @@ const langs = {
     navServices: "Услуги",
     navSchedule: "Встреча",
     navFAQ: "FAQ",
-    navDocs: "Документы",
     scheduleTitle: "Запланировать консультацию",
     scheduleDesc: "Используйте наш календарь, чтобы выбрать удобное время.",
     scheduleBtn: "Открыть календарь",
     calcTitle: "Калькулятор стоимости",
     calcBtn: "Рассчитать",
-    subscribeTitle: "Подписка на новости",
-    subscribeBtn: "Подписаться",
+    calcExample: "(например: 10 ч × 5000 KZT/ч = 50000 KZT)",
     calcResultText: "Итого: "
   },
   kz: {
@@ -104,14 +102,12 @@ const langs = {
     navServices: "Қызметтер",
     navSchedule: "Кездесу",
     navFAQ: "FAQ",
-    navDocs: "Құжаттар",
     scheduleTitle: "Кеңес жоспарлау",
     scheduleDesc: "Ыңғайлы уақытты таңдау үшін күнтізбені пайдаланыңыз.",
     scheduleBtn: "Күнтізбені ашу",
     calcTitle: "Құнының калькуляторы",
     calcBtn: "Есептеу",
-    subscribeTitle: "Жаңалықтарға жазылу",
-    subscribeBtn: "Жазылу",
+    calcExample: "(мысалы: 10 сағ × 5000 KZT/сағ = 50000 KZT)",
     calcResultText: "Жиынтығы: "
   },
   en: {
@@ -161,14 +157,12 @@ const langs = {
     navServices: "Services",
     navSchedule: "Meeting",
     navFAQ: "FAQ",
-    navDocs: "Documents",
     scheduleTitle: "Schedule a consultation",
     scheduleDesc: "Use our calendar to pick a convenient time.",
     scheduleBtn: "Open calendar",
     calcTitle: "Cost calculator",
     calcBtn: "Calculate",
-    subscribeTitle: "Newsletter subscription",
-    subscribeBtn: "Subscribe",
+    calcExample: "(e.g.: 10 h × 5000 KZT/h = 50000 KZT)",
     calcResultText: "Total: "
   }
 };
@@ -213,7 +207,7 @@ function setLang(lang) {
   document.querySelectorAll('#requestBtn, #requestBtn2').forEach(btn => btn && (btn.innerText = l.requestBtn));
   setElText('servicesTitle', l.servicesTitle);
   const servicesEl = document.getElementById('servicesList');
-  if(servicesEl) servicesEl.innerHTML = l.services.map((s,i)=>`<li><i class="bi ${serviceIcons[i]} service-icon"></i> ${s} <button class="service-btn" onclick="openModal('${s}')">${l.requestBtn}</button></li>`).join('');
+  if(servicesEl) servicesEl.innerHTML = l.services.map((s,i)=>`<li class="service-item"><span><i class="bi ${serviceIcons[i]} service-icon"></i>${s}</span><button class="service-btn" onclick="openModal('${s}')">${l.requestBtn}</button></li>`).join('');
   setElText('projectsTitle', l.projectsTitle);
   const projectsEl = document.getElementById('projectsList');
   if(projectsEl) projectsEl.innerHTML = l.projects.map(p=>`<li>${p}</li>`).join('');
@@ -236,14 +230,12 @@ function setLang(lang) {
   setElText('navServices', l.navServices);
   setElText('navSchedule', l.navSchedule);
   setElText('navFAQ', l.navFAQ);
-  setElText('navDocs', l.navDocs);
   setElText('scheduleTitle', l.scheduleTitle);
   setElText('scheduleDesc', l.scheduleDesc);
   const schedBtn=document.getElementById('scheduleBtn'); if(schedBtn) schedBtn.innerText = l.scheduleBtn;
   setElText('calcTitle', l.calcTitle);
   const calcBtn=document.getElementById('calcBtn'); if(calcBtn) calcBtn.innerText = l.calcBtn;
-  setElText('subscribeTitle', l.subscribeTitle);
-  const subBtn=document.getElementById('subscribeBtn'); if(subBtn) subBtn.innerText = l.subscribeBtn;
+  setElText('calcExample', l.calcExample);
   setElText('formMsg', l.formSuccess);
   setElText('qrText', l.qrText);
 }
