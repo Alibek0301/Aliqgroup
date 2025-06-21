@@ -51,3 +51,21 @@ li{margin-bottom:8px;font-size:1.08rem;}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
 .fade-in.visible{opacity:1;transform:none;}
 @media(max-width:600px){.container{padding:3vw;} .site-title{font-size:1.33rem;} .hero-slogan{font-size:1.18rem;} .sections{gap:12px;} .section{padding:14px 9px;} .nav{display:none;}}
+
+/* Переключатель темы */
+.theme-btn{background:#181e23;border:1px solid #2ec2f9;color:#2ec2f9;border-radius:18px;padding:6px 12px;margin-right:10px;cursor:pointer;}
+body.light{background:#fdfdfd;color:#222;}
+body.light .section{background:#f3f3f3;color:#222;}
+body.light a{color:#0077cc;}
+body.light .footer{color:#555;}
+
+/* Калькулятор */
+.calc-row{display:flex;gap:10px;margin-bottom:10px;flex-wrap:wrap;}
+.calc-input{flex:1;background:#222b34;border:1px solid #2ec2f9;border-radius:9px;padding:10px 11px;color:#fff;min-width:120px;}
+.calc-btn{background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;border:none;border-radius:9px;padding:10px 20px;cursor:pointer;}
+#calcResult{margin-top:5px;color:#b2ebff;}
+
+/* Подписка */
+.subscribe-form{display:flex;gap:10px;flex-wrap:wrap;}
+.subscribe-input{flex:1;min-width:160px;background:#222b34;border:1px solid #2ec2f9;border-radius:9px;padding:10px 11px;color:#fff;}
+.subscribe-btn{background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;border:none;border-radius:9px;padding:10px 20px;cursor:pointer;}
