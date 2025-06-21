@@ -1,6 +1,6 @@
     // Языки
-    const langs = {
-      ru: {
+const langs = {
+  ru: {
         siteTitle: "AliQ Group",
         slogan: "IT-решения для бизнеса и безопасности.<br>Компетентность. Скорость. Надёжность.",
         heroDesc: "Молодая ИТ-компания. Запускаем цифровые продукты, интегрируем сервисы, делаем ваш бизнес защищённым и современным.<br><b>Первый проект: AliGuard (MVP, платформа для охранных агентств).</b>",
@@ -38,10 +38,13 @@
         messengerLabel: "Отправить через:",
         submitBtn: "Отправить",
         formSuccess: "Спасибо! Ваша заявка отправлена.",
-        qrText: "Сканируйте QR код или скопируйте ссылку на сайт:",
-        langBtn: "Қазақша"
-      },
-      kz: {
+    qrText: "Сканируйте QR код или скопируйте ссылку на сайт:",
+    langBtn: "Қазақша",
+    navHome: "Главная",
+    navServices: "Услуги",
+    navSchedule: "Встреча"
+  },
+  kz: {
         siteTitle: "AliQ Group",
         slogan: "Бизнес пен қауіпсіздікке арналған IT-шешімдер.<br>Кәсібилік. Жылдамдық. Сенімділік.",
         heroDesc: "Жас IT-компания. Цифрлық өнімдерді іске қосамыз, сервистерді біріктіреміз, бизнесіңізді заманауи әрі қорғалған етеміз.<br><b>Бірінші жоба: AliGuard (MVP, күзет агенттіктеріне арналған платформа).</b>",
@@ -79,43 +82,101 @@
         messengerLabel: "Қай мессенджер арқылы жіберу:",
         submitBtn: "Жіберу",
         formSuccess: "Рақмет! Өтінішіңіз жіберілді.",
-        qrText: "QR кодын сканерлеңіз немесе сілтемені көшіріңіз:",
-        langBtn: "Русский"
-      }
-    };
-    let curLang = 'ru';
-    function setLang(lang) {
-      curLang = lang;
-      const l = langs[lang];
-      document.getElementById('siteTitle').innerText = l.siteTitle;
-      document.getElementById('slogan').innerHTML = l.slogan;
-      document.getElementById('heroDesc').innerHTML = l.heroDesc;
-      document.querySelectorAll('#requestBtn, #requestBtn2').forEach(btn => btn.innerText = l.requestBtn);
-      document.getElementById('servicesTitle').innerText = l.servicesTitle;
-      document.getElementById('servicesList').innerHTML = l.services.map(s=>`<li>${s}</li>`).join('');
-      document.getElementById('projectsTitle').innerText = l.projectsTitle;
-      document.getElementById('projectsList').innerHTML = l.projects.map(p=>`<li>${p}</li>`).join('');
-      document.getElementById('advTitle').innerText = l.advTitle;
-      document.getElementById('advList').innerHTML = l.adv.map(a=>`<li>${a}</li>`).join('');
-      document.getElementById('founderTitle').innerText = l.founderTitle;
-      document.getElementById('founderDesc').innerText = l.founderDesc;
-      document.getElementById('contactsTitle').innerText = l.contactsTitle;
-      document.getElementById('phoneLabel').innerText = l.phoneLabel;
-      document.getElementById('nameInput').placeholder = l.namePlaceholder;
-      document.getElementById('questionInput').placeholder = l.questionPlaceholder;
-      document.getElementById('messengerLabel').innerText = l.messengerLabel;
-      document.getElementById('submitBtn').innerText = l.submitBtn;
-      document.getElementById('langBtn').innerText = l.langBtn;
-      document.getElementById('formMsg').innerText = l.formSuccess;
-      document.getElementById('qrText').innerText = l.qrText;
-    }
+    qrText: "QR кодын сканерлеңіз немесе сілтемені көшіріңіз:",
+    langBtn: "English",
+    navHome: "Басты бет",
+    navServices: "Қызметтер",
+    navSchedule: "Кездесу"
+  },
+  en: {
+    siteTitle: "AliQ Group",
+    slogan: "IT solutions for business and security.<br>Expertise. Speed. Reliability.",
+    heroDesc: "A young IT company launching digital products, integrating services and keeping your business safe.<br><b>First project: AliGuard (MVP, platform for security agencies).</b>",
+    requestBtn: "Send request",
+    servicesTitle: "Our services",
+    services: [
+      "MVP development",
+      "Service integration (CRM, cloud, chats, API)",
+      "Modern websites and landing pages",
+      "IT consulting and audit",
+      "Business process automation",
+      "Information security"
+    ],
+    projectsTitle: "Projects & experience",
+    projects: [
+      "AliGuard — digital platform for security agencies (MVP)",
+      "Chat bots for business (Telegram, WhatsApp)",
+      "Cloud services integration and automation",
+      "Websites for training centers and service companies"
+    ],
+    advTitle: "Why choose us?",
+    adv: [
+      "Full cycle from idea to launch",
+      "Flexibility without bureaucracy",
+      "Deep IT and security expertise",
+      "Transparent communication",
+      "Real experience in Kazakhstan and CIS"
+    ],
+    founderTitle: "Founder: Alibek Urazov",
+    founderDesc: "Reserve officer, engineer. 20+ years in security and IT.",
+    contactsTitle: "Contacts",
+    phoneLabel: "Phone (WhatsApp):",
+    namePlaceholder: "Your name",
+    questionPlaceholder: "Your question",
+    messengerLabel: "Send via:",
+    submitBtn: "Send",
+    formSuccess: "Thank you! Your request has been sent.",
+    qrText: "Scan the QR code or copy the link:",
+    langBtn: "Русский",
+    navHome: "Home",
+    navServices: "Services",
+    navSchedule: "Meeting"
+  }
+};
+let curLang = 'ru';
+function setElText(id, html){ const el = document.getElementById(id); if(el) el.innerHTML = html; }
+function setLang(lang) {
+  curLang = lang;
+  const l = langs[lang];
+  setElText('siteTitle', l.siteTitle);
+  setElText('slogan', l.slogan);
+  setElText('heroDesc', l.heroDesc);
+  document.querySelectorAll('#requestBtn, #requestBtn2').forEach(btn => btn && (btn.innerText = l.requestBtn));
+  setElText('servicesTitle', l.servicesTitle);
+  const servicesEl = document.getElementById('servicesList');
+  if(servicesEl) servicesEl.innerHTML = l.services.map(s=>`<li>${s}</li>`).join('');
+  setElText('projectsTitle', l.projectsTitle);
+  const projectsEl = document.getElementById('projectsList');
+  if(projectsEl) projectsEl.innerHTML = l.projects.map(p=>`<li>${p}</li>`).join('');
+  setElText('advTitle', l.advTitle);
+  const advEl = document.getElementById('advList');
+  if(advEl) advEl.innerHTML = l.adv.map(a=>`<li>${a}</li>`).join('');
+  setElText('founderTitle', l.founderTitle);
+  setElText('founderDesc', l.founderDesc);
+  setElText('contactsTitle', l.contactsTitle);
+  setElText('phoneLabel', l.phoneLabel);
+  const nameInput=document.getElementById('nameInput'); if(nameInput) nameInput.placeholder = l.namePlaceholder;
+  const qInput=document.getElementById('questionInput'); if(qInput) qInput.placeholder = l.questionPlaceholder;
+  setElText('messengerLabel', l.messengerLabel);
+  const submit=document.getElementById('submitBtn'); if(submit) submit.innerText = l.submitBtn;
+  const langBtn=document.getElementById('langBtn'); if(langBtn) langBtn.innerText = l.langBtn;
+  setElText('navHome', l.navHome);
+  setElText('navServices', l.navServices);
+  setElText('navSchedule', l.navSchedule);
+  setElText('formMsg', l.formSuccess);
+  setElText('qrText', l.qrText);
+}
     document.getElementById('langBtn').onclick = function() {
-      setLang(curLang==='ru' ? 'kz':'ru');
+      setLang(curLang==='ru' ? 'kz' : (curLang==='kz' ? 'en' : 'ru'));
     };
-  document.getElementById('year').innerText = new Date().getFullYear();
-  document.getElementById('qrCode').src =
-    'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=' + encodeURIComponent(window.location.href);
-  document.getElementById('siteLink').value = window.location.href;
+const yearEls = document.querySelectorAll('#year, #year2');
+yearEls.forEach(el => el.innerText = new Date().getFullYear());
+const qrCodeEl = document.getElementById('qrCode');
+if(qrCodeEl){
+  qrCodeEl.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=' + encodeURIComponent(window.location.href);
+  const siteLink = document.getElementById('siteLink');
+  if(siteLink) siteLink.value = window.location.href;
+}
 
     // Модалка
     function openModal() {
@@ -141,15 +202,15 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, question, messenger })
-        });
-        if (!res.ok) throw new Error('fail');
-        msgEl.style.color = '#37ff86';
-      } catch (err) {
+          });
+          if (!res.ok) throw new Error('fail');
+          msgEl.style.color = '#37ff86';
+        } catch (err) {
         msgEl.style.color = 'red';
         msgEl.innerText = 'Ошибка отправки';
         return;
       }
-      msgEl.innerText = langs[curLang].formSuccess;
+        msgEl.innerText = langs[curLang].formSuccess;
       document.querySelector('#modalBg form').reset();
       setTimeout(closeModal, 1800);
     }

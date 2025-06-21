@@ -3,6 +3,21 @@ const nodemailer = require('nodemailer');
 const app = express();
 app.use(express.json());
 
+const rateMap = {};
+const LIMIT = 3;
+const WINDOW = 10 * 60 * 1000;
+
+
+app.use('/api/feedback', (req, res, next) => {
+  const ip = req.ip;
+  const now = Date.now();
+  if (!rateMap[ip]) rateMap[ip] = [];
+  rateMap[ip] = rateMap[ip].filter(t => now - t < WINDOW);
+  if (rateMap[ip].length >= LIMIT) return res.status(429).json({ error: 'rate_limit' });
+  rateMap[ip].push(now);
+  next();
+});
+
 app.post('/api/feedback', async (req, res) => {
   const { name, question, messenger } = req.body;
   if (!name || !question) return res.status(400).json({error: 'missing'});
