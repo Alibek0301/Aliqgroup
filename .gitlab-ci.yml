@@ -1,8 +1,7 @@
 pages:
   stage: deploy
   script:
-    - mkdir public
-    - cp -r * public
+    - echo "Publish"
   artifacts:
     paths:
       - public
