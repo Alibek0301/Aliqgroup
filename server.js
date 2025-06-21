@@ -56,6 +56,11 @@ app.post('/api/feedback', async (req, res) => {
   }
 });
 
+// Serve main page explicitly to avoid README being shown by hosting platforms
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res) => {
