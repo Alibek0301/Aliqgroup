@@ -1,22 +1,22 @@
-html,body{margin:0;padding:0;background:#0a0a0a;color:#f4f4f4;font-family:'Segoe UI',Arial,sans-serif;}
+html,body{margin:0;padding:0;background:#0a0a0a;color:#f4f4f4;font-family:'Roboto',Arial,sans-serif;}
 a{color:#1ec7f8;text-decoration:none;}
 a:hover{text-decoration:underline;}
 .container{max-width:900px;margin:0 auto;padding:32px;}
 .header{display:flex;align-items:center;justify-content:space-between;}
 .logo{width:90px;margin-right:18px;}
-.site-title{font-size:2.1rem;font-weight:700;color:#1ec7f8;letter-spacing:1px;}
+.site-title{font-size:2.1rem;font-weight:700;color:#1ec7f8;letter-spacing:1px;font-family:'Poppins',sans-serif;}
 .nav{margin-left:20px;}
 .nav a{margin:0 10px;color:#b2ebff;font-size:1rem;}
 .nav a:hover{text-decoration:underline;}
 .lang-btn{background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;border:none;border-radius:18px;padding:7px 20px;font-size:15px;cursor:pointer;}
 .hero{margin:54px 0 36px 0;text-align:center;}
-.hero-slogan{font-size:2.2rem;line-height:1.22;font-weight:700;color:#3cd3fc;margin-bottom:15px;}
-.hero-desc{font-size:1.18rem;color:#b2ebff;margin-bottom:12px;}
+.hero-slogan{font-size:2.2rem;line-height:1.22;font-weight:700;color:#3cd3fc;margin-bottom:15px;font-family:'Poppins',sans-serif;}
+.hero-desc{font-size:1.18rem;color:#b2ebff;margin-bottom:12px;font-family:'Roboto',sans-serif;}
 .hero-action a{display:inline-block;background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;font-weight:500;padding:12px 34px;border-radius:16px;margin-top:18px;box-shadow:0 4px 16px #0cf4;}
 .sections{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
 @media(max-width:900px){.sections{grid-template-columns:1fr;}}
 .section{background:#141b24;border-radius:18px;padding:28px 20px 20px 28px;margin-bottom:20px;box-shadow:0 8px 40px #009ee91f;}
-.section-title{color:#32d0ff;font-size:1.32rem;font-weight:600;margin-bottom:13px;}
+.section-title{color:#32d0ff;font-size:1.32rem;font-weight:600;margin-bottom:13px;font-family:'Poppins',sans-serif;}
 ul{padding-left:20px;margin:0;}
 li{margin-bottom:8px;font-size:1.08rem;}
 .projects-list{margin:0;padding-left:18px;}
@@ -48,4 +48,7 @@ li{margin-bottom:8px;font-size:1.08rem;}
 .modal-close{position:absolute;top:14px;right:20px;font-size:1.5rem;cursor:pointer;color:#fff;}
 .service-display{margin-bottom:10px;color:#b2ebff;font-size:0.95rem;}
 .service-btn{margin-left:10px;background:linear-gradient(90deg,#36aaff,#16c0f8);color:#fff;border:none;border-radius:12px;padding:4px 12px;font-size:0.9rem;cursor:pointer;}
-@media(max-width:600px){.container{padding:3vw;} .logo{width:70px;} .site-title{font-size:1.33rem;} .hero-slogan{font-size:1.18rem;} .sections{gap:12px;} .section{padding:14px 9px;} .nav{display:none;}}
+.service-icon{margin-right:6px;color:#1ec7f8;font-size:1.1rem;vertical-align:middle;}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.fade-in.visible{opacity:1;transform:none;}
+@media(max-width:600px){.container{padding:3vw;} .site-title{font-size:1.33rem;} .hero-slogan{font-size:1.18rem;} .sections{gap:12px;} .section{padding:14px 9px;} .nav{display:none;}}
