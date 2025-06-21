@@ -46,10 +46,16 @@ const langs = {
     navHome: "Главная",
     navServices: "Услуги",
     navSchedule: "Встреча",
-    navPortfolio: "Портфолио",
+    navFAQ: "FAQ",
+    navDocs: "Документы",
     scheduleTitle: "Запланировать консультацию",
     scheduleDesc: "Используйте наш календарь, чтобы выбрать удобное время.",
-    scheduleBtn: "Открыть календарь"
+    scheduleBtn: "Открыть календарь",
+    calcTitle: "Калькулятор стоимости",
+    calcBtn: "Рассчитать",
+    subscribeTitle: "Подписка на новости",
+    subscribeBtn: "Подписаться",
+    calcResultText: "Итого: "
   },
   kz: {
         siteTitle: "AliQ Group",
@@ -97,10 +103,16 @@ const langs = {
     navHome: "Басты бет",
     navServices: "Қызметтер",
     navSchedule: "Кездесу",
-    navPortfolio: "Портфолио",
+    navFAQ: "FAQ",
+    navDocs: "Құжаттар",
     scheduleTitle: "Кеңес жоспарлау",
     scheduleDesc: "Ыңғайлы уақытты таңдау үшін күнтізбені пайдаланыңыз.",
-    scheduleBtn: "Күнтізбені ашу"
+    scheduleBtn: "Күнтізбені ашу",
+    calcTitle: "Құнының калькуляторы",
+    calcBtn: "Есептеу",
+    subscribeTitle: "Жаңалықтарға жазылу",
+    subscribeBtn: "Жазылу",
+    calcResultText: "Жиынтығы: "
   },
   en: {
     siteTitle: "AliQ Group",
@@ -148,10 +160,16 @@ const langs = {
     navHome: "Home",
     navServices: "Services",
     navSchedule: "Meeting",
-    navPortfolio: "Portfolio",
+    navFAQ: "FAQ",
+    navDocs: "Documents",
     scheduleTitle: "Schedule a consultation",
     scheduleDesc: "Use our calendar to pick a convenient time.",
-    scheduleBtn: "Open calendar"
+    scheduleBtn: "Open calendar",
+    calcTitle: "Cost calculator",
+    calcBtn: "Calculate",
+    subscribeTitle: "Newsletter subscription",
+    subscribeBtn: "Subscribe",
+    calcResultText: "Total: "
   }
 };
 // Вопросы по услугам
@@ -217,10 +235,15 @@ function setLang(lang) {
   setElText('navHome', l.navHome);
   setElText('navServices', l.navServices);
   setElText('navSchedule', l.navSchedule);
-  setElText('navPortfolio', l.navPortfolio);
+  setElText('navFAQ', l.navFAQ);
+  setElText('navDocs', l.navDocs);
   setElText('scheduleTitle', l.scheduleTitle);
   setElText('scheduleDesc', l.scheduleDesc);
   const schedBtn=document.getElementById('scheduleBtn'); if(schedBtn) schedBtn.innerText = l.scheduleBtn;
+  setElText('calcTitle', l.calcTitle);
+  const calcBtn=document.getElementById('calcBtn'); if(calcBtn) calcBtn.innerText = l.calcBtn;
+  setElText('subscribeTitle', l.subscribeTitle);
+  const subBtn=document.getElementById('subscribeBtn'); if(subBtn) subBtn.innerText = l.subscribeBtn;
   setElText('formMsg', l.formSuccess);
   setElText('qrText', l.qrText);
 }
@@ -319,9 +342,37 @@ function openModal(service) {
     // Первичная установка языка
     setLang(curLang);
 
-    const observer = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if(e.isIntersecting) e.target.classList.add('visible');
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    function applyTheme(){
+      if(localStorage.theme==='light'){
+        document.body.classList.add('light');
+        const btn=document.getElementById('themeToggle');
+        if(btn) btn.innerText='☀';
+      }else{
+        document.body.classList.remove('light');
+        const btn=document.getElementById('themeToggle');
+        if(btn) btn.innerText='☾';
+      }
+    }
+    const themeBtn=document.getElementById('themeToggle');
+    if(themeBtn){
+      themeBtn.onclick=function(){
+        localStorage.theme = localStorage.theme==='light' ? 'dark' : 'light';
+        applyTheme();
+      };
+    }
+    applyTheme();
+
+    window.calcCost = function(){
+      const h=parseFloat(document.getElementById('hoursInput').value)||0;
+      const r=parseFloat(document.getElementById('rateInput').value)||0;
+      const res=h*r;
+      const out=document.getElementById('calcResult');
+      out.innerText=res?langs[curLang].calcResultText+res+' KZT':'';
+    };

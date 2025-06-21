@@ -42,9 +42,11 @@
         <nav class="nav">
           <a href="index.html" id="navHome">Главная</a>
           <a href="services.html" id="navServices">Услуги</a>
-          <a href="portfolio.html" id="navPortfolio">Портфолио</a>
           <a href="schedule.html" id="navSchedule">Встреча</a>
+          <a href="faq.html" id="navFAQ">FAQ</a>
+          <a href="documents.html" id="navDocs">Документы</a>
         </nav>
+        <button class="theme-btn" id="themeToggle">☾</button>
         <button class="lang-btn" id="langBtn">Қазақша</button>
       </header>
 
@@ -129,6 +131,24 @@
     <div class="qr-input">
       <input id="siteLink" type="text" readonly class="site-link" />
     </div>
+  </section>
+
+  <section class="section fade-in" id="calcSection">
+    <div class="section-title" id="calcTitle">Калькулятор стоимости</div>
+    <div class="calc-row">
+      <input id="hoursInput" type="number" placeholder="Часы" class="calc-input">
+      <input id="rateInput" type="number" placeholder="KZT/час" class="calc-input">
+      <button onclick="calcCost()" id="calcBtn" class="calc-btn">Рассчитать</button>
+    </div>
+    <div id="calcResult"></div>
+  </section>
+
+  <section class="section fade-in" id="subscribeSection">
+    <div class="section-title" id="subscribeTitle">Подписка на новости</div>
+    <form action="https://example.com" method="POST" target="_blank" class="subscribe-form">
+      <input type="email" name="EMAIL" placeholder="Email" required class="subscribe-input">
+      <button type="submit" id="subscribeBtn" class="subscribe-btn">Подписаться</button>
+    </form>
   </section>
 
   <section class="section privacy-section fade-in" id="privacy">
