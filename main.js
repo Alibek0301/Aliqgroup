@@ -45,7 +45,11 @@ const langs = {
     langBtn: "Қазақша",
     navHome: "Главная",
     navServices: "Услуги",
-    navSchedule: "Встреча"
+    navSchedule: "Встреча",
+    navPortfolio: "Портфолио",
+    scheduleTitle: "Запланировать консультацию",
+    scheduleDesc: "Используйте наш календарь, чтобы выбрать удобное время.",
+    scheduleBtn: "Открыть календарь"
   },
   kz: {
         siteTitle: "AliQ Group",
@@ -92,7 +96,11 @@ const langs = {
     langBtn: "English",
     navHome: "Басты бет",
     navServices: "Қызметтер",
-    navSchedule: "Кездесу"
+    navSchedule: "Кездесу",
+    navPortfolio: "Портфолио",
+    scheduleTitle: "Кеңес жоспарлау",
+    scheduleDesc: "Ыңғайлы уақытты таңдау үшін күнтізбені пайдаланыңыз.",
+    scheduleBtn: "Күнтізбені ашу"
   },
   en: {
     siteTitle: "AliQ Group",
@@ -139,7 +147,11 @@ const langs = {
     langBtn: "Русский",
     navHome: "Home",
     navServices: "Services",
-    navSchedule: "Meeting"
+    navSchedule: "Meeting",
+    navPortfolio: "Portfolio",
+    scheduleTitle: "Schedule a consultation",
+    scheduleDesc: "Use our calendar to pick a convenient time.",
+    scheduleBtn: "Open calendar"
   }
 };
 // Вопросы по услугам
@@ -170,6 +182,8 @@ const serviceQuestions = {
   ]
 };
 
+const serviceIcons = ['bi-lightning','bi-diagram-3','bi-window','bi-puzzle','bi-gear','bi-shield-lock'];
+
 let curLang = 'ru';
 function setElText(id, html){ const el = document.getElementById(id); if(el) el.innerHTML = html; }
 function setLang(lang) {
@@ -181,7 +195,7 @@ function setLang(lang) {
   document.querySelectorAll('#requestBtn, #requestBtn2').forEach(btn => btn && (btn.innerText = l.requestBtn));
   setElText('servicesTitle', l.servicesTitle);
   const servicesEl = document.getElementById('servicesList');
-  if(servicesEl) servicesEl.innerHTML = l.services.map(s=>`<li>${s} <button class="service-btn" onclick="openModal('${s}')">${l.requestBtn}</button></li>`).join('');
+  if(servicesEl) servicesEl.innerHTML = l.services.map((s,i)=>`<li><i class="bi ${serviceIcons[i]} service-icon"></i> ${s} <button class="service-btn" onclick="openModal('${s}')">${l.requestBtn}</button></li>`).join('');
   setElText('projectsTitle', l.projectsTitle);
   const projectsEl = document.getElementById('projectsList');
   if(projectsEl) projectsEl.innerHTML = l.projects.map(p=>`<li>${p}</li>`).join('');
@@ -203,13 +217,17 @@ function setLang(lang) {
   setElText('navHome', l.navHome);
   setElText('navServices', l.navServices);
   setElText('navSchedule', l.navSchedule);
+  setElText('navPortfolio', l.navPortfolio);
+  setElText('scheduleTitle', l.scheduleTitle);
+  setElText('scheduleDesc', l.scheduleDesc);
+  const schedBtn=document.getElementById('scheduleBtn'); if(schedBtn) schedBtn.innerText = l.scheduleBtn;
   setElText('formMsg', l.formSuccess);
   setElText('qrText', l.qrText);
 }
     document.getElementById('langBtn').onclick = function() {
       setLang(curLang==='ru' ? 'kz' : (curLang==='kz' ? 'en' : 'ru'));
     };
-const yearEls = document.querySelectorAll('#year, #year2');
+const yearEls = document.querySelectorAll('#year, #year2, #year3');
 yearEls.forEach(el => el.innerText = new Date().getFullYear());
 const qrCodeEl = document.getElementById('qrCode');
 if(qrCodeEl){
@@ -300,3 +318,10 @@ function openModal(service) {
 
     // Первичная установка языка
     setLang(curLang);
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
