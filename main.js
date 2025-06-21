@@ -3,7 +3,7 @@ const langs = {
   ru: {
         siteTitle: "AliQ Group",
         slogan: "IT-решения для бизнеса и безопасности.<br>Компетентность. Скорость. Надёжность.",
-        heroDesc: "Молодая ИТ-компания. Запускаем цифровые продукты, интегрируем сервисы, делаем ваш бизнес защищённым и современным.<br><b>Первый проект: AliGuard (MVP, платформа для охранных агентств).</b>",
+        heroDesc: "Молодая ИТ-компания. Запускаем цифровые продукты, интегрируем сервисы, делаем ваш бизнес защищённым и современным.<br><b>Первый собственный проект <a href=\"https://aliguard.kz\" target=\"_blank\">Aliguard.kz</a> (платформа для поиска охранных услуг).</b>",
         requestBtn: "Оставить заявку",
         servicesTitle: "Наши услуги",
         services: [
@@ -16,7 +16,7 @@ const langs = {
         ],
         projectsTitle: "Проекты и опыт",
         projects: [
-          "AliGuard — цифровая платформа для поиска охранных услуг (MVP)",
+          "<a href=\"https://aliguard.kz\" target=\"_blank\">Aliguard.kz</a> — цифровая платформа для поиска охранных услуг (MVP)",
           "Чат-боты для бизнеса (Telegram, WhatsApp)",
           "Внедрение облачных сервисов и автоматизация",
           "Сайты для учебных центров, сервисных компаний"
@@ -58,7 +58,7 @@ const langs = {
   kz: {
         siteTitle: "AliQ Group",
         slogan: "Бизнес пен қауіпсіздікке арналған IT-шешімдер.<br>Кәсібилік. Жылдамдық. Сенімділік.",
-        heroDesc: "Жас IT-компания. Цифрлық өнімдерді іске қосамыз, сервистерді біріктіреміз, бизнесіңізді заманауи әрі қорғалған етеміз.<br><b>Бірінші жоба: AliGuard (MVP, күзет агенттіктеріне арналған платформа).</b>",
+        heroDesc: "Жас IT-компания. Цифрлық өнімдерді іске қосамыз, сервистерді біріктіреміз, бизнесіңізді заманауи әрі қорғалған етеміз.<br><b>Бірінші жеке жоба <a href=\"https://aliguard.kz\" target=\"_blank\">Aliguard.kz</a> (күзет қызметтерін табуға арналған платформа).</b>",
         requestBtn: "Өтініш қалдыру",
         servicesTitle: "Қызметтеріміз",
         services: [
@@ -71,7 +71,7 @@ const langs = {
         ],
         projectsTitle: "Жобалар мен тәжірибе",
         projects: [
-          "AliGuard — күзет агенттіктеріне арналған цифрлық платформа (MVP)",
+          "<a href=\"https://aliguard.kz\" target=\"_blank\">Aliguard.kz</a> — күзет қызметтерін табуға арналған цифрлық платформа (MVP)",
           "Бизнеске арналған чат-боттар (Telegram, WhatsApp)",
           "Бұлттық сервистерді енгізу және автоматтандыру",
           "Оқу орталықтарына, сервис компанияларға сайттар"
@@ -113,7 +113,7 @@ const langs = {
   en: {
     siteTitle: "AliQ Group",
     slogan: "IT solutions for business and security.<br>Expertise. Speed. Reliability.",
-    heroDesc: "A young IT company launching digital products, integrating services and keeping your business safe.<br><b>First project: AliGuard (MVP, platform for security agencies).</b>",
+    heroDesc: "A young IT company launching digital products, integrating services and keeping your business safe.<br><b>First own project <a href=\"https://aliguard.kz\" target=\"_blank\">Aliguard.kz</a> (platform for finding security services).</b>",
     requestBtn: "Send request",
     servicesTitle: "Our services",
     services: [
@@ -126,7 +126,7 @@ const langs = {
     ],
     projectsTitle: "Projects & experience",
     projects: [
-      "AliGuard — digital platform for security agencies (MVP)",
+      "<a href=\"https://aliguard.kz\" target=\"_blank\">Aliguard.kz</a> — platform for finding security services (MVP)",
       "Chat bots for business (Telegram, WhatsApp)",
       "Cloud services integration and automation",
       "Websites for training centers and service companies"
