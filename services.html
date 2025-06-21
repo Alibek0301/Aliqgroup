@@ -130,7 +130,7 @@
   </section>
 
   <section class="section privacy-section" id="privacy">
-    Мы собираем имя и вопрос только для обратной связи. Информация не хранится на сайте и
+    Мы собираем имя, телефон, email (необязательно) и ответы на вопросы только для обратной связи. Информация не хранится на сайте и
     используется исключительно для связи через выбранный мессенджер. Аналитика собирается
     сервисом Yandex.Metrica.
   </section>
@@ -149,18 +149,19 @@
       <form onsubmit="sendForm(event)">
         <div class="service-display"><span id="serviceLabel">Услуга:</span> <span id="serviceName"></span></div>
         <input id="serviceInput" type="hidden">
+        <div id="dynamicFields"></div>
+        <textarea id="questionInput" rows="3" placeholder="Ваш вопрос" required></textarea>
         <input id="nameInput" type="text" placeholder="Ваше имя" required>
         <input id="phoneInput" type="tel" placeholder="Телефон" required>
         <input id="emailInput" type="email" placeholder="Email (необязательно)">
-        <textarea id="questionInput" rows="3" placeholder="Ваш вопрос" required></textarea>
         <label id="messengerLabel" for="messengerSelect" class="messenger-label"></label>
-          <select id="messengerSelect" class="messenger-select">
-            <option value="whatsapp">WhatsApp</option>
-            <option value="telegram">Telegram</option>
-          </select>
-          <button type="submit" id="submitBtn">Отправить</button>
-          <div id="formMsg" class="form-msg"></div>
-        </form>
+        <select id="messengerSelect" class="messenger-select">
+          <option value="whatsapp">WhatsApp</option>
+          <option value="telegram">Telegram</option>
+        </select>
+        <button type="submit" id="submitBtn">Отправить</button>
+        <div id="formMsg" class="form-msg"></div>
+      </form>
       </div>
   </div>
 
