@@ -53,7 +53,10 @@ const langs = {
     calcTitle: "Калькулятор стоимости",
     calcBtn: "Рассчитать",
     calcExample: "(например: 10 ч × 5000 KZT/ч = 50000 KZT)",
-    calcResultText: "Итого: "
+    calcResultText: "Итого: ",
+    roiTitle: "ROI калькулятор",
+    roiBtn: "Рассчитать",
+    roiResultText: "ROI: "
   },
   kz: {
         siteTitle: "AliQ Group",
@@ -108,7 +111,10 @@ const langs = {
     calcTitle: "Құнының калькуляторы",
     calcBtn: "Есептеу",
     calcExample: "(мысалы: 10 сағ × 5000 KZT/сағ = 50000 KZT)",
-    calcResultText: "Жиынтығы: "
+    calcResultText: "Жиынтығы: ",
+    roiTitle: "ROI есептеуі",
+    roiBtn: "Есептеу",
+    roiResultText: "ROI: "
   },
   en: {
     siteTitle: "AliQ Group",
@@ -163,7 +169,10 @@ const langs = {
     calcTitle: "Cost calculator",
     calcBtn: "Calculate",
     calcExample: "(e.g.: 10 h × 5000 KZT/h = 50000 KZT)",
-    calcResultText: "Total: "
+    calcResultText: "Total: ",
+    roiTitle: "ROI calculator",
+    roiBtn: "Calculate",
+    roiResultText: "ROI: "
   }
 };
 // Вопросы по услугам
@@ -237,6 +246,8 @@ function setLang(lang) {
   setElText('calcTitle', l.calcTitle);
   const calcBtn=document.getElementById('calcBtn'); if(calcBtn) calcBtn.innerText = l.calcBtn;
   setElText('calcExample', l.calcExample);
+  setElText('roiTitle', l.roiTitle);
+  const roiBtn=document.getElementById('roiBtn'); if(roiBtn) roiBtn.innerText = l.roiBtn;
   setElText('formMsg', l.formSuccess);
   setElText('qrText', l.qrText);
 }
@@ -305,10 +316,18 @@ function openModal(service) {
       const msgEl = document.getElementById('formMsg');
       msgEl.style.display = 'block';
       try {
+        const fd = new FormData();
+        fd.append('name', name);
+        fd.append('phone', phone);
+        fd.append('email', email);
+        fd.append('service', service);
+        fd.append('question', question);
+        fd.append('messenger', messenger);
+        const fileEl = document.getElementById('fileInput');
+        if(fileEl && fileEl.files[0]) fd.append('file', fileEl.files[0]);
         const res = await fetch('/api/feedback', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, phone, email, service, question, messenger })
+          body: fd
         });
         if (!res.ok) throw new Error('fail');
         msgEl.style.color = '#37ff86';
@@ -362,10 +381,39 @@ const observer = new IntersectionObserver(entries => {
     }
     applyTheme();
 
+    function applyColor(){
+      const col=localStorage.color||'blue';
+      const root=document.documentElement;
+      if(col==='green'){ root.style.setProperty('--accent1','#2af598'); root.style.setProperty('--accent2','#009eeb'); }
+      else if(col==='purple'){ root.style.setProperty('--accent1','#ff35a6'); root.style.setProperty('--accent2','#6e3bff'); }
+      else { root.style.setProperty('--accent1','#36aaff'); root.style.setProperty('--accent2','#16c0f8'); }
+    }
+    const colorBtn=document.getElementById('colorToggle');
+    if(colorBtn){
+      colorBtn.onclick=function(){
+        const cur=localStorage.color||'blue';
+        localStorage.color=cur==='blue'?'green':(cur==='green'?'purple':'blue');
+        applyColor();
+      };
+    }
+    applyColor();
+
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.register('service-worker.js');
+    }
+
     window.calcCost = function(){
       const h=parseFloat(document.getElementById('hoursInput').value)||0;
       const r=parseFloat(document.getElementById('rateInput').value)||0;
       const res=h*r;
       const out=document.getElementById('calcResult');
       out.innerText=res?langs[curLang].calcResultText+res+' KZT':'';
+    };
+
+    window.calcROI = function(){
+      const inv=parseFloat(document.getElementById('investInput').value)||0;
+      const prof=parseFloat(document.getElementById('profitInput').value)||0;
+      const roi=inv?((prof-inv)/inv*100).toFixed(1):0;
+      const out=document.getElementById('roiResult');
+      out.innerText=inv?langs[curLang].roiResultText+roi+'%':'';
     };

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Создание сайтов — AliQ Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="header-flex">
+      <span class="site-title" id="siteTitle">AliQ Group</span>
+    </div>
+    <nav class="nav">
+      <a href="../index.html" id="navHome">Главная</a>
+      <a href="../services.html" id="navServices">Услуги</a>
+      <a href="../schedule.html" id="navSchedule">Встреча</a>
+      <a href="../faq.html" id="navFAQ">FAQ</a>
+    </nav>
+    <button class="theme-btn" id="themeToggle">☾</button>
+    <button class="color-btn" id="colorToggle">🎨</button>
+    <button class="lang-btn" id="langBtn">Қазақша</button>
+  </header>
+  <main>
+    <section class="section fade-in">
+      <div class="section-title">Создание современных сайтов</div>
+      <p>Проектируем адаптивные и быстрые веб‑ресурсы, ориентированные на клиентов.</p>
+      <p>Используем актуальные технологии и обеспечиваем удобную админ‑панель.</p>
+    </section>
+    <div class="bottom-action" style="text-align:center">
+      <a href="#" onclick="openModal('Создание сайтов');return false;" class="hero-action" id="requestBtn">Оставить заявку</a>
+    </div>
+  </main>
+  <footer class="footer">
+    © <span id="year3"></span> AliQ Group
+  </footer>
+</div>
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <form onsubmit="sendForm(event)" enctype="multipart/form-data">
+      <div class="service-display"><span id="serviceLabel">Услуга:</span> <span id="serviceName"></span></div>
+      <input id="serviceInput" type="hidden">
+      <div id="dynamicFields"></div>
+      <textarea id="questionInput" rows="3" placeholder="Ваш вопрос" required></textarea>
+      <input id="nameInput" type="text" placeholder="Ваше имя" required>
+      <input id="phoneInput" type="tel" placeholder="Телефон" required>
+      <input id="emailInput" type="email" placeholder="Email (необязательно)">
+      <input id="fileInput" type="file">
+      <label id="messengerLabel" for="messengerSelect" class="messenger-label"></label>
+      <select id="messengerSelect" class="messenger-select">
+        <option value="whatsapp">WhatsApp</option>
+        <option value="telegram">Telegram</option>
+      </select>
+      <button type="submit" id="submitBtn">Отправить</button>
+      <div id="formMsg" class="form-msg"></div>
+    </form>
+  </div>
+</div>
+<script src="../main.js"></script>
+<script src="../config.js"></script>
+</body>
+</html>
