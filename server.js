@@ -66,6 +66,8 @@ app.get('/', (req, res) => {
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
+// Serve mobile assets (e.g., logo) without moving files
+app.use('/mobile', express.static(path.join(__dirname, 'mobile')));
 
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
