@@ -13,7 +13,8 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3EA%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   <!-- Иконки соцсетей через CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -48,6 +49,7 @@
           <a href="faq.html" id="navFAQ">FAQ</a>
         </nav>
         <button class="theme-btn" id="themeToggle">☾</button>
+        <button class="color-btn" id="colorToggle">🎨</button>
         <button class="lang-btn" id="langBtn">Қазақша</button>
       </header>
 
@@ -69,12 +71,12 @@
       <section class="section fade-in">
         <div class="section-title" id="servicesTitle">Наши услуги</div>
         <ul id="servicesList">
-          <li><i class="bi bi-lightning service-icon"></i> Разработка MVP (цифровых продуктов)</li>
-          <li><i class="bi bi-diagram-3 service-icon"></i> Интеграция сервисов (CRM, облако, чаты, API)</li>
-          <li><i class="bi bi-window service-icon"></i> Создание современных сайтов и лендингов</li>
-          <li><i class="bi bi-puzzle service-icon"></i> IT-консалтинг и аудит</li>
-          <li><i class="bi bi-gear service-icon"></i> Автоматизация бизнес-процессов</li>
-          <li><i class="bi bi-shield-lock service-icon"></i> Информбезопасность и защита данных</li>
+          <li><i class="bi bi-lightning service-icon"></i> <a href="services/mvp.html">Разработка MVP (цифровых продуктов)</a></li>
+          <li><i class="bi bi-diagram-3 service-icon"></i> <a href="services/integration.html">Интеграция сервисов (CRM, облако, чаты, API)</a></li>
+          <li><i class="bi bi-window service-icon"></i> <a href="services/websites.html">Создание современных сайтов и лендингов</a></li>
+          <li><i class="bi bi-puzzle service-icon"></i> <a href="services/consulting.html">IT-консалтинг и аудит</a></li>
+          <li><i class="bi bi-gear service-icon"></i> <a href="services/automation.html">Автоматизация бизнес-процессов</a></li>
+          <li><i class="bi bi-shield-lock service-icon"></i> <a href="services/security.html">Информбезопасность и защита данных</a></li>
         </ul>
       </section>
       <section class="section fade-in">
@@ -144,6 +146,15 @@
     <div id="calcResult"></div>
     <div class="calc-example" id="calcExample">(например: 10 ч × 5000 KZT/ч = 50000 KZT)</div>
   </section>
+  <section class="section fade-in" id="roiSection">
+    <div class="section-title" id="roiTitle">ROI калькулятор</div>
+    <div class="calc-row">
+      <input id="investInput" type="number" placeholder="Инвестиции" class="calc-input">
+      <input id="profitInput" type="number" placeholder="Доход" class="calc-input">
+      <button onclick="calcROI()" id="roiBtn" class="calc-btn">Рассчитать</button>
+    </div>
+    <div id="roiResult"></div>
+  </section>
 
   <section class="section privacy-section fade-in" id="privacy">
     Мы собираем имя, телефон, email (необязательно) и ответы на вопросы только для обратной связи. Информация не хранится на сайте и
@@ -162,7 +173,7 @@
   <div class="modal-bg" id="modalBg">
     <div class="modal">
       <span class="modal-close" onclick="closeModal()">&times;</span>
-      <form onsubmit="sendForm(event)">
+      <form onsubmit="sendForm(event)" enctype="multipart/form-data">
         <div class="service-display"><span id="serviceLabel">Услуга:</span> <span id="serviceName"></span></div>
         <input id="serviceInput" type="hidden">
         <div id="dynamicFields"></div>
@@ -170,6 +181,7 @@
         <input id="nameInput" type="text" placeholder="Ваше имя" required>
         <input id="phoneInput" type="tel" placeholder="Телефон" required>
         <input id="emailInput" type="email" placeholder="Email (необязательно)">
+        <input id="fileInput" type="file">
         <label id="messengerLabel" for="messengerSelect" class="messenger-label"></label>
         <select id="messengerSelect" class="messenger-select">
           <option value="whatsapp">WhatsApp</option>
