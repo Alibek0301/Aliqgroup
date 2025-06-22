@@ -38,7 +38,11 @@ li{margin-bottom:8px;font-size:1.08rem;}
 .footer{margin-top:40px;text-align:center;color:#454b55;font-size:.99rem;}
 /* Новые классы */
 .header-flex{display:flex;align-items:center;}
-.logo{width:32px;height:32px;margin-right:10px;}
+.logo{
+  width:2.1rem;
+  height:2.1rem;
+  margin-right:10px;
+}
 .bottom-action{margin-top:18px;}
 .qr-section{text-align:center;margin-top:20px;}
 .qr-code{margin-top:10px;width:160px;height:160px;}
@@ -63,7 +67,7 @@ li{margin-bottom:8px;font-size:1.08rem;}
 .service-item:hover .service-icon{transform:rotate(360deg);}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
 .fade-in.visible{opacity:1;transform:none;}
-@media(max-width:600px){.container{padding:3vw;} .site-title{font-size:1.33rem;} .hero-slogan{font-size:1.18rem;} .sections{gap:12px;} .section{padding:14px 9px;} .nav{display:none;}}
+@media(max-width:600px){.container{padding:3vw;} .site-title{font-size:1.33rem;} .logo{width:1.33rem;height:1.33rem;} .hero-slogan{font-size:1.18rem;} .sections{gap:12px;} .section{padding:14px 9px;} .nav{display:none;}}
 
 /* Переключатель темы */
 .theme-btn{background:linear-gradient(90deg,#00c6ff,#0072ff);border:none;color:#fff;border-radius:18px;padding:6px 12px;margin-right:10px;cursor:pointer;transition:transform .2s;}
