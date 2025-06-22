@@ -7,7 +7,7 @@ export default function App() {
     <View style={styles.container}>
       <WebView
         originWhitelist={['*']}
-        source={{ uri: 'https://aliqgroup.kz/' }}
+        source={{ uri: 'https://alibek0301.github.io/Aliqgroup/' }}
         style={styles.webview}
       />
     </View>
