@@ -27,12 +27,12 @@
   <noscript><div><img src="https://mc.yandex.ru/watch/12345678" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrica counter -->
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=" id="gaScript"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID');
+      gtag('config', window.GA_ID);
     </script>
     <!-- /Google Analytics -->
 </head>
@@ -107,17 +107,17 @@
       </section>
     </section>
 
-    <section class="section contacts-section fade-in">
+    <section class="section contacts-section fade-in" itemscope itemtype="https://schema.org/Organization">
       <div class="section-title" id="contactsTitle">Контакты</div>
       <div class="contact-block" id="phoneBlock">
         <span class="contact-label" id="phoneLabel">Телефон (WhatsApp):</span>
-        <a href="https://wa.me/77052546613" target="_blank" rel="noopener" class="contact-social" title="WhatsApp">
+        <a itemprop="telephone" href="https://wa.me/77052546613" target="_blank" rel="noopener" class="contact-social" title="WhatsApp">
           <i class="bi bi-whatsapp"></i> +7 705 254 6613
         </a>
       </div>
       <div class="contact-block">
         <span class="contact-label">Email:</span>
-        <a href="mailto:aliguard.kz@gmail.com" class="contact-social"><i class="bi bi-envelope"></i> aliguard.kz@gmail.com</a>
+        <a itemprop="email" href="mailto:aliguard.kz@gmail.com" class="contact-social"><i class="bi bi-envelope"></i> aliguard.kz@gmail.com</a>
       </div>
       <div class="contact-block">
         <span class="contact-label">Telegram:</span>
@@ -159,7 +159,7 @@
   <section class="section privacy-section fade-in" id="privacy">
     Мы собираем имя, телефон, email (необязательно) и ответы на вопросы только для обратной связи. Информация не хранится на сайте и
     используется исключительно для связи через выбранный мессенджер. Аналитика собирается
-    сервисом Yandex.Metrica.
+    сервисом Yandex.Metrica. Подробнее <a href="privacy.html">в политике конфиденциальности</a>.
   </section>
 
   </main>
@@ -191,6 +191,14 @@
         <div id="formMsg" class="form-msg"></div>
       </form>
       </div>
+  </div>
+  <!-- Модальное окно описания услуги -->
+  <div class="modal-bg" id="infoBg">
+    <div class="modal">
+      <span class="modal-close" onclick="closeInfo()">&times;</span>
+      <div id="infoContent"></div>
+      <button class="service-btn" id="infoRequest" onclick="openModal();closeInfo();">Оставить заявку</button>
+    </div>
   </div>
 
     <script src="main.js"></script>
