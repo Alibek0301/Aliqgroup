@@ -54,9 +54,7 @@ const langs = {
     calcBtn: "Рассчитать",
     calcExample: "(например: 10 ч × 5000 KZT/ч = 50000 KZT)",
     calcResultText: "Итого: ",
-    roiTitle: "ROI калькулятор",
-    roiBtn: "Рассчитать",
-    roiResultText: "ROI: "
+    
   },
   kz: {
         siteTitle: "AliQ Group",
@@ -111,10 +109,7 @@ const langs = {
     calcTitle: "Құнының калькуляторы",
     calcBtn: "Есептеу",
     calcExample: "(мысалы: 10 сағ × 5000 KZT/сағ = 50000 KZT)",
-    calcResultText: "Жиынтығы: ",
-    roiTitle: "ROI есептеуі",
-    roiBtn: "Есептеу",
-    roiResultText: "ROI: "
+    calcResultText: "Жиынтығы: "
   },
   en: {
     siteTitle: "AliQ Group",
@@ -170,9 +165,7 @@ const langs = {
     calcBtn: "Calculate",
     calcExample: "(e.g.: 10 h × 5000 KZT/h = 50000 KZT)",
     calcResultText: "Total: ",
-    roiTitle: "ROI calculator",
-    roiBtn: "Calculate",
-    roiResultText: "ROI: "
+    
   }
 };
 // Вопросы по услугам
@@ -273,8 +266,6 @@ function setLang(lang) {
   setElText('calcTitle', l.calcTitle);
   const calcBtn=document.getElementById('calcBtn'); if(calcBtn) calcBtn.innerText = l.calcBtn;
   setElText('calcExample', l.calcExample);
-  setElText('roiTitle', l.roiTitle);
-  const roiBtn=document.getElementById('roiBtn'); if(roiBtn) roiBtn.innerText = l.roiBtn;
   setElText('formMsg', l.formSuccess);
   setElText('qrText', l.qrText);
 }
@@ -505,10 +496,3 @@ const observer = new IntersectionObserver(entries => {
       out.innerText=res?langs[curLang].calcResultText+res+' KZT':'';
     };
 
-    window.calcROI = function(){
-      const inv=parseFloat(document.getElementById('investInput').value)||0;
-      const prof=parseFloat(document.getElementById('profitInput').value)||0;
-      const roi=inv?((prof-inv)/inv*100).toFixed(1):0;
-      const out=document.getElementById('roiResult');
-      out.innerText=inv?langs[curLang].roiResultText+roi+'%':'';
-    };
