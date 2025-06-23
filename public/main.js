@@ -174,6 +174,65 @@ const langs = {
     roiBtn: "Calculate",
     roiResultText: "ROI: "
   }
+  ,
+  uz: {
+    siteTitle: "AliQ Group",
+    slogan: "Biznes va xavfsizlik uchun IT yechimlar.",
+    heroDesc: "Yosh IT kompaniya. Raqamli mahsulotlarni ishga tushiramiz, servislarni integratsiya qilamiz.",
+    requestBtn: "Ariza yuborish",
+    servicesTitle: "Xizmatlarimiz",
+    services: [
+      "MVP ishlab chiqish",
+      "Servislarni integratsiya qilish",
+      "Zamonaviy saytlar",
+      "IT-konsalting",
+      "Biznes jarayonlarni avtomatlashtirish",
+      "Axborot xavfsizligi"
+    ],
+    projectsTitle: "Loyihalar va tajriba",
+    projects: [
+      "Aliguard.kz — xavfsizlik xizmatlarini topish platformasi",
+      "Biznes uchun chat-botlar",
+      "Bulut servislarini integratsiya qilish",
+      "O'quv markazlari uchun saytlar"
+    ],
+    advTitle: "Nega biz?",
+    adv: [
+      "G'oyadan ishga tushirishgacha to'liq tsikl",
+      "Byurokratiyasiz moslashuvchanlik",
+      "IT va xavfsizlik bo'yicha chuqur bilim",
+      "Ochiq muloqot",
+      "MDHda tajriba"
+    ],
+    founderTitle: "Rahbar: Alibek Urazov",
+    founderDesc: "Zaxira ofitseri, muhandis. 20+ yil xavfsizlik va IT sohasida.",
+    contactsTitle: "Aloqa",
+    phoneLabel: "Telefon (WhatsApp):",
+    namePlaceholder: "Ismingiz",
+    phonePlaceholder: "Telefon",
+    emailPlaceholder: "Email (majburiy emas)",
+    serviceLabelText: "Xizmat:",
+    questionPlaceholder: "Savolingiz",
+    messengerLabel: "Qaysi messenjer orqali:",
+    submitBtn: "Yuborish",
+    formSuccess: "Rahmat! So'rovingiz yuborildi.",
+    qrText: "QR kodni skanerlang yoki havolani nusxa oling:",
+    langBtn: "O'zbekcha",
+    navHome: "Bosh sahifa",
+    navServices: "Xizmatlar",
+    navSchedule: "Uchrashuv",
+    navFAQ: "Savol-javob",
+    scheduleTitle: "Konsultatsiya rejalashtirish",
+    scheduleDesc: "Kalendardan qulay vaqtni tanlang.",
+    scheduleBtn: "Kalendarni ochish",
+    calcTitle: "Narx hisoblagichi",
+    calcBtn: "Hisoblash",
+    calcExample: "(masalan: 10 soat × 5000 KZT/soat = 50000 KZT)",
+    calcResultText: "Jami: ",
+    roiTitle: "ROI kalkulyatori",
+    roiBtn: "Hisoblash",
+    roiResultText: "ROI: "
+  }
 };
 // Вопросы по услугам
 const serviceQuestions = {
@@ -200,10 +259,53 @@ const serviceQuestions = {
     ['Audit scope (infrastructure, processes, etc.)','Consultation goals','Desired results','Time for conducting'],
     ['Key tasks/processes','Tools in use','Problems to solve','Timeline','Contact person'],
     ['Current IT infrastructure','Priority risks/threats','Required protection measures','Contact details']
+  ],
+  uz: [
+    ['Loyiha tavsifi','Muddatlar','Byudjet','Bog\'lanish shaxsi','Qo\'shimcha ma\'lumot'],
+    ['Joriy tizimlar','Rejalashtirilgan integratsiyalar','Joriy etish muddati','Mas\'ul mutaxassis','Izohlar'],
+    ['Sayt turi','Dizayn talablari','Sayt namunalari','Aloqa va istaklar'],
+    ['Audit sohasi','Konsultatsiya maqsadi','Natija','O\'tkazish vaqti'],
+    ['Asosiy vazifalar','Foydalanilayotgan vositalar','Muammolar','Muddat','Aloqa shaxsi'],
+    ['Joriy IT infratuzilma','Ustuvor xavf-xatarlar','Kerakli himoya choralar','Aloqa ma\'lumotlari']
   ]
 };
 
 const serviceIcons = ['bi-lightning','bi-diagram-3','bi-window','bi-puzzle','bi-gear','bi-shield-lock'];
+
+const serviceDescriptions = {
+  ru: [
+    'Создаём минимально жизнеспособные продукты для проверки гипотез и быстрого выхода на рынок.',
+    'Интегрируем CRM, облачные сервисы и API для повышения эффективности.',
+    'Разрабатываем сайты и лендинги под современные стандарты.',
+    'Помогаем оптимизировать IT-инфраструктуру и проводим аудит.',
+    'Автоматизируем процессы и повышаем производительность.',
+    'Обеспечиваем защиту данных и информационную безопасность.'
+  ],
+  kz: [
+    'Гипотезаларды тексеру үшін MVP әзірлейміз.',
+    'CRM және басқа сервистерді біріктіреміз.',
+    'Заманауи сайттар жасаймыз.',
+    'IT-аудит және кеңес береміз.',
+    'Бизнес процесстерді автоматтандырамыз.',
+    'Деректерді және ақпараттық қауіпсіздікті қамтамасыз етеміз.'
+  ],
+  en: [
+    'We build MVPs to quickly test ideas.',
+    'Integrate CRM, cloud and other services.',
+    'Create modern websites and landings.',
+    'Provide IT consulting and audit.',
+    'Automate business processes.',
+    'Ensure information security.'
+  ],
+  uz: [
+    'Gipotezalarni sinash uchun MVP yaratamiz.',
+    'CRM va boshqa servislarni birlashtiramiz.',
+    'Zamonaviy saytlar ishlab chiqamiz.',
+    'IT bo\'yicha konsultatsiya va audit.',
+    'Biznes jarayonlarni avtomatlashtiramiz.',
+    'Ma\'lumotlar xavfsizligini ta\'minlaymiz.'
+  ]
+};
 
 let curLang = 'ru';
 function setElText(id, html){ const el = document.getElementById(id); if(el) el.innerHTML = html; }
@@ -217,7 +319,7 @@ function setLang(lang) {
   document.querySelectorAll('#requestBtn, #requestBtn2').forEach(btn => btn && (btn.innerText = l.requestBtn));
   setElText('servicesTitle', l.servicesTitle);
   const servicesEl = document.getElementById('servicesList');
-  if(servicesEl) servicesEl.innerHTML = l.services.map((s,i)=>`<li class="service-item"><span><i class="bi ${serviceIcons[i]} service-icon"></i>${s}</span><button class="service-btn" onclick="openModal('${s}')">${l.requestBtn}</button></li>`).join('');
+  if(servicesEl) servicesEl.innerHTML = l.services.map((s,i)=>`<li class="service-item"><span onclick="showService(${i})"><i class="bi ${serviceIcons[i]} service-icon"></i>${s}</span><button class="service-btn" onclick="openModal('${s}')">${l.requestBtn}</button></li>`).join('');
   setElText('projectsTitle', l.projectsTitle);
   const projectsEl = document.getElementById('projectsList');
   if(projectsEl) projectsEl.innerHTML = l.projects.map(p=>`<li>${p}</li>`).join('');
@@ -252,7 +354,9 @@ function setLang(lang) {
   setElText('qrText', l.qrText);
 }
     document.getElementById('langBtn').onclick = function() {
-      setLang(curLang==='ru' ? 'kz' : (curLang==='kz' ? 'en' : 'ru'));
+      const order = ['ru','kz','en','uz'];
+      const idx = order.indexOf(curLang);
+      setLang(order[(idx+1)%order.length]);
     };
 const yearEls = document.querySelectorAll('#year, #year2, #year3');
 yearEls.forEach(el => el.innerText = new Date().getFullYear());
@@ -261,6 +365,13 @@ if(qrCodeEl){
   qrCodeEl.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=' + encodeURIComponent(window.location.href);
   const siteLink = document.getElementById('siteLink');
   if(siteLink) siteLink.value = window.location.href;
+}
+
+const gCal = document.getElementById('gCal');
+if(gCal){
+  gCal.src = `https://calendar.google.com/calendar/embed?src=${window.CALENDAR_ID}&ctz=Asia%2FAlmaty`;
+  const ics = document.getElementById('icsLink');
+  if(ics) ics.href = `https://calendar.google.com/calendar/ical/${window.CALENDAR_ID}/public/basic.ics`;
 }
 
 function renderQuestions(service){
@@ -297,7 +408,20 @@ function openModal(service) {
     function closeModal() {
       document.getElementById('modalBg').style.display = 'none';
     }
-    window.openModal = openModal; window.closeModal = closeModal;
+      function showService(idx){
+        const info=document.getElementById('infoContent');
+        if(info){
+          info.innerText=serviceDescriptions[curLang][idx];
+          const btn=document.getElementById('infoRequest');
+          if(btn){
+            btn.innerText=langs[curLang].requestBtn;
+            btn.onclick=function(){openModal(langs[curLang].services[idx]);};
+          }
+          document.getElementById('infoBg').style.display='flex';
+        }
+      }
+    function closeInfo(){ document.getElementById('infoBg').style.display='none'; }
+    window.openModal = openModal; window.closeModal = closeModal; window.showService=showService; window.closeInfo=closeInfo;
 
     // Отправка формы и переход в мессенджер
     async function sendForm(e) {
@@ -398,8 +522,49 @@ const observer = new IntersectionObserver(entries => {
     }
     applyColor();
 
+    const ga = document.getElementById('gaScript');
+    if(ga) ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
+
     if('serviceWorker' in navigator){
-      navigator.serviceWorker.register('service-worker.js');
+      navigator.serviceWorker.register('service-worker.js').then(reg => {
+        if('PushManager' in window){
+          navigator.serviceWorker.ready.then(r => r.pushManager.getSubscription()).then(sub => {
+            if(!sub){
+              const btn = document.createElement('button');
+              btn.innerText = 'Подписаться на уведомления';
+              btn.className = 'color-btn';
+              btn.onclick = async () => {
+                try {
+                  const resp = await fetch('/vapidPublicKey');
+                  const { key } = await resp.json();
+                  const subscription = await reg.pushManager.subscribe({
+                    userVisibleOnly: true,
+                    applicationServerKey: urlB64ToUint8Array(key)
+                  });
+                  await fetch('/subscribe', {
+                    method: 'POST',
+                    headers: {'Content-Type':'application/json'},
+                    body: JSON.stringify(subscription)
+                  });
+                  btn.remove();
+                } catch(e){ console.error(e); }
+              };
+              document.body.appendChild(btn);
+            }
+          });
+        }
+      });
+    }
+
+    function urlB64ToUint8Array(base64String) {
+      const padding = '='.repeat((4 - base64String.length % 4) % 4);
+      const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+      const rawData = atob(base64);
+      const outputArray = new Uint8Array(rawData.length);
+      for (let i = 0; i < rawData.length; ++i) {
+        outputArray[i] = rawData.charCodeAt(i);
+      }
+      return outputArray;
     }
 
     window.calcCost = function(){
