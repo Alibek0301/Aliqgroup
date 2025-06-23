@@ -174,65 +174,6 @@ const langs = {
     roiBtn: "Calculate",
     roiResultText: "ROI: "
   }
-  ,
-  uz: {
-    siteTitle: "AliQ Group",
-    slogan: "Biznes va xavfsizlik uchun IT yechimlar.",
-    heroDesc: "Yosh IT kompaniya. Raqamli mahsulotlarni ishga tushiramiz, servislarni integratsiya qilamiz.",
-    requestBtn: "Ariza yuborish",
-    servicesTitle: "Xizmatlarimiz",
-    services: [
-      "MVP ishlab chiqish",
-      "Servislarni integratsiya qilish",
-      "Zamonaviy saytlar",
-      "IT-konsalting",
-      "Biznes jarayonlarni avtomatlashtirish",
-      "Axborot xavfsizligi"
-    ],
-    projectsTitle: "Loyihalar va tajriba",
-    projects: [
-      "Aliguard.kz — xavfsizlik xizmatlarini topish platformasi",
-      "Biznes uchun chat-botlar",
-      "Bulut servislarini integratsiya qilish",
-      "O'quv markazlari uchun saytlar"
-    ],
-    advTitle: "Nega biz?",
-    adv: [
-      "G'oyadan ishga tushirishgacha to'liq tsikl",
-      "Byurokratiyasiz moslashuvchanlik",
-      "IT va xavfsizlik bo'yicha chuqur bilim",
-      "Ochiq muloqot",
-      "MDHda tajriba"
-    ],
-    founderTitle: "Rahbar: Alibek Urazov",
-    founderDesc: "Zaxira ofitseri, muhandis. 20+ yil xavfsizlik va IT sohasida.",
-    contactsTitle: "Aloqa",
-    phoneLabel: "Telefon (WhatsApp):",
-    namePlaceholder: "Ismingiz",
-    phonePlaceholder: "Telefon",
-    emailPlaceholder: "Email (majburiy emas)",
-    serviceLabelText: "Xizmat:",
-    questionPlaceholder: "Savolingiz",
-    messengerLabel: "Qaysi messenjer orqali:",
-    submitBtn: "Yuborish",
-    formSuccess: "Rahmat! So'rovingiz yuborildi.",
-    qrText: "QR kodni skanerlang yoki havolani nusxa oling:",
-    langBtn: "O'zbekcha",
-    navHome: "Bosh sahifa",
-    navServices: "Xizmatlar",
-    navSchedule: "Uchrashuv",
-    navFAQ: "Savol-javob",
-    scheduleTitle: "Konsultatsiya rejalashtirish",
-    scheduleDesc: "Kalendardan qulay vaqtni tanlang.",
-    scheduleBtn: "Kalendarni ochish",
-    calcTitle: "Narx hisoblagichi",
-    calcBtn: "Hisoblash",
-    calcExample: "(masalan: 10 soat × 5000 KZT/soat = 50000 KZT)",
-    calcResultText: "Jami: ",
-    roiTitle: "ROI kalkulyatori",
-    roiBtn: "Hisoblash",
-    roiResultText: "ROI: "
-  }
 };
 // Вопросы по услугам
 const serviceQuestions = {
@@ -260,14 +201,6 @@ const serviceQuestions = {
     ['Key tasks/processes','Tools in use','Problems to solve','Timeline','Contact person'],
     ['Current IT infrastructure','Priority risks/threats','Required protection measures','Contact details']
   ],
-  uz: [
-    ['Loyiha tavsifi','Muddatlar','Byudjet','Bog\'lanish shaxsi','Qo\'shimcha ma\'lumot'],
-    ['Joriy tizimlar','Rejalashtirilgan integratsiyalar','Joriy etish muddati','Mas\'ul mutaxassis','Izohlar'],
-    ['Sayt turi','Dizayn talablari','Sayt namunalari','Aloqa va istaklar'],
-    ['Audit sohasi','Konsultatsiya maqsadi','Natija','O\'tkazish vaqti'],
-    ['Asosiy vazifalar','Foydalanilayotgan vositalar','Muammolar','Muddat','Aloqa shaxsi'],
-    ['Joriy IT infratuzilma','Ustuvor xavf-xatarlar','Kerakli himoya choralar','Aloqa ma\'lumotlari']
-  ]
 };
 
 const serviceIcons = ['bi-lightning','bi-diagram-3','bi-window','bi-puzzle','bi-gear','bi-shield-lock'];
@@ -297,14 +230,6 @@ const serviceDescriptions = {
     'Automate business processes.',
     'Ensure information security.'
   ],
-  uz: [
-    'Gipotezalarni sinash uchun MVP yaratamiz.',
-    'CRM va boshqa servislarni birlashtiramiz.',
-    'Zamonaviy saytlar ishlab chiqamiz.',
-    'IT bo\'yicha konsultatsiya va audit.',
-    'Biznes jarayonlarni avtomatlashtiramiz.',
-    'Ma\'lumotlar xavfsizligini ta\'minlaymiz.'
-  ]
 };
 
 let curLang = 'ru';
@@ -354,7 +279,7 @@ function setLang(lang) {
   setElText('qrText', l.qrText);
 }
     document.getElementById('langBtn').onclick = function() {
-      const order = ['ru','kz','en','uz'];
+      const order = ['ru','kz','en'];
       const idx = order.indexOf(curLang);
       setLang(order[(idx+1)%order.length]);
     };
