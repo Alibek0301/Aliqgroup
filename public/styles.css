@@ -62,6 +62,8 @@ li{margin-bottom:8px;font-size:1.08rem;}
 .service-btn{margin-left:10px;background:linear-gradient(90deg,#ff512f,#dd2476);color:#fff;border:none;border-radius:12px;padding:4px 12px;font-size:0.9rem;cursor:pointer;width:150px;text-align:center;transition:transform .2s;}
 .service-btn:hover{transform:scale(1.05);}
 .service-item{display:flex;justify-content:space-between;align-items:center;list-style:none;margin-bottom:8px;}
+#servicesList .service-item span{cursor:pointer;transition:color .2s,font-weight .2s;}
+#servicesList .service-item span:hover{color:var(--accent1);font-weight:600;}
 #servicesList{padding-left:0;}
 .service-icon{margin-right:6px;color:#ff6bd6;font-size:1.1rem;vertical-align:middle;transition:transform .3s;}
 .service-item:hover .service-icon{transform:rotate(360deg);}
