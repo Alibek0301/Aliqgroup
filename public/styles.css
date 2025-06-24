@@ -31,6 +31,8 @@ li{margin-bottom:8px;font-size:1.08rem;}
 .founder-block{margin-top:34px;text-align:center;}
 .founder-name{font-weight:700;color:#30b4ff;font-size:1.15rem;}
 .founder-desc{color:#b9e1fd;margin:7px 0;}
+.founder-list{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:7px 0;}
+@media(max-width:600px){.founder-list{grid-template-columns:1fr;}}
 .contacts-section{text-align:center;margin-top:40px;}
 .contact-label{color:#60e7fd;font-size:1.12rem;}
 .contact-block{margin:9px 0;}
