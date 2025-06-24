@@ -22,6 +22,7 @@
       "package": "com.aliqgroup.app"
     },
     "extra": {
+      "siteUrl": "https://alibek0301.github.io/Aliqgroup/",
       "eas": {
         "projectId": "f86c2610-d035-48af-9673-09a2513f2990"
       }
