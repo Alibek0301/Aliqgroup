@@ -29,8 +29,8 @@ const langs = {
           "Прозрачная коммуникация и честность",
           "Реальный опыт работы в Казахстане и СНГ"
         ],
-        founderTitle: "Руководитель: Алибек Уразов",
-        founderDesc: "Офицер запаса, инженер. 20+ лет в безопасности и ИТ. Эксперт в вопросах физической и цифровой защиты.",
+        founderTitle: "Основатели компании",
+        founderDesc: "Директор: Алибек Уразов, эксперт по физической и цифровой защите. Офицер запаса, инженер, более 20 лет в безопасности и ИТ. Заместитель директора: Ұлан Дүйсебаев, эксперт по физической и ядерной защите, офицер запаса, более 20 лет в безопасности. Участвовали в крупных проектах, имеем международные сертификаты и строго соблюдаем конфиденциальность.",
         contactsTitle: "Контакты",
         phoneLabel: "Телефон (WhatsApp):",
         namePlaceholder: "Ваше имя",
@@ -85,8 +85,8 @@ const langs = {
           "Ашық және әділ коммуникация",
           "Қазақстан мен ТМД-дағы нақты тәжірибе"
         ],
-        founderTitle: "Басшы: Әлібек Уразов",
-        founderDesc: "Запастағы офицер, инженер. 20+ жыл қауіпсіздік және IT саласында. Физикалық және цифрлық қорғаныс жөніндегі сарапшы.",
+        founderTitle: "Компания негізін қалаушылар",
+        founderDesc: "Директор: Әлібек Уразов – физикалық және цифрлық қорғаныс бойынша сарапшы. Запастағы офицер, инженер, қауіпсіздік пен IT саласында 20 жылдан астам. Директордың орынбасары: Ұлан Дүйсебаев – физикалық және ядролық қорғаныс сарапшысы, запастағы офицер, қауіпсіздік саласында 20 жылдан астам тәжірибе. Мамандарымыз ірі жобаларға қатысып, халықаралық сертификаттарға ие, құпиялылықты қатаң сақтаймыз.",
         contactsTitle: "Байланыс",
         phoneLabel: "Телефон (WhatsApp):",
         namePlaceholder: "Атыңыз",
@@ -140,8 +140,8 @@ const langs = {
       "Transparent communication",
       "Real experience in Kazakhstan and CIS"
     ],
-    founderTitle: "Founder: Alibek Urazov",
-    founderDesc: "Reserve officer, engineer. 20+ years in security and IT.",
+    founderTitle: "Company founders",
+    founderDesc: "Director: Alibek Urazov, expert in physical and digital security. Reserve officer and engineer with over 20 years in security and IT. Deputy Director: Ulan Duisebayev, expert in physical and nuclear security, reserve officer with more than 20 years of experience. Our team has worked on major projects, holds international certifications and strictly respects confidentiality.",
     contactsTitle: "Contacts",
     phoneLabel: "Phone (WhatsApp):",
     namePlaceholder: "Your name",
