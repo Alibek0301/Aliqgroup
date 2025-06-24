@@ -59,4 +59,11 @@ npm install
 npm start            # запустит Expo
 ```
 
-Expo позволит собрать приложение для Android и iOS. URL сайта задаётся в `App.js`.
+Expo позволит собрать приложение для Android и iOS. URL веб-версии можно задать 
+переменной окружения `SITE_URL` при запуске Expo:
+
+```bash
+SITE_URL=https://example.com npm start
+```
+
+Если переменная не указана, используется значение `siteUrl` в `mobile/app.json`.
