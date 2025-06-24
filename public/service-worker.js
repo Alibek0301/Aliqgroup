@@ -1,12 +1,14 @@
-const CACHE_NAME = 'aliq-cache-v2';
+const CACHE_NAME = 'aliq-cache-v3';
 const urls = [
   '/',
   '/index.html',
   '/services.html',
   '/schedule.html',
   '/faq.html',
+  '/privacy.html',
   '/styles.css',
   '/main.js',
+  '/config.js',
   '/offline.html',
   '/logo.png',
   '/manifest.json',
@@ -15,10 +17,20 @@ const urls = [
   '/services/websites.html',
   '/services/consulting.html',
   '/services/automation.html',
-  '/services/security.html'
+  '/services/security.html',
+  '/robots.txt',
+  '/404.html'
 ];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(urls)));
+});
+
+self.addEventListener('activate', e => {
+  e.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+    )
+  );
 });
 
 self.addEventListener('fetch', e => {
