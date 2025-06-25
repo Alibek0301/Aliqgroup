@@ -30,7 +30,7 @@ const langs = {
           "Реальный опыт работы в Казахстане и СНГ"
         ],
         founderTitle: "Основатели компании",
-        founderDesc: "<div class=\"founder-list\"><div class=\"founder-desc\">Алибек Уразов, эксперт по физической и цифровой защите. Офицер запаса, инженер, более 20 лет в безопасности и ИТ.</div><div class=\"founder-desc\">Ұлан Дүйсебаев, эксперт по физической и ядерной защите, офицер запаса, более 20 лет в безопасности.</div></div><div class=\"founder-desc\">Участвовали в крупных проектах, имеем международные сертификаты и строго соблюдаем конфиденциальность.</div>",
+        founderDesc: "<div class=\"founder-list\"><div class=\"founder-desc\">Алибек Уразов, эксперт по физической и цифровой защите. Офицер запаса, инженер, более 20 лет в безопасности и ИТ.</div></div><div class=\"founder-desc\">Участвовали в крупных проектах, имеем международные сертификаты и строго соблюдаем конфиденциальность.</div>",
         contactsTitle: "Контакты",
         phoneLabel: "Телефон (WhatsApp):",
         namePlaceholder: "Ваше имя",
@@ -86,7 +86,7 @@ const langs = {
           "Қазақстан мен ТМД-дағы нақты тәжірибе"
         ],
         founderTitle: "Компания негізін қалаушылар",
-        founderDesc: "<div class=\"founder-list\"><div class=\"founder-desc\">Әлібек Уразов – физикалық және цифрлық қорғаныс бойынша сарапшы. Запастағы офицер, инженер, қауіпсіздік пен IT саласында 20 жылдан астам.</div><div class=\"founder-desc\">Ұлан Дүйсебаев – физикалық және ядролық қорғаныс сарапшысы, запастағы офицер, қауіпсіздік саласында 20 жылдан астам тәжірибе.</div></div><div class=\"founder-desc\">Мамандарымыз ірі жобаларға қатысып, халықаралық сертификаттарға ие, құпиялылықты қатаң сақтаймыз.</div>",
+        founderDesc: "<div class=\"founder-list\"><div class=\"founder-desc\">Әлібек Уразов – физикалық және цифрлық қорғаныс бойынша сарапшы. Запастағы офицер, инженер, қауіпсіздік пен IT саласында 20 жылдан астам.</div></div><div class=\"founder-desc\">Мамандарымыз ірі жобаларға қатысып, халықаралық сертификаттарға ие, құпиялылықты қатаң сақтаймыз.</div>",
         contactsTitle: "Байланыс",
         phoneLabel: "Телефон (WhatsApp):",
         namePlaceholder: "Атыңыз",
@@ -141,7 +141,7 @@ const langs = {
       "Real experience in Kazakhstan and CIS"
     ],
     founderTitle: "Company founders",
-    founderDesc: "<div class=\"founder-list\"><div class=\"founder-desc\">Alibek Urazov, expert in physical and digital security. Reserve officer and engineer with over 20 years in security and IT.</div><div class=\"founder-desc\">Ulan Duisebayev, expert in physical and nuclear security, reserve officer with more than 20 years of experience.</div></div><div class=\"founder-desc\">Our team has worked on major projects, holds international certifications and strictly respects confidentiality.</div>",
+    founderDesc: "<div class=\"founder-list\"><div class=\"founder-desc\">Alibek Urazov, expert in physical and digital security. Reserve officer and engineer with over 20 years in security and IT.</div></div><div class=\"founder-desc\">Our team has worked on major projects, holds international certifications and strictly respects confidentiality.</div>",
     contactsTitle: "Contacts",
     phoneLabel: "Phone (WhatsApp):",
     namePlaceholder: "Your name",
