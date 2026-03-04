@@ -39,7 +39,6 @@ const langs = {
         messengerLabel: "Отправить через:",
         submitBtn: "Отправить",
         formSuccess: "Спасибо! Ваша заявка отправлена.",
-    qrText: "Сканируйте QR код или скопируйте ссылку на сайт:",
     langBtn: "Қазақша",
     navHome: "Главная",
     navServices: "Услуги",
@@ -48,10 +47,6 @@ const langs = {
     scheduleTitle: "Запланировать консультацию",
     scheduleDesc: "Используйте наш календарь, чтобы выбрать удобное время.",
     scheduleBtn: "Открыть календарь",
-    calcTitle: "Калькулятор стоимости",
-    calcBtn: "Рассчитать",
-    calcExample: "(например: 10 ч × 5000 KZT/ч = 50000 KZT)",
-    calcResultText: "Итого: ",
     
   },
   kz: {
@@ -93,7 +88,6 @@ const langs = {
         messengerLabel: "Қай мессенджер арқылы жіберу:",
         submitBtn: "Жіберу",
         formSuccess: "Рақмет! Өтінішіңіз жіберілді.",
-    qrText: "QR кодын сканерлеңіз немесе сілтемені көшіріңіз:",
     langBtn: "English",
     navHome: "Басты бет",
     navServices: "Қызметтер",
@@ -102,10 +96,7 @@ const langs = {
     scheduleTitle: "Кеңес жоспарлау",
     scheduleDesc: "Ыңғайлы уақытты таңдау үшін күнтізбені пайдаланыңыз.",
     scheduleBtn: "Күнтізбені ашу",
-    calcTitle: "Құнының калькуляторы",
-    calcBtn: "Есептеу",
-    calcExample: "(мысалы: 10 сағ × 5000 KZT/сағ = 50000 KZT)",
-    calcResultText: "Жиынтығы: "
+
   },
   en: {
     siteTitle: "AliQ Group",
@@ -146,7 +137,6 @@ const langs = {
     messengerLabel: "Send via:",
     submitBtn: "Send",
     formSuccess: "Thank you! Your request has been sent.",
-    qrText: "Scan the QR code or copy the link:",
     langBtn: "Русский",
     navHome: "Home",
     navServices: "Services",
@@ -155,10 +145,7 @@ const langs = {
     scheduleTitle: "Schedule a consultation",
     scheduleDesc: "Use our calendar to pick a convenient time.",
     scheduleBtn: "Open calendar",
-    calcTitle: "Cost calculator",
-    calcBtn: "Calculate",
-    calcExample: "(e.g.: 10 h × 5000 KZT/h = 50000 KZT)",
-    calcResultText: "Total: ",
+
     
   }
 };
@@ -255,11 +242,7 @@ function setLang(lang) {
   setElText('scheduleTitle', l.scheduleTitle);
   setElText('scheduleDesc', l.scheduleDesc);
   const schedBtn=document.getElementById('scheduleBtn'); if(schedBtn) schedBtn.innerText = l.scheduleBtn;
-  setElText('calcTitle', l.calcTitle);
-  const calcBtn=document.getElementById('calcBtn'); if(calcBtn) calcBtn.innerText = l.calcBtn;
-  setElText('calcExample', l.calcExample);
   setElText('formMsg', l.formSuccess);
-  setElText('qrText', l.qrText);
 }
     const langBtnEl = document.getElementById('langBtn');
     if (langBtnEl) langBtnEl.onclick = function() {
@@ -269,13 +252,6 @@ function setLang(lang) {
     };
 const yearEls = document.querySelectorAll('#year, #year2, #year3');
 yearEls.forEach(el => el.innerText = new Date().getFullYear());
-const qrCodeEl = document.getElementById('qrCode');
-if(qrCodeEl){
-  qrCodeEl.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=' + encodeURIComponent(window.location.href);
-  const siteLink = document.getElementById('siteLink');
-  if(siteLink) siteLink.value = window.location.href;
-}
-
 const gCal = document.getElementById('gCal');
 if(gCal){
   gCal.src = `https://calendar.google.com/calendar/embed?src=${window.CALENDAR_ID}&ctz=Asia%2FAlmaty`;
@@ -399,42 +375,6 @@ const observer = new IntersectionObserver(entries => {
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    function applyTheme(){
-      if(localStorage.theme==='light'){
-        document.body.classList.add('light');
-        const btn=document.getElementById('themeToggle');
-        if(btn) btn.innerText='☀';
-      }else{
-        document.body.classList.remove('light');
-        const btn=document.getElementById('themeToggle');
-        if(btn) btn.innerText='☾';
-      }
-    }
-    const themeBtn=document.getElementById('themeToggle');
-    if(themeBtn){
-      themeBtn.onclick=function(){
-        localStorage.theme = localStorage.theme==='light' ? 'dark' : 'light';
-        applyTheme();
-      };
-    }
-    applyTheme();
-
-    function applyColor(){
-      const col=localStorage.color||'blue';
-      const root=document.documentElement;
-      if(col==='green'){ root.style.setProperty('--accent1','#2af598'); root.style.setProperty('--accent2','#009eeb'); }
-      else if(col==='purple'){ root.style.setProperty('--accent1','#ff35a6'); root.style.setProperty('--accent2','#6e3bff'); }
-      else { root.style.setProperty('--accent1','#36aaff'); root.style.setProperty('--accent2','#16c0f8'); }
-    }
-    const colorBtn=document.getElementById('colorToggle');
-    if(colorBtn){
-      colorBtn.onclick=function(){
-        const cur=localStorage.color||'blue';
-        localStorage.color=cur==='blue'?'green':(cur==='green'?'purple':'blue');
-        applyColor();
-      };
-    }
-    applyColor();
 
     const ga = document.getElementById('gaScript');
     if(ga) ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
@@ -480,12 +420,4 @@ const observer = new IntersectionObserver(entries => {
       }
       return outputArray;
     }
-
-    window.calcCost = function(){
-      const h=parseFloat(document.getElementById('hoursInput').value)||0;
-      const r=parseFloat(document.getElementById('rateInput').value)||0;
-      const res=h*r;
-      const out=document.getElementById('calcResult');
-      out.innerText=res?langs[curLang].calcResultText+res+' KZT':'';
-    };
 

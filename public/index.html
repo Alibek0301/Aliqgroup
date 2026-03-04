@@ -48,8 +48,6 @@
           <a href="schedule.html" id="navSchedule">Встреча</a>
           <a href="faq.html" id="navFAQ">FAQ</a>
         </nav>
-        <button class="theme-btn" id="themeToggle">☾</button>
-        <button class="color-btn" id="colorToggle">🎨</button>
         <button class="lang-btn" id="langBtn">Қазақша</button>
       </header>
 
@@ -121,25 +119,6 @@
     <div class="bottom-action">
       <a href="#" onclick="openModal();return false;" id="requestBtn2" class="hero-action">Оставить заявку</a>
     </div>
-  </section>
-
-  <section class="section qr-section fade-in" id="qrSection">
-    <div id="qrText">Сканируйте QR код или скопируйте ссылку на сайт:</div>
-    <img id="qrCode" alt="QR code" class="qr-code" />
-    <div class="qr-input">
-      <input id="siteLink" type="text" readonly class="site-link" />
-    </div>
-  </section>
-
-  <section class="section fade-in" id="calcSection">
-    <div class="section-title" id="calcTitle">Калькулятор стоимости</div>
-    <div class="calc-row">
-      <input id="hoursInput" type="number" placeholder="Часы" class="calc-input">
-      <input id="rateInput" type="number" placeholder="KZT/час" class="calc-input">
-      <button onclick="calcCost()" id="calcBtn" class="calc-btn">Рассчитать</button>
-    </div>
-    <div id="calcResult"></div>
-    <div class="calc-example" id="calcExample">(например: 10 ч × 5000 KZT/ч = 50000 KZT)</div>
   </section>
 
   <section class="section privacy-section fade-in" id="privacy">
