@@ -3,7 +3,7 @@ const langs = {
   ru: {
         siteTitle: "AliQ Group",
         slogan: "IT-решения для бизнеса и безопасности.<br>Компетентность. Скорость. Надёжность.",
-        heroDesc: "Молодая ИТ-компания. Запускаем цифровые продукты, интегрируем сервисы, делаем ваш бизнес защищённым и современным.<br><b>Первый собственный проект <a href=\"http://aliguard.kz/\" target=\"_blank\">Aliguard.kz</a> (платформа для поиска охранных услуг).</b>",
+        heroDesc: "Молодая ИТ-компания. Запускаем цифровые продукты, интегрируем сервисы, делаем ваш бизнес защищённым и современным.",
         requestBtn: "Оставить заявку",
         servicesTitle: "Наши услуги",
         services: [
@@ -16,7 +16,7 @@ const langs = {
         ],
         projectsTitle: "Проекты и опыт",
         projects: [
-          "<a href=\"http://aliguard.kz/\" target=\"_blank\">Aliguard.kz</a> — цифровая платформа для поиска охранных услуг (MVP)",
+          "MVP-проекты для цифровых сервисов в сфере безопасности",
           "Чат-боты для бизнеса (Telegram, WhatsApp)",
           "Внедрение облачных сервисов и автоматизация",
           "Сайты для учебных центров, сервисных компаний"
@@ -29,8 +29,6 @@ const langs = {
           "Прозрачная коммуникация и честность",
           "Реальный опыт работы в Казахстане и СНГ"
         ],
-        founderTitle: "Основатели компании",
-        founderDesc: "<div class=\"founder-wrapper\"<div class=\"founder-list\"><div class=\"founder-desc\">Алибек Уразов, эксперт по физической и цифровой защите. Офицер запаса, инженер, более 20 лет в безопасности и ИТ.</div> <div class=\"founder-list\"><div class=\"founder-desc\">Амангелді Темірлан, frontend-разработчик с практическим опытом создания мобильных и веб приложений(HTML, CSS, Fluter, Figma, React и т.д.)</div></div> <div class=\"founder-list\"><div class=\"founder-desc\">Шарыкпаев Арлан, backend-разработчик с практическим опытом и создания мобильных и веб приложений(Postgre SQL, MySQL, Python, Java, MongoDB и т.д.)</div></div> <div class=\"founder-list\"><div class=\"founder-desc\">Жумадиллаев Аян, SMM-менеджер с практическим опытом ведения IT. Владение методологиями Agile/Scrum, Trello, Jira, Notion(от идеи до реализации)</div></div><div class=\"founder-desc\">Участвовали в крупных проектах, имеем международные сертификаты и строго соблюдаем конфиденциальность.</div>",
         contactsTitle: "Контакты",
         phoneLabel: "Телефон (WhatsApp):",
         namePlaceholder: "Ваше имя",
@@ -59,7 +57,7 @@ const langs = {
   kz: {
         siteTitle: "AliQ Group",
         slogan: "Бизнес пен қауіпсіздікке арналған IT-шешімдер.<br>Кәсібилік. Жылдамдық. Сенімділік.",
-        heroDesc: "Жас IT-компания. Цифрлық өнімдерді іске қосамыз, сервистерді біріктіреміз, бизнесіңізді заманауи әрі қорғалған етеміз.<br><b>Бірінші жеке жоба <a href=\"http://aliguard.kz/\" target=\"_blank\">Aliguard.kz</a> (күзет қызметтерін табуға арналған платформа).</b>",
+        heroDesc: "Жас IT-компания. Цифрлық өнімдерді іске қосамыз, сервистерді біріктіреміз, бизнесіңізді заманауи әрі қорғалған етеміз.",
         requestBtn: "Өтініш қалдыру",
         servicesTitle: "Қызметтеріміз",
         services: [
@@ -72,7 +70,7 @@ const langs = {
         ],
         projectsTitle: "Жобалар мен тәжірибе",
         projects: [
-          "<a href=\"http://aliguard.kz/\" target=\"_blank\">Aliguard.kz</a> — күзет қызметтерін табуға арналған цифрлық платформа (MVP)",
+          "Қауіпсіздік саласына арналған цифрлық сервистердің MVP жобалары",
           "Бизнеске арналған чат-боттар (Telegram, WhatsApp)",
           "Бұлттық сервистерді енгізу және автоматтандыру",
           "Оқу орталықтарына, сервис компанияларға сайттар"
@@ -85,8 +83,6 @@ const langs = {
           "Ашық және әділ коммуникация",
           "Қазақстан мен ТМД-дағы нақты тәжірибе"
         ],
-        founderTitle: "Компания негізін қалаушылар",
-        founderDesc: "<div class=\"founder-list\"><div class=\"founder-desc\">Әлібек Уразов – физикалық және цифрлық қорғаныс бойынша сарапшы. Запастағы офицер, инженер, қауіпсіздік пен IT саласында 20 жылдан астам.</div></div><div class=\"founder-desc\">Мамандарымыз ірі жобаларға қатысып, халықаралық сертификаттарға ие, құпиялылықты қатаң сақтаймыз.</div>",
         contactsTitle: "Байланыс",
         phoneLabel: "Телефон (WhatsApp):",
         namePlaceholder: "Атыңыз",
@@ -114,7 +110,7 @@ const langs = {
   en: {
     siteTitle: "AliQ Group",
     slogan: "IT solutions for business and security.<br>Expertise. Speed. Reliability.",
-    heroDesc: "A young IT company launching digital products, integrating services and keeping your business safe.<br><b>First own project <a href=\"http://aliguard.kz/\" target=\"_blank\">Aliguard.kz</a> (platform for finding security services).</b>",
+    heroDesc: "A young IT company launching digital products, integrating services and keeping your business safe.",
     requestBtn: "Send request",
     servicesTitle: "Our services",
     services: [
@@ -127,7 +123,7 @@ const langs = {
     ],
     projectsTitle: "Projects & experience",
     projects: [
-      "<a href=\"http://aliguard.kz/\" target=\"_blank\">Aliguard.kz</a> — platform for finding security services (MVP)",
+      "MVP projects for digital services in the security domain",
       "Chat bots for business (Telegram, WhatsApp)",
       "Cloud services integration and automation",
       "Websites for training centers and service companies"
@@ -140,8 +136,6 @@ const langs = {
       "Transparent communication",
       "Real experience in Kazakhstan and CIS"
     ],
-    founderTitle: "Company founders",
-    founderDesc: "<div class=\"founder-list\"><div class=\"founder-desc\">Alibek Urazov, expert in physical and digital security. Reserve officer and engineer with over 20 years in security and IT.</div></div><div class=\"founder-desc\">Our team has worked on major projects, holds international certifications and strictly respects confidentiality.</div>",
     contactsTitle: "Contacts",
     phoneLabel: "Phone (WhatsApp):",
     namePlaceholder: "Your name",
@@ -244,8 +238,6 @@ function setLang(lang) {
   setElText('advTitle', l.advTitle);
   const advEl = document.getElementById('advList');
   if(advEl) advEl.innerHTML = l.adv.map(a=>`<li>${a}</li>`).join('');
-  setElText('founderTitle', l.founderTitle);
-  setElText('founderDesc', l.founderDesc);
   setElText('contactsTitle', l.contactsTitle);
   setElText('phoneLabel', l.phoneLabel);
   const nameInput=document.getElementById('nameInput'); if(nameInput) nameInput.placeholder = l.namePlaceholder;
@@ -269,7 +261,8 @@ function setLang(lang) {
   setElText('formMsg', l.formSuccess);
   setElText('qrText', l.qrText);
 }
-    document.getElementById('langBtn').onclick = function() {
+    const langBtnEl = document.getElementById('langBtn');
+    if (langBtnEl) langBtnEl.onclick = function() {
       const order = ['ru','kz','en'];
       const idx = order.indexOf(curLang);
       setLang(order[(idx+1)%order.length]);
@@ -369,7 +362,7 @@ function openModal(service) {
         fd.append('question', question);
         fd.append('messenger', messenger);
         const fileEl = document.getElementById('fileInput');
-        if(fileEl && fileEl.files[0]) fd.append('file', fileEl.files[0]);
+        if(fileEl && fileEl.files[0]) fd.append('files', fileEl.files[0]);
         const res = await fetch('/api/feedback', {
           method: 'POST',
           body: fd

@@ -34,6 +34,11 @@ npm start
 
 - `EMAIL_FROM` — адрес отправителя
 - `EMAIL_TO` — получатель заявок
+- `SMTP_HOST` — SMTP-хост (если не задан, используется `sendmail`)
+- `SMTP_PORT` — SMTP-порт (по умолчанию `587`)
+- `SMTP_USER` — SMTP-логин
+- `SMTP_PASS` — SMTP-пароль
+- `SMTP_SECURE` — `true` для SSL/TLS (обычно порт `465`)
 - `TAWK_ID` — идентификатор виджета Tawk.to
 - `GA_ID` — идентификатор Google Analytics
 - `CALENDAR_ID` — ID Google-календаря для расписания

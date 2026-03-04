@@ -17,12 +17,32 @@ const LIMIT = 3;
 const WINDOW = 10 * 60 * 1000;
 
 const EMAIL_FROM = process.env.EMAIL_FROM || 'no-reply@aliqgroup.kz';
-const EMAIL_TO = process.env.EMAIL_TO || 'aliguard.kz@gmail.com';
+const EMAIL_TO = process.env.EMAIL_TO || 'aliqgroup.kz@gmail.com';
+const SMTP_HOST = process.env.SMTP_HOST || '';
+const SMTP_PORT = Number(process.env.SMTP_PORT || 587);
+const SMTP_USER = process.env.SMTP_USER || '';
+const SMTP_PASS = process.env.SMTP_PASS || '';
+const SMTP_SECURE = process.env.SMTP_SECURE === 'true';
 const TAWK_ID = process.env.TAWK_ID || 'YOUR_ID';
 const VAPID_PUBLIC_KEY = process.env.VAPID_PUBLIC_KEY || '';
 const VAPID_PRIVATE_KEY = process.env.VAPID_PRIVATE_KEY || '';
 const GA_ID = process.env.GA_ID || 'GA_MEASUREMENT_ID';
 const CALENDAR_ID = process.env.CALENDAR_ID || 'your_calendar_id';
+
+function createMailTransport() {
+  if (SMTP_HOST) {
+    const smtpConfig = {
+      host: SMTP_HOST,
+      port: SMTP_PORT,
+      secure: SMTP_SECURE
+    };
+    if (SMTP_USER && SMTP_PASS) {
+      smtpConfig.auth = { user: SMTP_USER, pass: SMTP_PASS };
+    }
+    return nodemailer.createTransport(smtpConfig);
+  }
+  return nodemailer.createTransport({ sendmail: true });
+}
 
 if (VAPID_PUBLIC_KEY && VAPID_PRIVATE_KEY) {
   webpush.setVapidDetails('mailto:admin@aliqgroup.kz', VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY);
@@ -102,7 +122,7 @@ app.post('/api/feedback', upload, async (req, res) => {
   if (!name || !phone || !question) return res.status(400).json({ error: 'missing' });
   const text = `Имя: ${name}\nТелефон: ${phone}\nEmail: ${email || ''}\nУслуга: ${service || ''}\nВопрос: ${question}\nМессенджер: ${messenger}`;
   try {
-    const transporter = nodemailer.createTransport({ sendmail: true });
+    const transporter = createMailTransport();
     await transporter.sendMail({
       from: EMAIL_FROM,
       to: EMAIL_TO,

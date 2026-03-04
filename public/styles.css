@@ -28,44 +28,11 @@ ul{padding-left:20px;margin:0;}
 li{margin-bottom:8px;font-size:1.08rem;}
 .projects-list{margin:0;padding-left:18px;}
 .adv-list{margin:0;padding-left:20px;}
-.founder-block{margin-top:34px;text-align:center;}
-.founder-name{font-weight:700;color:#30b4ff;font-size:1.15rem;}
-.founder-desc{color:#b9e1fd;margin:7px 0;}
-.founder-list{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:7px 0;}
-@media(max-width:600px){.founder-list{grid-template-columns:1fr;}}
 .contacts-section{text-align:center;margin-top:40px;}
 .contact-label{color:#60e7fd;font-size:1.12rem;}
 .contact-block{margin:9px 0;}
 .contact-social{margin:0 7px;font-size:1.6rem;}
 .footer{margin-top:40px;text-align:center;color:#454b55;font-size:.99rem;}
-.founder-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 32px;
-}
-.founder-card {
-  background: rgba(20, 27, 36, 0.85);
-  border-radius: 14px;
-  padding: 18px;
-  box-shadow: 0 4px 20px rgba(0, 158, 233, 0.3);
-}
-.founder-name {
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: #30b4ff;
-  margin-bottom: 6px;
-}
-.founder-desc {
-  font-size: 0.98rem;
-  color: #b9e1fd;
-  line-height: 1.4;
-}
-@media (max-width: 600px) {
-  .founder-wrapper {
-    grid-template-columns: 1fr;
-  }
-}
 /* Новые классы */
 .header-flex{display:flex;align-items:center;}
 .logo{
