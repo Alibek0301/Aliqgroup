@@ -42,8 +42,6 @@ const langs = {
     langBtn: "Қазақша",
     navHome: "Главная",
     navServices: "Услуги",
-    navSchedule: "Встреча",
-    navFAQ: "FAQ",
     scheduleTitle: "Запланировать консультацию",
     scheduleDesc: "Используйте наш календарь, чтобы выбрать удобное время.",
     scheduleBtn: "Открыть календарь",
@@ -91,8 +89,6 @@ const langs = {
     langBtn: "English",
     navHome: "Басты бет",
     navServices: "Қызметтер",
-    navSchedule: "Кездесу",
-    navFAQ: "FAQ",
     scheduleTitle: "Кеңес жоспарлау",
     scheduleDesc: "Ыңғайлы уақытты таңдау үшін күнтізбені пайдаланыңыз.",
     scheduleBtn: "Күнтізбені ашу",
@@ -140,8 +136,6 @@ const langs = {
     langBtn: "Русский",
     navHome: "Home",
     navServices: "Services",
-    navSchedule: "Meeting",
-    navFAQ: "FAQ",
     scheduleTitle: "Schedule a consultation",
     scheduleDesc: "Use our calendar to pick a convenient time.",
     scheduleBtn: "Open calendar",
@@ -237,8 +231,6 @@ function setLang(lang) {
   const langBtn=document.getElementById('langBtn'); if(langBtn) langBtn.innerText = l.langBtn;
   setElText('navHome', l.navHome);
   setElText('navServices', l.navServices);
-  setElText('navSchedule', l.navSchedule);
-  setElText('navFAQ', l.navFAQ);
   setElText('scheduleTitle', l.scheduleTitle);
   setElText('scheduleDesc', l.scheduleDesc);
   const schedBtn=document.getElementById('scheduleBtn'); if(schedBtn) schedBtn.innerText = l.scheduleBtn;
