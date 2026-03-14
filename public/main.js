@@ -278,42 +278,9 @@ function createMobileQuickBar() {
   if (window.matchMedia('(min-width: 701px)').matches) return;
   if (document.getElementById('mobileQuickBar')) return;
 
-  const phoneRaw = '+77052546613';
-  const phoneLink = `tel:${phoneRaw}`;
-
-  const triggerPhoneCall = () => {
-    const tryOpen = (fn) => {
-      try {
-        fn();
-        return true;
-      } catch (e) {
-        return false;
-      }
-    };
-
-    if (tryOpen(() => { window.top.location.href = phoneLink; })) return;
-    if (tryOpen(() => { window.location.href = phoneLink; })) return;
-    if (tryOpen(() => { window.open(phoneLink, '_self'); })) return;
-
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(phoneRaw).catch(() => null);
-    }
-    alert(`Не удалось открыть звонок автоматически. Номер скопирован: ${phoneRaw}`);
-  };
-
   const bar = document.createElement('div');
   bar.id = 'mobileQuickBar';
   bar.className = 'mobile-quickbar';
-
-  const call = document.createElement('a');
-  call.href = phoneLink;
-  call.className = 'quick-action';
-  call.innerHTML = '<i class="bi bi-telephone-fill"></i><span>Call</span>';
-  call.setAttribute('aria-label', `Call ${phoneRaw}`);
-  call.addEventListener('click', (e) => {
-    e.preventDefault();
-    triggerPhoneCall();
-  });
 
   const wa = document.createElement('a');
   wa.href = 'https://wa.me/77052546613';
@@ -335,7 +302,7 @@ function createMobileQuickBar() {
     third.innerHTML = '<i class="bi bi-grid-1x2-fill"></i><span>Services</span>';
   }
 
-  bar.append(call, wa, third);
+  bar.append(wa, third);
   document.body.appendChild(bar);
 
   const footer = document.querySelector('.footer');
@@ -347,16 +314,15 @@ function setQuickBarLocale(lang) {
   if (!bar) return;
 
   const labels = {
-    ru: ['Звонок', 'WhatsApp', 'Заявка'],
-    kz: ['Қоңырау', 'WhatsApp', 'Өтініш'],
-    en: ['Call', 'WhatsApp', 'Request']
+    ru: ['WhatsApp', 'Заявка'],
+    kz: ['WhatsApp', 'Өтініш'],
+    en: ['WhatsApp', 'Request']
   };
 
-  const [callText, waText, thirdText] = labels[lang] || labels.en;
+  const [waText, thirdText] = labels[lang] || labels.en;
   const items = bar.querySelectorAll('.quick-action span');
-  if (items[0]) items[0].innerText = callText;
-  if (items[1]) items[1].innerText = waText;
-  if (items[2]) items[2].innerText = thirdText;
+  if (items[0]) items[0].innerText = waText;
+  if (items[1]) items[1].innerText = thirdText;
 }
 
 function setNavToggleLocale(lang) {
