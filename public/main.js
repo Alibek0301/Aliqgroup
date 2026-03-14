@@ -286,6 +286,11 @@ function createMobileQuickBar() {
   call.href = 'tel:+77052546613';
   call.className = 'quick-action';
   call.innerHTML = '<i class="bi bi-telephone-fill"></i><span>Call</span>';
+  call.setAttribute('aria-label', 'Call +77052546613');
+  call.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = 'tel:+77052546613';
+  });
 
   const wa = document.createElement('a');
   wa.href = 'https://wa.me/77052546613';
