@@ -278,18 +278,41 @@ function createMobileQuickBar() {
   if (window.matchMedia('(min-width: 701px)').matches) return;
   if (document.getElementById('mobileQuickBar')) return;
 
+  const phoneRaw = '+77052546613';
+  const phoneLink = `tel:${phoneRaw}`;
+
+  const triggerPhoneCall = () => {
+    const tryOpen = (fn) => {
+      try {
+        fn();
+        return true;
+      } catch (e) {
+        return false;
+      }
+    };
+
+    if (tryOpen(() => { window.top.location.href = phoneLink; })) return;
+    if (tryOpen(() => { window.location.href = phoneLink; })) return;
+    if (tryOpen(() => { window.open(phoneLink, '_self'); })) return;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(phoneRaw).catch(() => null);
+    }
+    alert(`Не удалось открыть звонок автоматически. Номер скопирован: ${phoneRaw}`);
+  };
+
   const bar = document.createElement('div');
   bar.id = 'mobileQuickBar';
   bar.className = 'mobile-quickbar';
 
   const call = document.createElement('a');
-  call.href = 'tel:+77052546613';
+  call.href = phoneLink;
   call.className = 'quick-action';
   call.innerHTML = '<i class="bi bi-telephone-fill"></i><span>Call</span>';
-  call.setAttribute('aria-label', 'Call +77052546613');
+  call.setAttribute('aria-label', `Call ${phoneRaw}`);
   call.addEventListener('click', (e) => {
     e.preventDefault();
-    window.location.href = 'tel:+77052546613';
+    triggerPhoneCall();
   });
 
   const wa = document.createElement('a');
