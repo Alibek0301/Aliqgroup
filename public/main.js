@@ -202,6 +202,149 @@ const serviceDescriptions = {
 
 let curLang = 'ru';
 function setElText(id, html){ const el = document.getElementById(id); if(el) el.innerHTML = html; }
+
+function initMobileNavToggle() {
+  const header = document.querySelector('.header');
+  const nav = document.querySelector('.nav');
+  if (!header || !nav) return;
+  if (document.getElementById('mobileNavToggle')) return;
+
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.id = 'mobileNavToggle';
+  toggle.className = 'mobile-nav-toggle';
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-controls', 'mobileNavMenu');
+  toggle.innerHTML = '<i class="bi bi-list"></i><span>Menu</span>';
+
+  nav.id = 'mobileNavMenu';
+  nav.classList.add('mobile-nav');
+  nav.classList.remove('is-open');
+
+  const langBtn = document.getElementById('langBtn');
+  if (langBtn) {
+    header.insertBefore(toggle, langBtn);
+  } else {
+    header.insertBefore(toggle, nav);
+  }
+
+  const closeNav = () => {
+    nav.classList.remove('is-open');
+    toggle.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+
+  const syncNav = () => {
+    if (window.matchMedia('(min-width: 701px)').matches) {
+      nav.classList.remove('is-open');
+      toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  };
+
+  toggle.addEventListener('click', () => {
+    const opened = nav.classList.toggle('is-open');
+    toggle.classList.toggle('is-open', opened);
+    toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+  });
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeNav);
+  });
+
+  window.addEventListener('resize', syncNav);
+  syncNav();
+}
+
+function getPublicPathname() {
+  const path = window.location.pathname || '/';
+  if (path.endsWith('/')) return 'index.html';
+  return path.split('/').pop() || 'index.html';
+}
+
+function markActiveNav() {
+  const page = getPublicPathname();
+  const homePages = ['index.html', 'faq.html', 'schedule.html', 'privacy.html', '404.html', 'offline.html'];
+  const servicePages = ['services.html', 'mvp.html', 'integration.html', 'websites.html', 'consulting.html', 'automation.html', 'security.html'];
+
+  const navHome = document.getElementById('navHome');
+  const navServices = document.getElementById('navServices');
+
+  if (navHome && homePages.includes(page)) navHome.classList.add('nav-active');
+  if (navServices && servicePages.includes(page)) navServices.classList.add('nav-active');
+}
+
+function createMobileQuickBar() {
+  if (window.matchMedia('(min-width: 701px)').matches) return;
+  if (document.getElementById('mobileQuickBar')) return;
+
+  const bar = document.createElement('div');
+  bar.id = 'mobileQuickBar';
+  bar.className = 'mobile-quickbar';
+
+  const call = document.createElement('a');
+  call.href = 'tel:+77052546613';
+  call.className = 'quick-action';
+  call.innerHTML = '<i class="bi bi-telephone-fill"></i><span>Call</span>';
+
+  const wa = document.createElement('a');
+  wa.href = 'https://wa.me/77052546613';
+  wa.target = '_blank';
+  wa.rel = 'noopener';
+  wa.className = 'quick-action quick-action-primary';
+  wa.innerHTML = '<i class="bi bi-whatsapp"></i><span>WhatsApp</span>';
+
+  const hasModal = typeof window.openModal === 'function' && document.getElementById('modalBg');
+  const third = document.createElement(hasModal ? 'button' : 'a');
+  third.className = 'quick-action';
+
+  if (hasModal) {
+    third.type = 'button';
+    third.innerHTML = '<i class="bi bi-chat-text-fill"></i><span>Request</span>';
+    third.addEventListener('click', () => window.openModal(''));
+  } else {
+    third.href = '/services.html';
+    third.innerHTML = '<i class="bi bi-grid-1x2-fill"></i><span>Services</span>';
+  }
+
+  bar.append(call, wa, third);
+  document.body.appendChild(bar);
+
+  const footer = document.querySelector('.footer');
+  if (footer) footer.classList.add('footer-mobile-space');
+}
+
+function setQuickBarLocale(lang) {
+  const bar = document.getElementById('mobileQuickBar');
+  if (!bar) return;
+
+  const labels = {
+    ru: ['Звонок', 'WhatsApp', 'Заявка'],
+    kz: ['Қоңырау', 'WhatsApp', 'Өтініш'],
+    en: ['Call', 'WhatsApp', 'Request']
+  };
+
+  const [callText, waText, thirdText] = labels[lang] || labels.en;
+  const items = bar.querySelectorAll('.quick-action span');
+  if (items[0]) items[0].innerText = callText;
+  if (items[1]) items[1].innerText = waText;
+  if (items[2]) items[2].innerText = thirdText;
+}
+
+function setNavToggleLocale(lang) {
+  const navToggle = document.getElementById('mobileNavToggle');
+  if (!navToggle) return;
+  const labels = {
+    ru: 'Меню',
+    kz: 'Мәзір',
+    en: 'Menu'
+  };
+  const text = labels[lang] || labels.en;
+  const textEl = navToggle.querySelector('span');
+  if (textEl) textEl.innerText = text;
+  navToggle.setAttribute('aria-label', text);
+}
+
 function setLang(lang) {
   curLang = lang;
   document.documentElement.lang = lang;
@@ -235,6 +378,8 @@ function setLang(lang) {
   setElText('scheduleDesc', l.scheduleDesc);
   const schedBtn=document.getElementById('scheduleBtn'); if(schedBtn) schedBtn.innerText = l.scheduleBtn;
   setElText('formMsg', l.formSuccess);
+  setQuickBarLocale(lang);
+  setNavToggleLocale(lang);
 }
     const langBtnEl = document.getElementById('langBtn');
     if (langBtnEl) langBtnEl.onclick = function() {
@@ -358,7 +503,10 @@ function openModal(service) {
     window.sendForm = sendForm;
 
     // Первичная установка языка
+  markActiveNav();
+    initMobileNavToggle();
     setLang(curLang);
+  createMobileQuickBar();
 
 const observer = new IntersectionObserver(entries => {
       entries.forEach(e => {
