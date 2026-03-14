@@ -2,8 +2,19 @@
 const langs = {
   ru: {
         siteTitle: "AliQ Group",
+        heroEyebrow: "Цифровые решения для роста и устойчивости бизнеса",
         slogan: "IT-решения для бизнеса и безопасности.<br>Компетентность. Скорость. Надёжность.",
         heroDesc: "Молодая ИТ-компания. Запускаем цифровые продукты, интегрируем сервисы, делаем ваш бизнес защищённым и современным.",
+        heroPills: [
+          "MVP и быстрый запуск",
+          "Интеграции и автоматизация",
+          "Безопасность по умолчанию"
+        ],
+        heroCards: [
+          ["Быстрый старт", "Собираем рабочий план запуска без длинной бюрократии и лишних этапов."],
+          ["Понятный результат", "Фокусируемся на решении конкретной бизнес-задачи, а не на абстрактной разработке."],
+          ["Техническая опора", "Закладываем масштабируемость, интеграции и базовую защиту с самого начала."]
+        ],
         requestBtn: "Оставить заявку",
         servicesTitle: "Наши услуги",
         services: [
@@ -14,12 +25,12 @@ const langs = {
           "Автоматизация бизнес-процессов",
           "Информбезопасность и защита данных"
         ],
-        projectsTitle: "Проекты и опыт",
+        projectsTitle: "Как мы работаем",
         projects: [
-          "MVP-проекты для цифровых сервисов в сфере безопасности",
-          "Чат-боты для бизнеса (Telegram, WhatsApp)",
-          "Внедрение облачных сервисов и автоматизация",
-          "Сайты для учебных центров, сервисных компаний"
+          "Уточняем задачу, ограничения и приоритеты проекта.",
+          "Предлагаем понятное решение, этапы и ожидаемый результат.",
+          "Запускаем разработку, интеграции или аудит в рабочем темпе.",
+          "Передаём результат, дорабатываем и помогаем масштабировать."
         ],
         advTitle: "Почему выбирают нас?",
         adv: [
@@ -49,8 +60,19 @@ const langs = {
   },
   kz: {
         siteTitle: "AliQ Group",
+        heroEyebrow: "Бизнес өсімі мен тұрақтылығына арналған цифрлық шешімдер",
         slogan: "Бизнес пен қауіпсіздікке арналған IT-шешімдер.<br>Кәсібилік. Жылдамдық. Сенімділік.",
         heroDesc: "Жас IT-компания. Цифрлық өнімдерді іске қосамыз, сервистерді біріктіреміз, бизнесіңізді заманауи әрі қорғалған етеміз.",
+        heroPills: [
+          "MVP және жылдам іске қосу",
+          "Интеграциялар және автоматтандыру",
+          "Қауіпсіздік бастапқыдан"
+        ],
+        heroCards: [
+          ["Жылдам бастау", "Ұзақ бюрократиясыз және артық кезеңдерсіз нақты іске қосу жоспарын құрамыз."],
+          ["Түсінікті нәтиже", "Абстрактілі әзірлеуге емес, нақты бизнес-мәселені шешуге назар аударамыз."],
+          ["Техникалық тірек", "Басынан бастап масштабтау, интеграциялар және базалық қорғанысты ескереміз."]
+        ],
         requestBtn: "Өтініш қалдыру",
         servicesTitle: "Қызметтеріміз",
         services: [
@@ -61,12 +83,12 @@ const langs = {
           "Бизнес-процестерді автоматтандыру",
           "Информқауіпсіздік және деректерді қорғау"
         ],
-        projectsTitle: "Жобалар мен тәжірибе",
+        projectsTitle: "Біз қалай жұмыс істейміз",
         projects: [
-          "Қауіпсіздік саласына арналған цифрлық сервистердің MVP жобалары",
-          "Бизнеске арналған чат-боттар (Telegram, WhatsApp)",
-          "Бұлттық сервистерді енгізу және автоматтандыру",
-          "Оқу орталықтарына, сервис компанияларға сайттар"
+          "Жобаның міндетін, шектеулерін және басымдықтарын нақтылаймыз.",
+          "Түсінікті шешім, кезеңдер және күтілетін нәтижені ұсынамыз.",
+          "Әзірлеу, интеграция немесе аудитті жұмыс ырғағымен бастаймыз.",
+          "Нәтижені тапсырып, жетілдіріп, масштабтауға көмектесеміз."
         ],
         advTitle: "Бізді не үшін таңдайды?",
         adv: [
@@ -96,8 +118,19 @@ const langs = {
   },
   en: {
     siteTitle: "AliQ Group",
+    heroEyebrow: "Digital solutions for business growth and resilience",
     slogan: "IT solutions for business and security.<br>Expertise. Speed. Reliability.",
     heroDesc: "A young IT company launching digital products, integrating services and keeping your business safe.",
+    heroPills: [
+      "MVP and fast launch",
+      "Integrations and automation",
+      "Security by default"
+    ],
+    heroCards: [
+      ["Fast start", "We shape a practical launch plan without long bureaucracy or unnecessary phases."],
+      ["Clear outcome", "We focus on solving a concrete business problem, not on abstract development."],
+      ["Technical backbone", "We build in scalability, integrations, and baseline security from the start."]
+    ],
     requestBtn: "Send request",
     servicesTitle: "Our services",
     services: [
@@ -108,12 +141,12 @@ const langs = {
       "Business process automation",
       "Information security"
     ],
-    projectsTitle: "Projects & experience",
+    projectsTitle: "How we work",
     projects: [
-      "MVP projects for digital services in the security domain",
-      "Chat bots for business (Telegram, WhatsApp)",
-      "Cloud services integration and automation",
-      "Websites for training centers and service companies"
+      "We clarify the task, constraints, and project priorities.",
+      "We propose a clear solution, stages, and expected outcome.",
+      "We launch development, integrations, or audit at a working pace.",
+      "We deliver, refine, and help scale the result."
     ],
     advTitle: "Why choose us?",
     adv: [
@@ -344,15 +377,20 @@ function setLang(lang) {
   document.documentElement.lang = lang;
   const l = langs[lang];
   setElText('siteTitle', l.siteTitle);
+  setElText('heroEyebrow', l.heroEyebrow);
   setElText('slogan', l.slogan);
   setElText('heroDesc', l.heroDesc);
+  const heroPillsEl = document.getElementById('heroPills');
+  if (heroPillsEl) heroPillsEl.innerHTML = l.heroPills.map(item => `<span class="hero-pill">${item}</span>`).join('');
+  const heroCardGridEl = document.getElementById('heroCardGrid');
+  if (heroCardGridEl) heroCardGridEl.innerHTML = l.heroCards.map(([title, text]) => `<article class="hero-card"><div class="hero-card-title">${title}</div><p>${text}</p></article>`).join('');
   document.querySelectorAll('#requestBtn, #requestBtn2').forEach(btn => btn && (btn.innerText = l.requestBtn));
   setElText('servicesTitle', l.servicesTitle);
   const servicesEl = document.getElementById('servicesList');
   if(servicesEl) servicesEl.innerHTML = l.services.map((s,i)=>`<li class="service-item"><span onclick="showService(${i})"><i class="bi ${serviceIcons[i]} service-icon"></i>${s}</span><button class="service-btn" onclick="openModal('${s}')">${l.requestBtn}</button></li>`).join('');
   setElText('projectsTitle', l.projectsTitle);
   const projectsEl = document.getElementById('projectsList');
-  if(projectsEl) projectsEl.innerHTML = l.projects.map(p=>`<li>${p}</li>`).join('');
+  if(projectsEl) projectsEl.innerHTML = l.projects.map((p, idx)=>`<article class="process-item"><span class="process-index">0${idx + 1}</span><div>${p}</div></article>`).join('');
   setElText('advTitle', l.advTitle);
   const advEl = document.getElementById('advList');
   if(advEl) advEl.innerHTML = l.adv.map(a=>`<li>${a}</li>`).join('');
