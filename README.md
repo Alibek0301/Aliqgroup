@@ -43,6 +43,8 @@ npm start
 - `GA_ID` — идентификатор Google Analytics
 - `CALENDAR_ID` — ID Google-календаря для расписания
 - `VAPID_PUBLIC_KEY` и `VAPID_PRIVATE_KEY` — ключи для Web Push
+- `ALLOWED_ORIGINS` — список разрешённых origin для CORS через запятую
+- `NOTIFY_TOKEN` — токен для защищённого вызова `POST /notify` (заголовок `x-notify-token`)
 
 При отсутствии переменных применяются значения по умолчанию.
 

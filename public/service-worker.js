@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aliq-cache-v3';
+const CACHE_NAME = 'aliq-cache-v4';
 const urls = [
   '/',
   '/index.html',
@@ -23,6 +23,7 @@ const urls = [
 ];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(urls)));
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', e => {
@@ -31,13 +32,39 @@ self.addEventListener('activate', e => {
       Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
     )
   );
+  self.clients.claim();
 });
 
 self.addEventListener('fetch', e => {
+  const req = e.request;
+  if (req.method !== 'GET') return;
+
+  const reqUrl = new URL(req.url);
+  if (reqUrl.origin !== self.location.origin) return;
+
+  if (req.mode === 'navigate') {
+    e.respondWith(
+      fetch(req)
+        .then(resp => {
+          const clone = resp.clone();
+          caches.open(CACHE_NAME).then(c => c.put(req, clone)).catch(() => {});
+          return resp;
+        })
+        .catch(() => caches.match(req).then(cached => cached || caches.match('/offline.html')))
+    );
+    return;
+  }
+
   e.respondWith(
-    caches.match(e.request).then(resp => {
-      if (resp) return resp;
-      return fetch(e.request).catch(() => caches.match('/offline.html'));
+    caches.match(req).then(cached => {
+      const networkFetch = fetch(req)
+        .then(resp => {
+          const clone = resp.clone();
+          caches.open(CACHE_NAME).then(c => c.put(req, clone)).catch(() => {});
+          return resp;
+        })
+        .catch(() => cached);
+      return cached || networkFetch;
     })
   );
 });

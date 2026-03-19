@@ -9,7 +9,7 @@
     <meta property="og:title" content="AliQ Group — IT Solutions">
     <meta property="og:description" content="Молодая ИТ‑компания, запускающая цифровые продукты и обеспечивающая безопасность бизнеса.">
     <meta property="og:url" content="https://aliqgroup.kz/">
-    <meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+P8/AAX+Av6Qs+MAAAAASUVORK5CYII=">
+    <meta property="og:image" content="https://aliqgroup.kz/logo.png">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3EA%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,12 +27,14 @@
   <noscript><div><img src="https://mc.yandex.ru/watch/12345678" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrica counter -->
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=" id="gaScript"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID');
+      if (window.GA_ID && window.GA_ID !== 'GA_MEASUREMENT_ID') {
+        gtag('config', window.GA_ID);
+      }
     </script>
     <!-- /Google Analytics -->
 </head>
@@ -176,8 +178,8 @@
       </div>
   </div>
 
-    <script src="main.js"></script>
     <script src="config.js"></script>
+    <script src="main.js"></script>
     <!-- Онлайн-чат -->
     <script type="text/javascript">
       var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();

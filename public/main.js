@@ -49,7 +49,10 @@ const langs = {
         questionPlaceholder: "Ваш вопрос",
         messengerLabel: "Отправить через:",
         submitBtn: "Отправить",
+        formSending: "Отправка...",
         formSuccess: "Спасибо! Ваша заявка отправлена.",
+        formFail: "Не удалось отправить заявку. Попробуйте снова.",
+        formRateLimit: "Слишком много попыток. Повторите позже.",
     langBtn: "Қазақша",
     navHome: "Главная",
     navServices: "Услуги",
@@ -107,7 +110,10 @@ const langs = {
         questionPlaceholder: "Сұрағыңыз",
         messengerLabel: "Қай мессенджер арқылы жіберу:",
         submitBtn: "Жіберу",
+        formSending: "Жіберілуде...",
         formSuccess: "Рақмет! Өтінішіңіз жіберілді.",
+        formFail: "Өтінішті жіберу мүмкін болмады. Қайталап көріңіз.",
+        formRateLimit: "Тым көп әрекет. Кейінірек қайталап көріңіз.",
     langBtn: "English",
     navHome: "Басты бет",
     navServices: "Қызметтер",
@@ -165,7 +171,10 @@ const langs = {
     questionPlaceholder: "Your question",
     messengerLabel: "Send via:",
     submitBtn: "Send",
+    formSending: "Sending...",
     formSuccess: "Thank you! Your request has been sent.",
+    formFail: "Failed to send your request. Please try again.",
+    formRateLimit: "Too many attempts. Please try again later.",
     langBtn: "Русский",
     navHome: "Home",
     navServices: "Services",
@@ -205,6 +214,14 @@ const serviceQuestions = {
 };
 
 const serviceIcons = ['bi-lightning','bi-diagram-3','bi-window','bi-puzzle','bi-gear','bi-shield-lock'];
+const serviceUrls = [
+  'services/mvp.html',
+  'services/integration.html',
+  'services/websites.html',
+  'services/consulting.html',
+  'services/automation.html',
+  'services/security.html'
+];
 
 const serviceDescriptions = {
   ru: [
@@ -387,7 +404,12 @@ function setLang(lang) {
   document.querySelectorAll('#requestBtn, #requestBtn2').forEach(btn => btn && (btn.innerText = l.requestBtn));
   setElText('servicesTitle', l.servicesTitle);
   const servicesEl = document.getElementById('servicesList');
-  if(servicesEl) servicesEl.innerHTML = l.services.map((s,i)=>`<li class="service-item"><span onclick="showService(${i})"><i class="bi ${serviceIcons[i]} service-icon"></i>${s}</span><button class="service-btn" onclick="openModal('${s}')">${l.requestBtn}</button></li>`).join('');
+  if (servicesEl) {
+    servicesEl.innerHTML = l.services.map((s, i) => {
+      const href = serviceUrls[i] || '#';
+      return `<li class="service-item"><a href="${href}"><i class="bi ${serviceIcons[i]} service-icon"></i>${s}</a><button class="service-btn" onclick="openModal('${s}')">${l.requestBtn}</button></li>`;
+    }).join('');
+  }
   setElText('projectsTitle', l.projectsTitle);
   const projectsEl = document.getElementById('projectsList');
   if(projectsEl) projectsEl.innerHTML = l.projects.map((p, idx)=>`<article class="process-item"><span class="process-index">0${idx + 1}</span><div>${p}</div></article>`).join('');
@@ -497,7 +519,16 @@ function openModal(service) {
       const question = [extra, questionInputEl.value].filter(Boolean).join('\n');
       const messenger = document.getElementById('messengerSelect').value;
       const msgEl = document.getElementById('formMsg');
+      const submitBtn = document.getElementById('submitBtn');
+      const submitLabel = langs[curLang].submitBtn;
       msgEl.style.display = 'block';
+      msgEl.style.color = '#c8d5e1';
+      msgEl.innerText = langs[curLang].formSending;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerText = langs[curLang].formSending;
+      }
+      let wasSent = false;
       try {
         const fd = new FormData();
         fd.append('name', name);
@@ -512,25 +543,41 @@ function openModal(service) {
           method: 'POST',
           body: fd
         });
-        if (!res.ok) throw new Error('fail');
+        if (!res.ok) {
+          if (res.status === 429) {
+            msgEl.style.color = '#ffb347';
+            msgEl.innerText = langs[curLang].formRateLimit;
+            return;
+          }
+          throw new Error('fail');
+        }
+        wasSent = true;
         msgEl.style.color = '#37ff86';
+        msgEl.innerText = langs[curLang].formSuccess;
       } catch (err) {
         console.error(err);
         msgEl.style.color = '#ffb347';
+        msgEl.innerText = langs[curLang].formFail;
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerText = submitLabel;
+        }
       }
-      msgEl.innerText = langs[curLang].formSuccess;
 
-      const text = encodeURIComponent(`Имя: ${name}\nТелефон: ${phone}\nEmail: ${email}\nУслуга: ${service}\nВопрос: ${question}`);
-      let url = '';
-      if (messenger === 'whatsapp') {
-        url = `https://wa.me/77052546613?text=${text}`;
-      } else {
-        url = `https://t.me/aliqgroup?text=${text}`;
+      if (wasSent) {
+        const text = encodeURIComponent(`Имя: ${name}\nТелефон: ${phone}\nEmail: ${email}\nУслуга: ${service}\nВопрос: ${question}`);
+        let url = '';
+        if (messenger === 'whatsapp') {
+          url = `https://wa.me/77052546613?text=${text}`;
+        } else {
+          url = `https://t.me/aliqgroup?text=${text}`;
+        }
+        window.open(url, '_blank');
+
+        document.querySelector('#modalBg form').reset();
+        setTimeout(closeModal, 1800);
       }
-      window.open(url, '_blank');
-
-      document.querySelector('#modalBg form').reset();
-      setTimeout(closeModal, 1800);
     }
     window.sendForm = sendForm;
 
@@ -549,7 +596,12 @@ const observer = new IntersectionObserver(entries => {
 
 
     const ga = document.getElementById('gaScript');
-    if(ga) ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
+    if (ga && window.GA_ID && window.GA_ID !== 'GA_MEASUREMENT_ID') {
+      ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
+      if (typeof window.gtag === 'function') {
+        window.gtag('config', window.GA_ID);
+      }
+    }
 
     if('serviceWorker' in navigator){
       navigator.serviceWorker.register('service-worker.js').then(reg => {
@@ -563,6 +615,7 @@ const observer = new IntersectionObserver(entries => {
                 try {
                   const resp = await fetch('/vapidPublicKey');
                   const { key } = await resp.json();
+                    if (!key) return;
                   const subscription = await reg.pushManager.subscribe({
                     userVisibleOnly: true,
                     applicationServerKey: urlB64ToUint8Array(key)

@@ -7,9 +7,26 @@ const webpush = require('web-push');
 const morgan = require('morgan');
 
 const app = express();
-const upload = multer().array('files');
+const upload = multer({
+  limits: {
+    files: 3,
+    fileSize: 5 * 1024 * 1024
+  }
+}).array('files');
 app.use(express.json());
-app.use(cors());
+const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || '')
+  .split(',')
+  .map(v => v.trim())
+  .filter(Boolean);
+app.use(cors({
+  origin(origin, callback) {
+    if (!origin) return callback(null, true);
+    if (ALLOWED_ORIGINS.length === 0 || ALLOWED_ORIGINS.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error('CORS blocked'));
+  }
+}));
 app.use(morgan('combined'));
 
 const rateMap = {};
@@ -28,6 +45,7 @@ const VAPID_PUBLIC_KEY = process.env.VAPID_PUBLIC_KEY || '';
 const VAPID_PRIVATE_KEY = process.env.VAPID_PRIVATE_KEY || '';
 const GA_ID = process.env.GA_ID || 'GA_MEASUREMENT_ID';
 const CALENDAR_ID = process.env.CALENDAR_ID || 'your_calendar_id';
+const NOTIFY_TOKEN = process.env.NOTIFY_TOKEN || '';
 
 function createMailTransport() {
   if (SMTP_HOST) {
@@ -49,6 +67,18 @@ if (VAPID_PUBLIC_KEY && VAPID_PRIVATE_KEY) {
 }
 
 const subscriptions = [];
+
+function isValidSubscription(sub) {
+  return !!(
+    sub &&
+    typeof sub === 'object' &&
+    typeof sub.endpoint === 'string' &&
+    sub.endpoint.startsWith('https://') &&
+    sub.keys &&
+    typeof sub.keys.p256dh === 'string' &&
+    typeof sub.keys.auth === 'string'
+  );
+}
 
 
 app.use('/api/feedback', (req, res, next) => {
@@ -107,13 +137,26 @@ app.get('/vapidPublicKey', (req, res) => {
 });
 
 app.post('/subscribe', express.json(), (req, res) => {
-  subscriptions.push(req.body);
+  if (!isValidSubscription(req.body)) {
+    return res.status(400).json({ error: 'invalid_subscription' });
+  }
+  if (!subscriptions.some(s => s.endpoint === req.body.endpoint)) {
+    subscriptions.push(req.body);
+  }
   res.json({ ok: true });
 });
 
 app.post('/notify', async (req, res) => {
+  if (!NOTIFY_TOKEN || req.get('x-notify-token') !== NOTIFY_TOKEN) {
+    return res.status(403).json({ error: 'forbidden' });
+  }
+  if (!VAPID_PUBLIC_KEY || !VAPID_PRIVATE_KEY) {
+    return res.status(400).json({ error: 'push_not_configured' });
+  }
   const payload = JSON.stringify({ title: req.body.title, body: req.body.body });
-  const results = await Promise.all(subscriptions.map(s => webpush.sendNotification(s, payload).catch(()=>null)));
+  const results = await Promise.all(
+    subscriptions.map(s => webpush.sendNotification(s, payload).catch(() => null))
+  );
   res.json({ sent: results.length });
 });
 
@@ -133,6 +176,9 @@ app.post('/api/feedback', upload, async (req, res) => {
     res.json({ success: true });
   } catch (e) {
     console.error(e);
+    if (e && e.code === 'LIMIT_FILE_SIZE') {
+      return res.status(413).json({ error: 'file_too_large' });
+    }
     res.status(500).json({ error: 'fail' });
   }
 });

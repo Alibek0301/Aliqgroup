@@ -7,7 +7,7 @@
   <meta property="og:title" content="AliQ Group — IT Solutions">
   <meta property="og:description" content="Молодая ИТ‑компания, запускающая цифровые продукты и обеспечивающая безопасность бизнеса.">
   <meta property="og:url" content="https://aliqgroup.kz/faq.html">
-  <meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+P8/AAX+Av6Qs+MAAAAASUVORK5CYII=">
+  <meta property="og:image" content="https://aliqgroup.kz/logo.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3EA%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,10 +32,30 @@
     <main>
       <section class="section fade-in" style="margin-top:40px;">
         <div class="section-title">FAQ</div>
-        <ul class="adv-list">
-          <li><b>Как отправить заявку?</b> Используйте форму на главной странице.</li>
-          <li><b>Как запланировать встречу?</b> Перейдите на страницу встречи и выберите удобное время.</li>
-        </ul>
+        <details style="margin-bottom:10px" open>
+          <summary><b>Как отправить заявку и что происходит дальше?</b></summary>
+          <p>Оставьте заявку на главной или на странице услуг. В течение рабочего времени мы связываемся с вами для уточнения задачи и предлагаем понятный план действий.</p>
+        </details>
+        <details style="margin-bottom:10px">
+          <summary><b>Сколько времени занимает старт проекта?</b></summary>
+          <p>По большинству задач старт возможен в течение 1-3 рабочих дней после согласования объема работ и приоритетов.</p>
+        </details>
+        <details style="margin-bottom:10px">
+          <summary><b>Можно ли начать с небольшого этапа или аудита?</b></summary>
+          <p>Да. Часто мы начинаем с мини-аудита или MVP-этапа, чтобы быстро проверить гипотезу и снизить риски перед масштабированием.</p>
+        </details>
+        <details style="margin-bottom:10px">
+          <summary><b>Работаете ли вы с существующими системами (CRM, API, облако)?</b></summary>
+          <p>Да. Мы подключаем и синхронизируем внешние сервисы, настраиваем интеграции и автоматизацию, сохраняя стабильность текущих процессов.</p>
+        </details>
+        <details style="margin-bottom:10px">
+          <summary><b>Как вы обеспечиваете безопасность данных?</b></summary>
+          <p>Применяем базовые практики защиты, контроль доступа и безопасную настройку интеграций. Для критичных задач проводим отдельный аудит безопасности.</p>
+        </details>
+        <details style="margin-bottom:10px">
+          <summary><b>Как запланировать встречу?</b></summary>
+          <p>Перейдите на страницу планирования и выберите удобное время в календаре. Также можно написать в WhatsApp или Telegram из раздела контактов.</p>
+        </details>
       </section>
     </main>
 
@@ -43,7 +63,55 @@
       © <span id="year"></span> AliQ Group
     </footer>
   </div>
-  <script src="main.js"></script>
   <script src="config.js"></script>
+  <script src="main.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как отправить заявку и что происходит дальше?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Оставьте заявку на главной или на странице услуг. В течение рабочего времени мы связываемся с вами для уточнения задачи и предлагаем понятный план действий."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько времени занимает старт проекта?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "По большинству задач старт возможен в течение 1-3 рабочих дней после согласования объема работ и приоритетов."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли начать с небольшого этапа или аудита?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Часто мы начинаем с мини-аудита или MVP-этапа, чтобы быстро проверить гипотезу и снизить риски перед масштабированием."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Работаете ли вы с существующими системами (CRM, API, облако)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Мы подключаем и синхронизируем внешние сервисы, настраиваем интеграции и автоматизацию, сохраняя стабильность текущих процессов."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как вы обеспечиваете безопасность данных?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Применяем базовые практики защиты, контроль доступа и безопасную настройку интеграций. Для критичных задач проводим отдельный аудит безопасности."
+          }
+        }
+      ]
+    }
+  </script>
 </body>
 </html>

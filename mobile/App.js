@@ -9,11 +9,27 @@ export default function App() {
     Constants.expoConfig?.extra?.siteUrl ||
     'https://alibek0301.github.io/Aliqgroup/';
 
+  let allowedOrigin = 'https://alibek0301.github.io';
+  try {
+    allowedOrigin = new URL(siteUrl).origin;
+  } catch (_) {}
+
   const handleNavigation = (event) => {
     const url = event.url || '';
     if (url.startsWith('mailto:') || url.startsWith('tel:')) {
       Linking.openURL(url).catch(() => {});
       return false;
+    }
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      try {
+        const targetOrigin = new URL(url).origin;
+        if (targetOrigin !== allowedOrigin) {
+          Linking.openURL(url).catch(() => {});
+          return false;
+        }
+      } catch (_) {
+        return false;
+      }
     }
     return true;
   };
@@ -21,7 +37,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <WebView
-        originWhitelist={['*']}
+        originWhitelist={[allowedOrigin]}
         source={{ uri: siteUrl }}
         style={styles.webview}
         onShouldStartLoadWithRequest={handleNavigation}
