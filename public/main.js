@@ -443,6 +443,45 @@ function getPublicPathname() {
   return path.split('/').pop() || 'index.html';
 }
 
+function getSiteBasePath() {
+  const rawPath = window.location.pathname || '/';
+  const path = rawPath.replace(/\/+$/, '');
+  if (!path || path === '/') return '';
+
+  const markers = [
+    '/services/',
+    '/index.html',
+    '/services.html',
+    '/faq.html',
+    '/schedule.html',
+    '/privacy.html',
+    '/404.html',
+    '/offline.html'
+  ];
+
+  for (const marker of markers) {
+    const idx = path.indexOf(marker);
+    if (idx >= 0) return path.slice(0, idx);
+  }
+
+  const segments = path.split('/').filter(Boolean);
+  if (!path.includes('.') && segments.length === 1) return `/${segments[0]}`;
+  return '';
+}
+
+function withBasePath(targetPath) {
+  const basePath = getSiteBasePath();
+  if (targetPath === '/') return basePath ? `${basePath}/` : '/';
+  return `${basePath}${targetPath}`;
+}
+
+function normalizeHeaderNavLinks() {
+  const navHome = document.getElementById('navHome');
+  const navServices = document.getElementById('navServices');
+  if (navHome) navHome.setAttribute('href', withBasePath('/'));
+  if (navServices) navServices.setAttribute('href', withBasePath('/services.html'));
+}
+
 function markActiveNav() {
   const page = getPublicPathname();
   const homePages = ['index.html', 'faq.html', 'schedule.html', 'privacy.html', '404.html', 'offline.html'];
@@ -482,7 +521,7 @@ function createMobileQuickBar() {
     third.innerHTML = '<i class="bi bi-chat-text-fill"></i><span>Request</span>';
     third.addEventListener('click', () => window.openModal(''));
   } else {
-    third.href = '/services.html';
+    third.href = withBasePath('/services.html');
     third.innerHTML = '<i class="bi bi-grid-1x2-fill"></i><span>Services</span>';
   }
 
@@ -787,6 +826,7 @@ function openModal(service) {
     window.sendForm = sendForm;
 
     // Первичная установка языка
+  normalizeHeaderNavLinks();
   markActiveNav();
     initMobileNavToggle();
     setLang(curLang);
