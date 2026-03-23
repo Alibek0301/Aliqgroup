@@ -13,6 +13,23 @@ const upload = multer({
     fileSize: 5 * 1024 * 1024
   }
 }).array('files');
+
+function uploadFeedback(req, res, next) {
+  upload(req, res, err => {
+    if (!err) return next();
+    if (err instanceof multer.MulterError) {
+      if (err.code === 'LIMIT_FILE_SIZE') {
+        return res.status(413).json({ error: 'file_too_large' });
+      }
+      if (err.code === 'LIMIT_FILE_COUNT') {
+        return res.status(413).json({ error: 'too_many_files' });
+      }
+      return res.status(400).json({ error: 'invalid_upload' });
+    }
+    return res.status(400).json({ error: 'invalid_upload' });
+  });
+}
+
 app.use(express.json());
 const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || '')
   .split(',')
@@ -160,10 +177,51 @@ app.post('/notify', async (req, res) => {
   res.json({ sent: results.length });
 });
 
-app.post('/api/feedback', upload, async (req, res) => {
-  const { name, phone, email, service, question, messenger } = req.body;
+app.post('/api/feedback', uploadFeedback, async (req, res) => {
+  const {
+    name,
+    phone,
+    email,
+    service,
+    question,
+    messenger,
+    utm_source,
+    utm_medium,
+    utm_campaign,
+    utm_content,
+    utm_term,
+    gclid,
+    fbclid,
+    landing_path,
+    referrer_url,
+    first_seen_at
+  } = req.body;
   if (!name || !phone || !question) return res.status(400).json({ error: 'missing' });
-  const text = `Имя: ${name}\nТелефон: ${phone}\nEmail: ${email || ''}\nУслуга: ${service || ''}\nВопрос: ${question}\nМессенджер: ${messenger}`;
+
+  const attributionLines = [
+    ['utm_source', utm_source],
+    ['utm_medium', utm_medium],
+    ['utm_campaign', utm_campaign],
+    ['utm_content', utm_content],
+    ['utm_term', utm_term],
+    ['gclid', gclid],
+    ['fbclid', fbclid],
+    ['landing_path', landing_path],
+    ['referrer_url', referrer_url],
+    ['first_seen_at', first_seen_at]
+  ]
+    .filter(([, value]) => value)
+    .map(([key, value]) => `${key}: ${value}`);
+
+  const text = [
+    `Имя: ${name}`,
+    `Телефон: ${phone}`,
+    `Email: ${email || ''}`,
+    `Услуга: ${service || ''}`,
+    `Вопрос: ${question}`,
+    `Мессенджер: ${messenger}`,
+    attributionLines.length ? `\nАтрибуция:\n${attributionLines.join('\n')}` : ''
+  ].join('\n');
   try {
     const transporter = createMailTransport();
     await transporter.sendMail({
@@ -176,9 +234,6 @@ app.post('/api/feedback', upload, async (req, res) => {
     res.json({ success: true });
   } catch (e) {
     console.error(e);
-    if (e && e.code === 'LIMIT_FILE_SIZE') {
-      return res.status(413).json({ error: 'file_too_large' });
-    }
     res.status(500).json({ error: 'fail' });
   }
 });

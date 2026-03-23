@@ -2,9 +2,9 @@
 const langs = {
   ru: {
         siteTitle: "AliQ Group",
-        heroEyebrow: "Цифровые решения для роста и устойчивости бизнеса",
+      heroEyebrow: "План цифрового запуска за 24 часа",
         slogan: "IT-решения для бизнеса и безопасности.<br>Компетентность. Скорость. Надёжность.",
-        heroDesc: "Молодая ИТ-компания. Запускаем цифровые продукты, интегрируем сервисы, делаем ваш бизнес защищённым и современным.",
+      heroDesc: "Готовим пошаговый план запуска, сроки и приоритеты уже в первый день, чтобы вы быстро вышли к результату.",
         heroPills: [
           "MVP и быстрый запуск",
           "Интеграции и автоматизация",
@@ -15,6 +15,8 @@ const langs = {
           ["Понятный результат", "Фокусируемся на решении конкретной бизнес-задачи, а не на абстрактной разработке."],
           ["Техническая опора", "Закладываем масштабируемость, интеграции и базовую защиту с самого начала."]
         ],
+        heroPrimaryCta: "Получить план запуска за 24 часа",
+        heroSecondaryCta: "Написать в WhatsApp",
         requestBtn: "Оставить заявку",
         servicesTitle: "Наши услуги",
         services: [
@@ -42,6 +44,7 @@ const langs = {
         ],
         contactsTitle: "Контакты",
         phoneLabel: "Телефон (WhatsApp):",
+        contactSla: "Отвечаем в течение 30 минут в рабочее время (Пн-Пт, 09:00-19:00).",
         namePlaceholder: "Ваше имя",
         phonePlaceholder: "Телефон",
         emailPlaceholder: "Email (необязательно)",
@@ -53,6 +56,8 @@ const langs = {
         formSuccess: "Спасибо! Ваша заявка отправлена.",
         formFail: "Не удалось отправить заявку. Попробуйте снова.",
         formRateLimit: "Слишком много попыток. Повторите позже.",
+        formFileTooLarge: "Файл слишком большой. Максимум 5 МБ на файл.",
+        formTooManyFiles: "Можно прикрепить не более 3 файлов.",
     langBtn: "Қазақша",
     navHome: "Главная",
     navServices: "Услуги",
@@ -63,9 +68,9 @@ const langs = {
   },
   kz: {
         siteTitle: "AliQ Group",
-        heroEyebrow: "Бизнес өсімі мен тұрақтылығына арналған цифрлық шешімдер",
+      heroEyebrow: "24 сағатта цифрлық іске қосу жоспары",
         slogan: "Бизнес пен қауіпсіздікке арналған IT-шешімдер.<br>Кәсібилік. Жылдамдық. Сенімділік.",
-        heroDesc: "Жас IT-компания. Цифрлық өнімдерді іске қосамыз, сервистерді біріктіреміз, бизнесіңізді заманауи әрі қорғалған етеміз.",
+      heroDesc: "Бірінші күннің өзінде кезеңдер, мерзімдер және басымдықтары бар нақты жоспар ұсынамыз.",
         heroPills: [
           "MVP және жылдам іске қосу",
           "Интеграциялар және автоматтандыру",
@@ -76,6 +81,8 @@ const langs = {
           ["Түсінікті нәтиже", "Абстрактілі әзірлеуге емес, нақты бизнес-мәселені шешуге назар аударамыз."],
           ["Техникалық тірек", "Басынан бастап масштабтау, интеграциялар және базалық қорғанысты ескереміз."]
         ],
+        heroPrimaryCta: "24 сағатта іске қосу жоспарын алу",
+        heroSecondaryCta: "WhatsApp-қа жазу",
         requestBtn: "Өтініш қалдыру",
         servicesTitle: "Қызметтеріміз",
         services: [
@@ -103,6 +110,7 @@ const langs = {
         ],
         contactsTitle: "Байланыс",
         phoneLabel: "Телефон (WhatsApp):",
+        contactSla: "Жұмыс уақытында 30 минут ішінде жауап береміз (Дс-Жм, 09:00-19:00).",
         namePlaceholder: "Атыңыз",
         phonePlaceholder: "Телефон",
         emailPlaceholder: "Email (міндетті емес)",
@@ -114,6 +122,8 @@ const langs = {
         formSuccess: "Рақмет! Өтінішіңіз жіберілді.",
         formFail: "Өтінішті жіберу мүмкін болмады. Қайталап көріңіз.",
         formRateLimit: "Тым көп әрекет. Кейінірек қайталап көріңіз.",
+        formFileTooLarge: "Файл тым үлкен. Бір файлға максимум 5 МБ.",
+        formTooManyFiles: "3 файлдан артық тіркеуге болмайды.",
     langBtn: "English",
     navHome: "Басты бет",
     navServices: "Қызметтер",
@@ -124,9 +134,9 @@ const langs = {
   },
   en: {
     siteTitle: "AliQ Group",
-    heroEyebrow: "Digital solutions for business growth and resilience",
+    heroEyebrow: "Digital launch plan in 24 hours",
     slogan: "IT solutions for business and security.<br>Expertise. Speed. Reliability.",
-    heroDesc: "A young IT company launching digital products, integrating services and keeping your business safe.",
+    heroDesc: "We provide a step-by-step launch plan with priorities and timeline on day one to move fast with less risk.",
     heroPills: [
       "MVP and fast launch",
       "Integrations and automation",
@@ -137,6 +147,8 @@ const langs = {
       ["Clear outcome", "We focus on solving a concrete business problem, not on abstract development."],
       ["Technical backbone", "We build in scalability, integrations, and baseline security from the start."]
     ],
+    heroPrimaryCta: "Get a launch plan in 24 hours",
+    heroSecondaryCta: "Message on WhatsApp",
     requestBtn: "Send request",
     servicesTitle: "Our services",
     services: [
@@ -164,6 +176,7 @@ const langs = {
     ],
     contactsTitle: "Contacts",
     phoneLabel: "Phone (WhatsApp):",
+    contactSla: "We reply within 30 minutes during working hours (Mon-Fri, 09:00-19:00).",
     namePlaceholder: "Your name",
     phonePlaceholder: "Phone",
     emailPlaceholder: "Email (optional)",
@@ -175,6 +188,8 @@ const langs = {
     formSuccess: "Thank you! Your request has been sent.",
     formFail: "Failed to send your request. Please try again.",
     formRateLimit: "Too many attempts. Please try again later.",
+    formFileTooLarge: "File is too large. Maximum 5 MB per file.",
+    formTooManyFiles: "You can attach up to 3 files.",
     langBtn: "Русский",
     navHome: "Home",
     navServices: "Services",
@@ -252,6 +267,122 @@ const serviceDescriptions = {
 
 let curLang = 'ru';
 function setElText(id, html){ const el = document.getElementById(id); if(el) el.innerHTML = html; }
+
+const ATTR_STORAGE_KEY = 'aliqgroup_attribution_v1';
+const ATTR_QUERY_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
+let modalFirstInputTracked = false;
+
+function getAttribution() {
+  let stored = {};
+  try {
+    stored = JSON.parse(sessionStorage.getItem(ATTR_STORAGE_KEY) || '{}');
+  } catch (_) {
+    stored = {};
+  }
+
+  const url = new URL(window.location.href);
+  const search = url.searchParams;
+  const queryData = {};
+  ATTR_QUERY_KEYS.forEach(key => {
+    const value = search.get(key);
+    if (value) queryData[key] = value;
+  });
+
+  const baseData = {
+    landing_path: stored.landing_path || (window.location.pathname || '/'),
+    first_seen_at: stored.first_seen_at || new Date().toISOString(),
+    referrer_url: stored.referrer_url || document.referrer || 'direct'
+  };
+
+  const merged = { ...stored, ...baseData, ...queryData };
+  try {
+    sessionStorage.setItem(ATTR_STORAGE_KEY, JSON.stringify(merged));
+  } catch (_) {
+    // ignore storage errors (private mode or quota)
+  }
+  return merged;
+}
+
+function withAttribution(params = {}) {
+  return { ...params, ...getAttribution() };
+}
+
+function trackEvent(eventName, params = {}) {
+  if (typeof window.gtag !== 'function') return;
+  window.gtag('event', eventName, withAttribution(params));
+}
+
+function bindModalStepTracking() {
+  const form = document.querySelector('#modalBg form');
+  if (!form || form.dataset.funnelBound === 'true') return;
+
+  form.addEventListener('input', e => {
+    if (modalFirstInputTracked) return;
+    const target = e.target;
+    if (!(target instanceof HTMLElement)) return;
+    const field = target.id || target.getAttribute('name') || target.className || 'unknown';
+    trackEvent('form_step', {
+      page: getPublicPathname(),
+      lang: curLang,
+      step: 'first_input',
+      field
+    });
+    modalFirstInputTracked = true;
+  });
+
+  const messengerSelect = document.getElementById('messengerSelect');
+  if (messengerSelect) {
+    messengerSelect.addEventListener('change', () => {
+      trackEvent('form_step', {
+        page: getPublicPathname(),
+        lang: curLang,
+        step: 'messenger_selected',
+        messenger: messengerSelect.value
+      });
+    });
+  }
+
+  const fileInput = document.getElementById('fileInput');
+  if (fileInput) {
+    fileInput.addEventListener('change', () => {
+      trackEvent('form_step', {
+        page: getPublicPathname(),
+        lang: curLang,
+        step: 'attachments_selected',
+        files_count: fileInput.files ? fileInput.files.length : 0
+      });
+    });
+  }
+
+  form.dataset.funnelBound = 'true';
+}
+
+function bindAnalyticsHandlers() {
+  const ctaMap = [
+    ['requestBtn', 'hero_primary_modal'],
+    ['requestBtn2', 'bottom_modal'],
+    ['quickConsultBtn', 'hero_secondary_whatsapp']
+  ];
+  ctaMap.forEach(([id, label]) => {
+    const el = document.getElementById(id);
+    if (!el || el.dataset.analyticsBound === 'true') return;
+    el.addEventListener('click', () => {
+      trackEvent('cta_click', { label, page: getPublicPathname(), lang: curLang });
+    });
+    el.dataset.analyticsBound = 'true';
+  });
+
+  const quickBar = document.getElementById('mobileQuickBar');
+  if (quickBar && quickBar.dataset.analyticsBound !== 'true') {
+    quickBar.addEventListener('click', e => {
+      const action = e.target.closest('.quick-action');
+      if (!action) return;
+      const label = action.classList.contains('quick-action-primary') ? 'mobile_whatsapp' : 'mobile_secondary';
+      trackEvent('cta_click', { label, page: getPublicPathname(), lang: curLang });
+    });
+    quickBar.dataset.analyticsBound = 'true';
+  }
+}
 
 function initMobileNavToggle() {
   const header = document.querySelector('.header');
@@ -338,6 +469,9 @@ function createMobileQuickBar() {
   wa.rel = 'noopener';
   wa.className = 'quick-action quick-action-primary';
   wa.innerHTML = '<i class="bi bi-whatsapp"></i><span>WhatsApp</span>';
+  wa.addEventListener('click', () => {
+    trackEvent('cta_click', { label: 'mobile_whatsapp', page: getPublicPathname(), lang: curLang });
+  });
 
   const hasModal = typeof window.openModal === 'function' && document.getElementById('modalBg');
   const third = document.createElement(hasModal ? 'button' : 'a');
@@ -357,6 +491,8 @@ function createMobileQuickBar() {
 
   const footer = document.querySelector('.footer');
   if (footer) footer.classList.add('footer-mobile-space');
+
+  bindAnalyticsHandlers();
 }
 
 function setQuickBarLocale(lang) {
@@ -401,7 +537,12 @@ function setLang(lang) {
   if (heroPillsEl) heroPillsEl.innerHTML = l.heroPills.map(item => `<span class="hero-pill">${item}</span>`).join('');
   const heroCardGridEl = document.getElementById('heroCardGrid');
   if (heroCardGridEl) heroCardGridEl.innerHTML = l.heroCards.map(([title, text]) => `<article class="hero-card"><div class="hero-card-title">${title}</div><p>${text}</p></article>`).join('');
-  document.querySelectorAll('#requestBtn, #requestBtn2').forEach(btn => btn && (btn.innerText = l.requestBtn));
+  const requestBtn = document.getElementById('requestBtn');
+  if (requestBtn) requestBtn.innerText = l.heroPrimaryCta;
+  const requestBtn2 = document.getElementById('requestBtn2');
+  if (requestBtn2) requestBtn2.innerText = l.requestBtn;
+  const quickConsultBtn = document.getElementById('quickConsultBtn');
+  if (quickConsultBtn) quickConsultBtn.innerText = l.heroSecondaryCta;
   setElText('servicesTitle', l.servicesTitle);
   const servicesEl = document.getElementById('servicesList');
   if (servicesEl) {
@@ -418,6 +559,7 @@ function setLang(lang) {
   if(advEl) advEl.innerHTML = l.adv.map(a=>`<li>${a}</li>`).join('');
   setElText('contactsTitle', l.contactsTitle);
   setElText('phoneLabel', l.phoneLabel);
+  setElText('contactSla', l.contactSla);
   const nameInput=document.getElementById('nameInput'); if(nameInput) nameInput.placeholder = l.namePlaceholder;
   const phoneInput=document.getElementById('phoneInput'); if(phoneInput) phoneInput.placeholder = l.phonePlaceholder;
   const emailInput=document.getElementById('emailInput'); if(emailInput) emailInput.placeholder = l.emailPlaceholder;
@@ -434,6 +576,7 @@ function setLang(lang) {
   setElText('formMsg', l.formSuccess);
   setQuickBarLocale(lang);
   setNavToggleLocale(lang);
+  bindAnalyticsHandlers();
 }
     const langBtnEl = document.getElementById('langBtn');
     if (langBtnEl) langBtnEl.onclick = function() {
@@ -453,13 +596,21 @@ if(gCal){
 function renderQuestions(service){
   const fieldsEl = document.getElementById('dynamicFields');
   const qInput = document.getElementById('questionInput');
+  if (!fieldsEl || !qInput) return;
   fieldsEl.innerHTML = '';
   if(!service){
     qInput.style.display = 'block';
     qInput.required = true;
     return;
   }
-  const idx = langs[curLang].services.indexOf(service);
+  let idx = langs[curLang].services.indexOf(service);
+  if (idx < 0) {
+    const normalizedService = String(service).toLowerCase();
+    idx = langs[curLang].services.findIndex(s => {
+      const normalized = String(s).toLowerCase();
+      return normalized.includes(normalizedService) || normalizedService.includes(normalized);
+    });
+  }
   const list = serviceQuestions[curLang][idx] || [];
   if(list.length===0){
     qInput.style.display = 'block';
@@ -473,6 +624,13 @@ function renderQuestions(service){
 
     // Модалка
 function openModal(service) {
+  modalFirstInputTracked = false;
+  bindModalStepTracking();
+  trackEvent('modal_open', {
+    page: getPublicPathname(),
+    lang: curLang,
+    service: service || 'general'
+  });
   document.getElementById('modalBg').style.display = 'flex';
   document.getElementById('formMsg').style.display = 'none';
   const form = document.querySelector('#modalBg form');
@@ -524,6 +682,13 @@ function openModal(service) {
       msgEl.style.display = 'block';
       msgEl.style.color = '#c8d5e1';
       msgEl.innerText = langs[curLang].formSending;
+      trackEvent('form_submit_attempt', {
+        page: getPublicPathname(),
+        lang: curLang,
+        service: service || 'general',
+        messenger,
+        files: document.querySelectorAll('#fileInput')[0]?.files?.length || 0
+      });
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.innerText = langs[curLang].formSending;
@@ -531,14 +696,20 @@ function openModal(service) {
       let wasSent = false;
       try {
         const fd = new FormData();
+        const attribution = getAttribution();
         fd.append('name', name);
         fd.append('phone', phone);
         fd.append('email', email);
         fd.append('service', service);
         fd.append('question', question);
         fd.append('messenger', messenger);
+        Object.entries(attribution).forEach(([key, value]) => {
+          if (value) fd.append(key, String(value));
+        });
         const fileEl = document.getElementById('fileInput');
-        if(fileEl && fileEl.files[0]) fd.append('files', fileEl.files[0]);
+        if (fileEl && fileEl.files && fileEl.files.length) {
+          Array.from(fileEl.files).forEach(file => fd.append('files', file));
+        }
         const res = await fetch('/api/feedback', {
           method: 'POST',
           body: fd
@@ -547,6 +718,24 @@ function openModal(service) {
           if (res.status === 429) {
             msgEl.style.color = '#ffb347';
             msgEl.innerText = langs[curLang].formRateLimit;
+            trackEvent('form_submit_result', {
+              page: getPublicPathname(),
+              lang: curLang,
+              status: 'rate_limit'
+            });
+            return;
+          }
+          if (res.status === 413) {
+            const data = await res.json().catch(() => ({}));
+            msgEl.style.color = '#ffb347';
+            msgEl.innerText = data.error === 'too_many_files'
+              ? langs[curLang].formTooManyFiles
+              : langs[curLang].formFileTooLarge;
+            trackEvent('form_submit_result', {
+              page: getPublicPathname(),
+              lang: curLang,
+              status: data.error === 'too_many_files' ? 'too_many_files' : 'file_too_large'
+            });
             return;
           }
           throw new Error('fail');
@@ -554,10 +743,20 @@ function openModal(service) {
         wasSent = true;
         msgEl.style.color = '#37ff86';
         msgEl.innerText = langs[curLang].formSuccess;
+        trackEvent('form_submit_result', {
+          page: getPublicPathname(),
+          lang: curLang,
+          status: 'success'
+        });
       } catch (err) {
         console.error(err);
         msgEl.style.color = '#ffb347';
         msgEl.innerText = langs[curLang].formFail;
+        trackEvent('form_submit_result', {
+          page: getPublicPathname(),
+          lang: curLang,
+          status: 'fail'
+        });
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
@@ -573,6 +772,12 @@ function openModal(service) {
         } else {
           url = `https://t.me/aliqgroup?text=${text}`;
         }
+        trackEvent('messenger_redirect', {
+          page: getPublicPathname(),
+          lang: curLang,
+          messenger,
+          service: service || 'general'
+        });
         window.open(url, '_blank');
 
         document.querySelector('#modalBg form').reset();
@@ -586,6 +791,7 @@ function openModal(service) {
     initMobileNavToggle();
     setLang(curLang);
   createMobileQuickBar();
+  bindAnalyticsHandlers();
 
 const observer = new IntersectionObserver(entries => {
       entries.forEach(e => {
