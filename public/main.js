@@ -59,8 +59,6 @@ const langs = {
         formFileTooLarge: "Файл слишком большой. Максимум 5 МБ на файл.",
         formTooManyFiles: "Можно прикрепить не более 3 файлов.",
     langBtn: "Қазақша",
-    navHome: "Главная",
-    navServices: "Услуги",
     scheduleTitle: "Запланировать консультацию",
     scheduleDesc: "Используйте наш календарь, чтобы выбрать удобное время.",
     scheduleBtn: "Открыть календарь",
@@ -125,8 +123,6 @@ const langs = {
         formFileTooLarge: "Файл тым үлкен. Бір файлға максимум 5 МБ.",
         formTooManyFiles: "3 файлдан артық тіркеуге болмайды.",
     langBtn: "English",
-    navHome: "Басты бет",
-    navServices: "Қызметтер",
     scheduleTitle: "Кеңес жоспарлау",
     scheduleDesc: "Ыңғайлы уақытты таңдау үшін күнтізбені пайдаланыңыз.",
     scheduleBtn: "Күнтізбені ашу",
@@ -191,8 +187,6 @@ const langs = {
     formFileTooLarge: "File is too large. Maximum 5 MB per file.",
     formTooManyFiles: "You can attach up to 3 files.",
     langBtn: "Русский",
-    navHome: "Home",
-    navServices: "Services",
     scheduleTitle: "Schedule a consultation",
     scheduleDesc: "Use our calendar to pick a convenient time.",
     scheduleBtn: "Open calendar",
@@ -427,22 +421,11 @@ function withBasePath(targetPath) {
 }
 
 function normalizeHeaderNavLinks() {
-  const navHome = document.getElementById('navHome');
-  const navServices = document.getElementById('navServices');
-  if (navHome) navHome.setAttribute('href', withBasePath('/'));
-  if (navServices) navServices.setAttribute('href', withBasePath('/services.html'));
+  // navHome and navServices removed
 }
 
 function markActiveNav() {
-  const page = getPublicPathname();
-  const homePages = ['index.html', 'faq.html', 'schedule.html', 'privacy.html', '404.html', 'offline.html'];
-  const servicePages = ['services.html', 'mvp.html', 'integration.html', 'websites.html', 'consulting.html', 'automation.html', 'security.html'];
-
-  const navHome = document.getElementById('navHome');
-  const navServices = document.getElementById('navServices');
-
-  if (navHome && homePages.includes(page)) navHome.classList.add('nav-active');
-  if (navServices && servicePages.includes(page)) navServices.classList.add('nav-active');
+  // navHome and navServices removed
 }
 
 function createMobileQuickBar() {
@@ -548,8 +531,6 @@ function setLang(lang) {
   setElText('messengerLabel', l.messengerLabel);
   const submit=document.getElementById('submitBtn'); if(submit) submit.innerText = l.submitBtn;
   const langBtn=document.getElementById('langBtn'); if(langBtn) langBtn.innerText = l.langBtn;
-  setElText('navHome', l.navHome);
-  setElText('navServices', l.navServices);
   setElText('scheduleTitle', l.scheduleTitle);
   setElText('scheduleDesc', l.scheduleDesc);
   const schedBtn=document.getElementById('scheduleBtn'); if(schedBtn) schedBtn.innerText = l.scheduleBtn;
