@@ -272,57 +272,7 @@ const ATTR_STORAGE_KEY = 'aliqgroup_attribution_v1';
 const ATTR_QUERY_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
 let modalFirstInputTracked = false;
 
-function getAttribution() {
-  let stored = {};
-  try {
-    stored = JSON.parse(sessionStorage.getItem(ATTR_STORAGE_KEY) || '{}');
-  } catch (_) {
-    stored = {};
-  }
-
-  const url = new URL(window.location.href);
-  const search = url.searchParams;
-  const queryData = {};
-  ATTR_QUERY_KEYS.forEach(key => {
-    const value = search.get(key);
-    if (value) queryData[key] = value;
-  });
-
-  const baseData = {
-    landing_path: stored.landing_path || (window.location.pathname || '/'),
-    first_seen_at: stored.first_seen_at || new Date().toISOString(),
-    referrer_url: stored.referrer_url || document.referrer || 'direct'
-  };
-
-  const merged = { ...stored, ...baseData, ...queryData };
-  try {
-    sessionStorage.setItem(ATTR_STORAGE_KEY, JSON.stringify(merged));
-  } catch (_) {
-    // ignore storage errors (private mode or quota)
-  }
-  return merged;
-}
-
-function withAttribution(params = {}) {
-  return { ...params, ...getAttribution() };
-}
-
-function trackEvent(eventName, params = {}) {
-  if (typeof window.gtag !== 'function') return;
-  window.gtag('event', eventName, withAttribution(params));
-}
-
-function bindModalStepTracking() {
-  const form = document.querySelector('#modalBg form');
-  if (!form || form.dataset.funnelBound === 'true') return;
-
-  form.addEventListener('input', e => {
-    if (modalFirstInputTracked) return;
-    const target = e.target;
-    if (!(target instanceof HTMLElement)) return;
-    const field = target.id || target.getAttribute('name') || target.className || 'unknown';
-    trackEvent('form_step', {
-      page: getPublicPathname(),
+function initMobileNavToggle() {}
       lang: curLang,
       step: 'first_input',
       field
@@ -550,19 +500,7 @@ function setQuickBarLocale(lang) {
   if (items[1]) items[1].innerText = thirdText;
 }
 
-function setNavToggleLocale(lang) {
-  const navToggle = document.getElementById('mobileNavToggle');
-  if (!navToggle) return;
-  const labels = {
-    ru: 'Меню',
-    kz: 'Мәзір',
-    en: 'Menu'
-  };
-  const text = labels[lang] || labels.en;
-  const textEl = navToggle.querySelector('span');
-  if (textEl) textEl.innerText = text;
-  navToggle.setAttribute('aria-label', text);
-}
+function setNavToggleLocale(lang) {}
 
 function setLang(lang) {
   curLang = lang;
