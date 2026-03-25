@@ -772,7 +772,7 @@ const observer = new IntersectionObserver(entries => {
     }
 
     if('serviceWorker' in navigator){
-      navigator.serviceWorker.register('service-worker.js').then(reg => {
+      navigator.serviceWorker.register('/service-worker.js').then(reg => {
         if('PushManager' in window){
           navigator.serviceWorker.ready.then(r => r.pushManager.getSubscription()).then(sub => {
             if(!sub){
