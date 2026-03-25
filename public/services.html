@@ -45,6 +45,9 @@
           <span class="site-title" id="siteTitle">AliQ Group</span>
         </div>
         <nav class="nav">
+          <a href="#servicesBlock" id="navAnchorServices">Услуги</a>
+          <a href="#processBlock" id="navAnchorProcess">Процесс</a>
+          <a href="#contactsBlock" id="navAnchorContacts">Контакты</a>
         </nav>
         <button class="lang-btn" id="langBtn">Қазақша</button>
       </header>
@@ -57,6 +60,11 @@
       </div>
       <div class="hero-desc" id="heroDesc">
         Молодая ИТ-компания. Запускаем цифровые продукты, интегрируем сервисы, делаем ваш бизнес защищённым и современным.
+      </div>
+      <div class="hero-proof-row" id="heroProofRow">
+        <div class="hero-proof-item"><strong>Под задачу</strong><span>а не универсальным шаблоном</span></div>
+        <div class="hero-proof-item"><strong>Понятно</strong><span>по этапам, срокам и результату</span></div>
+        <div class="hero-proof-item"><strong>Безопасно</strong><span>по доступам и рабочим процессам</span></div>
       </div>
       <div class="hero-pill-row" id="heroPills">
         <span class="hero-pill">MVP и быстрый запуск</span>
@@ -83,8 +91,14 @@
       </div>
     </section>
 
+    <section class="section fade-in trust-strip" id="trustBlock">
+      <div class="trust-metric"><strong id="metricOneValue">6 направлений</strong><span id="metricOneLabel">от MVP до информационной безопасности</span></div>
+      <div class="trust-metric"><strong id="metricTwoValue">1 команда</strong><span id="metricTwoLabel">единая ответственность за решение и коммуникацию</span></div>
+      <div class="trust-metric"><strong id="metricThreeValue">0 лишнего</strong><span id="metricThreeLabel">только нужные этапы, без перегруза процессом</span></div>
+    </section>
+
     <section class="sections">
-      <section class="section fade-in">
+      <section class="section fade-in" id="servicesBlock">
         <div class="section-title" id="servicesTitle">Наши услуги</div>
         <ul id="servicesList">
           <li><i class="bi bi-lightning service-icon"></i> <a href="services/mvp.html">Разработка MVP (цифровых продуктов)</a></li>
@@ -95,7 +109,7 @@
           <li><i class="bi bi-shield-lock service-icon"></i> <a href="services/security.html">Информбезопасность и защита данных</a></li>
         </ul>
       </section>
-      <section class="section fade-in">
+      <section class="section fade-in" id="processBlock">
         <div class="section-title" id="projectsTitle">Как мы работаем</div>
         <div class="process-list" id="projectsList">
           <article class="process-item"><span class="process-index">01</span><div>Уточняем задачу, ограничения и приоритеты проекта.</div></article>
@@ -117,9 +131,43 @@
           <li>Реальный опыт работы в Казахстане и СНГ</li>
         </ul>
       </section>
+      <section class="section fade-in" id="deliverablesBlock">
+        <div class="section-title" id="deliverablesTitle">Что входит в работу</div>
+        <div class="deliverables-list" id="deliverablesList">
+          <article class="deliverable-item"><h3>Разбор задачи</h3><p>Уточняем цель, ограничения, контекст и критерий результата.</p></article>
+          <article class="deliverable-item"><h3>Архитектура решения</h3><p>Предлагаем рабочую структуру, инструменты и порядок запуска.</p></article>
+          <article class="deliverable-item"><h3>Поддержка внедрения</h3><p>Сопровождаем запуск и помогаем не потерять темп после старта.</p></article>
+        </div>
+      </section>
     </section>
 
-    <section class="section contacts-section fade-in">
+    <section class="sections">
+      <section class="section fade-in" id="securityBlock">
+        <div class="section-title" id="securityTitle">Профессиональный и безопасный подход</div>
+        <ul class="security-list" id="securityList">
+          <li>Понятная коммуникация без перегруза техническими деталями</li>
+          <li>Контроль доступов и аккуратная работа с данными</li>
+          <li>Фиксация этапов, сроков и ожидаемого результата</li>
+          <li>Возможность начать с небольшого этапа без лишнего риска</li>
+        </ul>
+      </section>
+      <section class="section fade-in" id="ctaBlock">
+        <div class="section-title" id="ctaTitle">Выберите удобный способ старта</div>
+        <p class="cta-copy" id="ctaCopy">Можно начать с короткого описания задачи, отдельной услуги или запроса на консультацию. Мы предложим ближайший разумный шаг.</p>
+        <div class="cta-panel">
+          <div class="cta-panel-item">
+            <div class="cta-panel-title" id="ctaPanelOneTitle">Нужна структура проекта</div>
+            <p id="ctaPanelOneText">Оставьте заявку и мы поможем определить объём, сроки и формат запуска.</p>
+          </div>
+          <div class="cta-panel-item">
+            <div class="cta-panel-title" id="ctaPanelTwoTitle">Нужно быстрое обсуждение</div>
+            <p id="ctaPanelTwoText">Пишите в мессенджер, если хотите начать с короткого диалога без долгого брифа.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="section contacts-section fade-in" id="contactsBlock">
       <div class="section-title" id="contactsTitle">Контакты</div>
       <div class="contact-block" id="phoneBlock">
         <span class="contact-label" id="phoneLabel">Телефон (WhatsApp):</span>
@@ -136,6 +184,7 @@
         <a href="https://t.me/aliqgroup" target="_blank" class="contact-social"><i class="bi bi-telegram"></i> @aliqgroup</a>
       </div>
       <div class="contact-sla" id="contactSla">Отвечаем в течение 30 минут в рабочее время (Пн-Пт, 09:00-19:00).</div>
+    <div class="form-trust-note" id="formTrustNote">Без спама и навязчивых продаж. Только ответ по задаче и следующий рабочий шаг.</div>
     <div class="bottom-action">
       <a href="#" onclick="openModal();return false;" id="requestBtn2" class="hero-action">Оставить заявку</a>
     </div>

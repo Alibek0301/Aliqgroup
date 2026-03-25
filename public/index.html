@@ -45,6 +45,9 @@
           <span class="site-title" id="siteTitle">AliQ Group</span>
         </div>
         <nav class="nav">
+          <a href="#servicesBlock" id="navAnchorServices">Услуги</a>
+          <a href="#processBlock" id="navAnchorProcess">Процесс</a>
+          <a href="#contactsBlock" id="navAnchorContacts">Контакты</a>
         </nav>
         <button class="lang-btn" id="langBtn">Қазақша</button>
       </header>
@@ -57,6 +60,11 @@
       </div>
       <div class="hero-desc" id="heroDesc">
         Молодая ИТ-компания. Запускаем цифровые продукты, интегрируем сервисы, делаем ваш бизнес защищённым и современным.
+      </div>
+      <div class="hero-proof-row" id="heroProofRow">
+        <div class="hero-proof-item"><strong>24 часа</strong><span>на первичный план запуска</span></div>
+        <div class="hero-proof-item"><strong>30 минут</strong><span>на ответ в рабочее время</span></div>
+        <div class="hero-proof-item"><strong>NDA</strong><span>при необходимости с первого контакта</span></div>
       </div>
       <div class="hero-pill-row" id="heroPills">
         <span class="hero-pill">MVP и быстрый запуск</span>
@@ -81,10 +89,24 @@
           <p>Закладываем масштабируемость, интеграции и базовую защиту с самого начала.</p>
         </article>
       </div>
+      <aside class="hero-brief" id="heroBrief">
+        <div class="hero-brief-title" id="heroBriefTitle">Что вы получите после первого контакта</div>
+        <ul class="hero-brief-list" id="heroBriefList">
+          <li>Короткий разбор задачи и ограничений</li>
+          <li>Предварительный вариант решения</li>
+          <li>Оценку сроков и ближайших шагов</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section fade-in trust-strip" id="trustBlock">
+      <div class="trust-metric"><strong id="metricOneValue">24 часа</strong><span id="metricOneLabel">на первичный план запуска</span></div>
+      <div class="trust-metric"><strong id="metricTwoValue">3 этапа</strong><span id="metricTwoLabel">от запроса до понятного плана работ</span></div>
+      <div class="trust-metric"><strong id="metricThreeValue">Безопасно</strong><span id="metricThreeLabel">NDA, ограничение доступов и рабочая прозрачность</span></div>
     </section>
 
     <section class="sections">
-      <section class="section fade-in">
+      <section class="section fade-in" id="servicesBlock">
         <div class="section-title" id="servicesTitle">Наши услуги</div>
         <ul id="servicesList">
           <li><i class="bi bi-lightning service-icon"></i> <a href="services/mvp.html">Разработка MVP (цифровых продуктов)</a></li>
@@ -95,7 +117,7 @@
           <li><i class="bi bi-shield-lock service-icon"></i> <a href="services/security.html">Информбезопасность и защита данных</a></li>
         </ul>
       </section>
-      <section class="section fade-in">
+      <section class="section fade-in" id="processBlock">
         <div class="section-title" id="projectsTitle">Как мы работаем</div>
         <div class="process-list" id="projectsList">
           <article class="process-item"><span class="process-index">01</span><div>Уточняем задачу, ограничения и приоритеты проекта.</div></article>
@@ -117,9 +139,43 @@
           <li>Реальный опыт работы в Казахстане и СНГ</li>
         </ul>
       </section>
+      <section class="section fade-in" id="deliverablesBlock">
+        <div class="section-title" id="deliverablesTitle">Что получает клиент</div>
+        <div class="deliverables-list" id="deliverablesList">
+          <article class="deliverable-item"><h3>Понятный объём работ</h3><p>Фиксируем, что делаем сейчас, что позже и где точка результата.</p></article>
+          <article class="deliverable-item"><h3>Оценку сроков</h3><p>Даем реалистичный диапазон сроков и ближайшие шаги без лишних обещаний.</p></article>
+          <article class="deliverable-item"><h3>Техническую основу</h3><p>Сразу учитываем масштабирование, интеграции, доступы и базовую защиту.</p></article>
+        </div>
+      </section>
     </section>
 
-    <section class="section contacts-section fade-in" itemscope itemtype="https://schema.org/Organization">
+    <section class="sections">
+      <section class="section fade-in" id="securityBlock">
+        <div class="section-title" id="securityTitle">Как мы работаем безопасно</div>
+        <ul class="security-list" id="securityList">
+          <li>NDA и формализация договоренностей при необходимости</li>
+          <li>Доступы только по принципу минимальной необходимости</li>
+          <li>Рабочая прозрачность по этапам, срокам и изменениям</li>
+          <li>Без публикации внутренних данных клиента</li>
+        </ul>
+      </section>
+      <section class="section fade-in" id="ctaBlock">
+        <div class="section-title" id="ctaTitle">С чего лучше начать</div>
+        <p class="cta-copy" id="ctaCopy">Если задача еще не сформулирована до конца, начните с короткого запроса. Мы поможем собрать структуру проекта, определить риски и предложим следующий шаг.</p>
+        <div class="cta-panel">
+          <div class="cta-panel-item">
+            <div class="cta-panel-title" id="ctaPanelOneTitle">Нужен быстрый старт</div>
+            <p id="ctaPanelOneText">Оставьте заявку и получите первичный план запуска в течение 24 часов.</p>
+          </div>
+          <div class="cta-panel-item">
+            <div class="cta-panel-title" id="ctaPanelTwoTitle">Нужно быстро обсудить</div>
+            <p id="ctaPanelTwoText">Напишите в WhatsApp или Telegram, если удобнее начать с короткого диалога.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="section contacts-section fade-in" id="contactsBlock" itemscope itemtype="https://schema.org/Organization">
       <div class="section-title" id="contactsTitle">Контакты</div>
       <div class="contact-block" id="phoneBlock">
         <span class="contact-label" id="phoneLabel">Телефон (WhatsApp):</span>
@@ -136,6 +192,7 @@
         <a href="https://t.me/aliqgroup" target="_blank" class="contact-social"><i class="bi bi-telegram"></i> @aliqgroup</a>
       </div>
       <div class="contact-sla" id="contactSla">Отвечаем в течение 30 минут в рабочее время (Пн-Пт, 09:00-19:00).</div>
+      <div class="form-trust-note" id="formTrustNote">Без спама. Только ответ по вашему запросу и дальнейшая связь через выбранный канал.</div>
     <div class="bottom-action">
       <a href="#" onclick="openModal();return false;" id="requestBtn2" class="hero-action">Оставить заявку</a>
     </div>

@@ -2,9 +2,17 @@
 const langs = {
   ru: {
         siteTitle: "AliQ Group",
+      navAnchorServices: "Услуги",
+      navAnchorProcess: "Процесс",
+      navAnchorContacts: "Контакты",
       heroEyebrow: "План цифрового запуска за 24 часа",
-        slogan: "IT-решения для бизнеса и безопасности.<br>Компетентность. Скорость. Надёжность.",
-      heroDesc: "Готовим пошаговый план запуска, сроки и приоритеты уже в первый день, чтобы вы быстро вышли к результату.",
+        slogan: "Запускаем MVP, автоматизацию, интеграции и аудит безопасности без лишней бюрократии.",
+      heroDesc: "Помогаем быстро понять объём работ, следующий шаг и техническую основу проекта, чтобы вы принимали решения без хаоса и лишнего риска.",
+        heroProof: [
+          ["24 часа", "на первичный план запуска"],
+          ["30 минут", "на ответ в рабочее время"],
+          ["NDA", "при необходимости с первого контакта"]
+        ],
         heroPills: [
           "MVP и быстрый запуск",
           "Интеграции и автоматизация",
@@ -16,8 +24,19 @@ const langs = {
           ["Техническая опора", "Закладываем масштабируемость, интеграции и базовую защиту с самого начала."]
         ],
         heroPrimaryCta: "Получить план запуска за 24 часа",
-        heroSecondaryCta: "Написать в WhatsApp",
-        requestBtn: "Оставить заявку",
+        heroSecondaryCta: "Обсудить задачу в WhatsApp",
+        heroBriefTitle: "Что вы получите после первого контакта",
+        heroBrief: [
+          "Короткий разбор задачи и ограничений",
+          "Предварительный вариант решения",
+          "Оценку сроков и ближайших шагов"
+        ],
+        trustMetrics: [
+          ["24 часа", "на первичный план запуска"],
+          ["3 этапа", "от запроса до понятного плана работ"],
+          ["Безопасно", "NDA, ограничение доступов и рабочая прозрачность"]
+        ],
+        requestBtn: "Получить оценку и следующий шаг",
         servicesTitle: "Наши услуги",
         services: [
           "Разработка MVP (цифровых продуктов)",
@@ -36,15 +55,35 @@ const langs = {
         ],
         advTitle: "Почему выбирают нас?",
         adv: [
-          "Комплексный подход: от идеи до запуска",
-          "Гибкость, работа без бюрократии",
-          "Глубокое понимание ИТ и безопасности",
-          "Прозрачная коммуникация и честность",
-          "Реальный опыт работы в Казахстане и СНГ"
+          "Фокус на результате, а не на абстрактной разработке",
+          "Быстрый старт без перегруза процессом",
+          "Глубокое понимание ИТ, интеграций и безопасности",
+          "Прозрачная коммуникация по срокам и этапам",
+          "Можно начать с малого этапа и снизить риск"
         ],
+        deliverablesTitle: "Что получает клиент",
+        deliverables: [
+          ["Понятный объём работ", "Фиксируем, что делаем сейчас, что позже и где точка результата."],
+          ["Оценку сроков", "Даем реалистичный диапазон сроков и ближайшие шаги без лишних обещаний."],
+          ["Техническую основу", "Сразу учитываем масштабирование, интеграции, доступы и базовую защиту."]
+        ],
+        securityTitle: "Как мы работаем безопасно",
+        security: [
+          "NDA и формализация договоренностей при необходимости",
+          "Доступы только по принципу минимальной необходимости",
+          "Рабочая прозрачность по этапам, срокам и изменениям",
+          "Без публикации внутренних данных клиента"
+        ],
+        ctaTitle: "С чего лучше начать",
+        ctaCopy: "Если задача еще не сформулирована до конца, начните с короткого запроса. Мы поможем собрать структуру проекта, определить риски и предложим следующий шаг.",
+        ctaPanelOneTitle: "Нужен быстрый старт",
+        ctaPanelOneText: "Оставьте заявку и получите первичный план запуска в течение 24 часов.",
+        ctaPanelTwoTitle: "Нужно быстро обсудить",
+        ctaPanelTwoText: "Напишите в WhatsApp или Telegram, если удобнее начать с короткого диалога.",
         contactsTitle: "Контакты",
         phoneLabel: "Телефон (WhatsApp):",
         contactSla: "Отвечаем в течение 30 минут в рабочее время (Пн-Пт, 09:00-19:00).",
+        formTrustNote: "Без спама. Только ответ по вашему запросу и дальнейшая связь через выбранный канал.",
         namePlaceholder: "Ваше имя",
         phonePlaceholder: "Телефон",
         emailPlaceholder: "Email (необязательно)",
@@ -66,9 +105,17 @@ const langs = {
   },
   kz: {
         siteTitle: "AliQ Group",
+      navAnchorServices: "Қызметтер",
+      navAnchorProcess: "Процесс",
+      navAnchorContacts: "Байланыс",
       heroEyebrow: "24 сағатта цифрлық іске қосу жоспары",
-        slogan: "Бизнес пен қауіпсіздікке арналған IT-шешімдер.<br>Кәсібилік. Жылдамдық. Сенімділік.",
-      heroDesc: "Бірінші күннің өзінде кезеңдер, мерзімдер және басымдықтары бар нақты жоспар ұсынамыз.",
+        slogan: "MVP, автоматтандыру, интеграциялар және қауіпсіздік аудитін артық бюрократиясыз іске қосамыз.",
+      heroDesc: "Жобаның көлемін, келесі қадамын және техникалық негізін тез түсінуге көмектесеміз, сонда шешімді артық тәуекелсіз қабылдай аласыз.",
+        heroProof: [
+          ["24 сағат", "алғашқы іске қосу жоспарына"],
+          ["30 минут", "жұмыс уақытындағы жауапқа"],
+          ["NDA", "қажет болса алғашқы байланыстан"]
+        ],
         heroPills: [
           "MVP және жылдам іске қосу",
           "Интеграциялар және автоматтандыру",
@@ -80,8 +127,19 @@ const langs = {
           ["Техникалық тірек", "Басынан бастап масштабтау, интеграциялар және базалық қорғанысты ескереміз."]
         ],
         heroPrimaryCta: "24 сағатта іске қосу жоспарын алу",
-        heroSecondaryCta: "WhatsApp-қа жазу",
-        requestBtn: "Өтініш қалдыру",
+        heroSecondaryCta: "WhatsApp-та талқылау",
+        heroBriefTitle: "Алғашқы байланыстан кейін не аласыз",
+        heroBrief: [
+          "Міндет пен шектеулердің қысқа талдауы",
+          "Алдын ала шешім нұсқасы",
+          "Мерзімдер мен жақын қадамдар бағасы"
+        ],
+        trustMetrics: [
+          ["24 сағат", "алғашқы іске қосу жоспарына"],
+          ["3 кезең", "сұраныстан нақты жұмыс жоспарына дейін"],
+          ["Қауіпсіз", "NDA, қолжетімділікті шектеу және ашық жұмыс"]
+        ],
+        requestBtn: "Баға мен келесі қадамды алу",
         servicesTitle: "Қызметтеріміз",
         services: [
           "MVP әзірлеу (цифрлық өнімдер)",
@@ -100,15 +158,35 @@ const langs = {
         ],
         advTitle: "Бізді не үшін таңдайды?",
         adv: [
-          "Идеядан іске қосуға дейін толық цикл",
-          "Икемділік, бюрократиясыз жұмыс",
-          "IT және қауіпсіздікті терең түсіну",
-          "Ашық және әділ коммуникация",
-          "Қазақстан мен ТМД-дағы нақты тәжірибе"
+          "Абстрактілі әзірлеуге емес, нақты нәтижеге назар",
+          "Процеске артық салмақ түсірмейтін жылдам бастау",
+          "IT, интеграциялар және қауіпсіздікті терең түсіну",
+          "Мерзімдер мен кезеңдер бойынша ашық коммуникация",
+          "Тәуекелді азайту үшін шағын кезеңнен бастауға болады"
         ],
+        deliverablesTitle: "Клиент не алады",
+        deliverables: [
+          ["Жұмыс көлемінің анықтығы", "Қазір не істейтінімізді, кейін не болатынын және нәтиже нүктесін бекітеміз."],
+          ["Мерзім бағасы", "Артық уәде бермей, нақты мерзім диапазоны мен жақын қадамдарды айтамыз."],
+          ["Техникалық негіз", "Масштабтау, интеграциялар, қолжетімділік және базалық қорғанысты бірден ескереміз."]
+        ],
+        securityTitle: "Қауіпсіз қалай жұмыс істейміз",
+        security: [
+          "Қажет болса NDA және келісімдерді бекіту",
+          "Қолжетімділіктер тек минималды қажеттілік қағидасымен",
+          "Кезеңдер, мерзімдер және өзгерістер бойынша ашықтық",
+          "Клиенттің ішкі деректерін жарияламау"
+        ],
+        ctaTitle: "Неден бастаған дұрыс",
+        ctaCopy: "Егер міндет соңына дейін нақтыланбаған болса, қысқа сұраудан бастаңыз. Біз жоба құрылымын жинап, тәуекелдерді анықтап, келесі қадамды ұсынамыз.",
+        ctaPanelOneTitle: "Жылдам бастау керек",
+        ctaPanelOneText: "Өтініш қалдырыңыз және 24 сағат ішінде алғашқы іске қосу жоспарын алыңыз.",
+        ctaPanelTwoTitle: "Жылдам талқылау керек",
+        ctaPanelTwoText: "Қысқа диалогтан бастау ыңғайлы болса, WhatsApp немесе Telegram-ға жазыңыз.",
         contactsTitle: "Байланыс",
         phoneLabel: "Телефон (WhatsApp):",
         contactSla: "Жұмыс уақытында 30 минут ішінде жауап береміз (Дс-Жм, 09:00-19:00).",
+        formTrustNote: "Спам жоқ. Тек сұранысыңызға жауап және таңдалған арна арқылы байланыс.",
         namePlaceholder: "Атыңыз",
         phonePlaceholder: "Телефон",
         emailPlaceholder: "Email (міндетті емес)",
@@ -130,9 +208,17 @@ const langs = {
   },
   en: {
     siteTitle: "AliQ Group",
+    navAnchorServices: "Services",
+    navAnchorProcess: "Process",
+    navAnchorContacts: "Contacts",
     heroEyebrow: "Digital launch plan in 24 hours",
-    slogan: "IT solutions for business and security.<br>Expertise. Speed. Reliability.",
-    heroDesc: "We provide a step-by-step launch plan with priorities and timeline on day one to move fast with less risk.",
+    slogan: "We launch MVPs, automation, integrations, and security audits without unnecessary bureaucracy.",
+    heroDesc: "We help you quickly understand scope, next step, and technical foundation so you can make decisions with less chaos and less risk.",
+    heroProof: [
+      ["24 hours", "for an initial launch plan"],
+      ["30 minutes", "for a reply during working hours"],
+      ["NDA", "from the first contact if needed"]
+    ],
     heroPills: [
       "MVP and fast launch",
       "Integrations and automation",
@@ -144,8 +230,19 @@ const langs = {
       ["Technical backbone", "We build in scalability, integrations, and baseline security from the start."]
     ],
     heroPrimaryCta: "Get a launch plan in 24 hours",
-    heroSecondaryCta: "Message on WhatsApp",
-    requestBtn: "Send request",
+    heroSecondaryCta: "Discuss on WhatsApp",
+    heroBriefTitle: "What you get after the first contact",
+    heroBrief: [
+      "A short review of the task and constraints",
+      "A preliminary solution direction",
+      "Estimated timing and next steps"
+    ],
+    trustMetrics: [
+      ["24 hours", "for an initial launch plan"],
+      ["3 stages", "from request to a clear work plan"],
+      ["Secure", "NDA, limited access, and transparent work process"]
+    ],
+    requestBtn: "Get estimate and next step",
     servicesTitle: "Our services",
     services: [
       "MVP development",
@@ -164,15 +261,35 @@ const langs = {
     ],
     advTitle: "Why choose us?",
     adv: [
-      "Full cycle from idea to launch",
-      "Flexibility without bureaucracy",
-      "Deep IT and security expertise",
-      "Transparent communication",
-      "Real experience in Kazakhstan and CIS"
+      "Focus on business outcome, not abstract development",
+      "Fast start without process overload",
+      "Strong understanding of IT, integrations, and security",
+      "Transparent communication on timing and stages",
+      "Easy to start with a small phase and reduce risk"
     ],
+    deliverablesTitle: "What the client gets",
+    deliverables: [
+      ["Clear scope", "We define what is done now, what comes later, and where the result point is."],
+      ["Timing estimate", "We provide a realistic timing range and immediate next steps without overpromising."],
+      ["Technical foundation", "We account for scale, integrations, access, and baseline protection from the start."]
+    ],
+    securityTitle: "How we work securely",
+    security: [
+      "NDA and formalized agreements when needed",
+      "Access only on a minimum-necessary basis",
+      "Transparency on stages, timing, and changes",
+      "No publication of internal client data"
+    ],
+    ctaTitle: "Best way to start",
+    ctaCopy: "If the task is not fully defined yet, start with a short request. We will help structure the project, identify risks, and suggest the next practical step.",
+    ctaPanelOneTitle: "Need a fast start",
+    ctaPanelOneText: "Leave a request and get an initial launch plan within 24 hours.",
+    ctaPanelTwoTitle: "Need a quick discussion",
+    ctaPanelTwoText: "Message us on WhatsApp or Telegram if it is easier to start with a short conversation.",
     contactsTitle: "Contacts",
     phoneLabel: "Phone (WhatsApp):",
     contactSla: "We reply within 30 minutes during working hours (Mon-Fri, 09:00-19:00).",
+    formTrustNote: "No spam. Only a reply to your request and follow-up via the channel you choose.",
     namePlaceholder: "Your name",
     phonePlaceholder: "Phone",
     emailPlaceholder: "Email (optional)",
@@ -496,16 +613,37 @@ function setLang(lang) {
   setElText('heroEyebrow', l.heroEyebrow);
   setElText('slogan', l.slogan);
   setElText('heroDesc', l.heroDesc);
+  const heroProofRow = document.getElementById('heroProofRow');
+  if (heroProofRow && l.heroProof) heroProofRow.innerHTML = l.heroProof.map(([value, text]) => `<div class="hero-proof-item"><strong>${value}</strong><span>${text}</span></div>`).join('');
   const heroPillsEl = document.getElementById('heroPills');
   if (heroPillsEl) heroPillsEl.innerHTML = l.heroPills.map(item => `<span class="hero-pill">${item}</span>`).join('');
   const heroCardGridEl = document.getElementById('heroCardGrid');
   if (heroCardGridEl) heroCardGridEl.innerHTML = l.heroCards.map(([title, text]) => `<article class="hero-card"><div class="hero-card-title">${title}</div><p>${text}</p></article>`).join('');
+  setElText('heroBriefTitle', l.heroBriefTitle);
+  const heroBriefList = document.getElementById('heroBriefList');
+  if (heroBriefList && l.heroBrief) heroBriefList.innerHTML = l.heroBrief.map(item => `<li>${item}</li>`).join('');
   const requestBtn = document.getElementById('requestBtn');
   if (requestBtn) requestBtn.innerText = l.heroPrimaryCta;
   const requestBtn2 = document.getElementById('requestBtn2');
   if (requestBtn2) requestBtn2.innerText = l.requestBtn;
   const quickConsultBtn = document.getElementById('quickConsultBtn');
   if (quickConsultBtn) quickConsultBtn.innerText = l.heroSecondaryCta;
+  setElText('navAnchorServices', l.navAnchorServices);
+  setElText('navAnchorProcess', l.navAnchorProcess);
+  setElText('navAnchorContacts', l.navAnchorContacts);
+  const trustMetrics = l.trustMetrics || [];
+  if (trustMetrics[0]) {
+    setElText('metricOneValue', trustMetrics[0][0]);
+    setElText('metricOneLabel', trustMetrics[0][1]);
+  }
+  if (trustMetrics[1]) {
+    setElText('metricTwoValue', trustMetrics[1][0]);
+    setElText('metricTwoLabel', trustMetrics[1][1]);
+  }
+  if (trustMetrics[2]) {
+    setElText('metricThreeValue', trustMetrics[2][0]);
+    setElText('metricThreeLabel', trustMetrics[2][1]);
+  }
   setElText('servicesTitle', l.servicesTitle);
   const servicesEl = document.getElementById('servicesList');
   if (servicesEl) {
@@ -520,9 +658,22 @@ function setLang(lang) {
   setElText('advTitle', l.advTitle);
   const advEl = document.getElementById('advList');
   if(advEl) advEl.innerHTML = l.adv.map(a=>`<li>${a}</li>`).join('');
+  setElText('deliverablesTitle', l.deliverablesTitle);
+  const deliverablesEl = document.getElementById('deliverablesList');
+  if (deliverablesEl && l.deliverables) deliverablesEl.innerHTML = l.deliverables.map(([title, text]) => `<article class="deliverable-item"><h3>${title}</h3><p>${text}</p></article>`).join('');
+  setElText('securityTitle', l.securityTitle);
+  const securityEl = document.getElementById('securityList');
+  if (securityEl && l.security) securityEl.innerHTML = l.security.map(item => `<li>${item}</li>`).join('');
+  setElText('ctaTitle', l.ctaTitle);
+  setElText('ctaCopy', l.ctaCopy);
+  setElText('ctaPanelOneTitle', l.ctaPanelOneTitle);
+  setElText('ctaPanelOneText', l.ctaPanelOneText);
+  setElText('ctaPanelTwoTitle', l.ctaPanelTwoTitle);
+  setElText('ctaPanelTwoText', l.ctaPanelTwoText);
   setElText('contactsTitle', l.contactsTitle);
   setElText('phoneLabel', l.phoneLabel);
   setElText('contactSla', l.contactSla);
+  setElText('formTrustNote', l.formTrustNote);
   const nameInput=document.getElementById('nameInput'); if(nameInput) nameInput.placeholder = l.namePlaceholder;
   const phoneInput=document.getElementById('phoneInput'); if(phoneInput) phoneInput.placeholder = l.phonePlaceholder;
   const emailInput=document.getElementById('emailInput'); if(emailInput) emailInput.placeholder = l.emailPlaceholder;
