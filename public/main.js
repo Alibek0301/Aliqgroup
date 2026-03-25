@@ -272,7 +272,57 @@ const ATTR_STORAGE_KEY = 'aliqgroup_attribution_v1';
 const ATTR_QUERY_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
 let modalFirstInputTracked = false;
 
-function initMobileNavToggle() {}
+function getAttribution() {
+  let stored = {};
+  try {
+    stored = JSON.parse(sessionStorage.getItem(ATTR_STORAGE_KEY) || '{}');
+  } catch (_) {
+    stored = {};
+  }
+
+  const url = new URL(window.location.href);
+  const search = url.searchParams;
+  const queryData = {};
+  ATTR_QUERY_KEYS.forEach(key => {
+    const value = search.get(key);
+    if (value) queryData[key] = value;
+  });
+
+  const baseData = {
+    landing_path: stored.landing_path || (window.location.pathname || '/'),
+    first_seen_at: stored.first_seen_at || new Date().toISOString(),
+    referrer_url: stored.referrer_url || document.referrer || 'direct'
+  };
+
+  const merged = { ...stored, ...baseData, ...queryData };
+  try {
+    sessionStorage.setItem(ATTR_STORAGE_KEY, JSON.stringify(merged));
+  } catch (_) {
+    // ignore storage errors (private mode or quota)
+  }
+  return merged;
+}
+
+function withAttribution(params = {}) {
+  return { ...params, ...getAttribution() };
+}
+
+function trackEvent(eventName, params = {}) {
+  if (typeof window.gtag !== 'function') return;
+  window.gtag('event', eventName, withAttribution(params));
+}
+
+function bindModalStepTracking() {
+  const form = document.querySelector('#modalBg form');
+  if (!form || form.dataset.funnelBound === 'true') return;
+
+  form.addEventListener('input', e => {
+    if (modalFirstInputTracked) return;
+    const target = e.target;
+    if (!(target instanceof HTMLElement)) return;
+    const field = target.id || target.getAttribute('name') || target.className || 'unknown';
+    trackEvent('form_step', {
+      page: getPublicPathname(),
       lang: curLang,
       step: 'first_input',
       field
@@ -335,56 +385,7 @@ function bindAnalyticsHandlers() {
 }
 
 function initMobileNavToggle() {
-  const header = document.querySelector('.header');
-  const nav = document.querySelector('.nav');
-  if (!header || !nav) return;
-  if (document.getElementById('mobileNavToggle')) return;
-
-  const toggle = document.createElement('button');
-  toggle.type = 'button';
-  toggle.id = 'mobileNavToggle';
-  toggle.className = 'mobile-nav-toggle';
-  toggle.setAttribute('aria-expanded', 'false');
-  toggle.setAttribute('aria-controls', 'mobileNavMenu');
-  toggle.innerHTML = '<i class="bi bi-list"></i><span>Menu</span>';
-
-  nav.id = 'mobileNavMenu';
-  nav.classList.add('mobile-nav');
-  nav.classList.remove('is-open');
-
-  const langBtn = document.getElementById('langBtn');
-  if (langBtn) {
-    header.insertBefore(toggle, langBtn);
-  } else {
-    header.insertBefore(toggle, nav);
-  }
-
-  const closeNav = () => {
-    nav.classList.remove('is-open');
-    toggle.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded', 'false');
-  };
-
-  const syncNav = () => {
-    if (window.matchMedia('(min-width: 701px)').matches) {
-      nav.classList.remove('is-open');
-      toggle.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-  };
-
-  toggle.addEventListener('click', () => {
-    const opened = nav.classList.toggle('is-open');
-    toggle.classList.toggle('is-open', opened);
-    toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
-  });
-
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeNav);
-  });
-
-  window.addEventListener('resize', syncNav);
-  syncNav();
+  // Menu toggle button removed — nav is always visible
 }
 
 function getPublicPathname() {
@@ -500,7 +501,9 @@ function setQuickBarLocale(lang) {
   if (items[1]) items[1].innerText = thirdText;
 }
 
-function setNavToggleLocale(lang) {}
+function setNavToggleLocale(lang) {
+  // Menu toggle button removed — nothing to localize
+}
 
 function setLang(lang) {
   curLang = lang;

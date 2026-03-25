@@ -115,7 +115,6 @@ a:hover {
   flex-wrap: wrap;
 }
 
-
 .nav a {
   display: inline-flex;
   align-items: center;
@@ -146,7 +145,6 @@ a:hover {
 .hero-action a:focus-visible,
 #requestBtn:focus-visible,
 #requestBtn2:focus-visible,
-.mobile-nav-toggle:focus-visible,
 .quick-action:focus-visible {
   outline: 2px solid rgba(240, 215, 162, 0.85);
   outline-offset: 2px;
@@ -677,36 +675,15 @@ li {
     font-size: 0.78rem;
   }
 
-
-  .mobile-nav {
-    display: none;
-    order: 3;
-    width: 100%;
-    margin-top: 2px;
-    gap: 7px;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 8px;
-    border-radius: 12px;
-    border: 1px solid rgba(215, 186, 125, 0.16);
-    background: rgba(9, 17, 28, 0.82);
-  }
-
-  .mobile-nav.is-open {
-    display: flex;
-  }
-
   .nav {
     order: 3;
     width: 100%;
     margin: 0;
     overflow: visible;
-    flex-wrap: nowrap;
+    flex-direction: column;
     justify-content: flex-start;
     gap: 8px;
     padding-bottom: 0;
-    scrollbar-width: auto;
-    scroll-snap-type: none;
   }
 
   .nav a {
@@ -920,7 +897,6 @@ li {
     padding: 8px 11px;
     font-size: 0.84rem;
   }
-
 
   .hero {
     padding: 18px 14px;
