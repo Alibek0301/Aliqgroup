@@ -496,7 +496,29 @@ function bindAnalyticsHandlers() {
 }
 
 function initMobileNavToggle() {
-  // Menu toggle button removed — nav is always visible
+  const btn = document.getElementById('burgerBtn');
+  const dropdown = document.getElementById('burgerDropdown');
+  if (!btn || !dropdown) return;
+
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    const isOpen = dropdown.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  dropdown.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      dropdown.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
 }
 
 function getPublicPathname() {
