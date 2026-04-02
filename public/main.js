@@ -101,6 +101,18 @@ const langs = {
     scheduleTitle: "Запланировать консультацию",
     scheduleDesc: "Используйте наш календарь, чтобы выбрать удобное время.",
     scheduleBtn: "Открыть календарь",
+    pricingTitle: "Ценовые ориентиры",
+    pricing: [
+      ["Сайт / лендинг", "от 100 000 ₸", "1–3 нед."],
+      ["MVP продукт", "от 500 000 ₸", "4–8 нед."],
+      ["Интеграции и API", "от 150 000 ₸", "1–3 нед."],
+      ["Аудит безопасности", "от 120 000 ₸", "1–2 нед."],
+      ["Автоматизация", "от 150 000 ₸", "1–4 нед."],
+      ["IT-консалтинг", "от 40 000 ₸ / сессия", "по запросу"]
+    ],
+    pricingNote: "Итоговая стоимость зависит от объёма и сложности задачи. Оставьте заявку — пришлём персональный расчёт.",
+    linkedinTitle: "LinkedIn",
+    instagramTitle: "Instagram",
     
   },
   kz: {
@@ -204,6 +216,18 @@ const langs = {
     scheduleTitle: "Кеңес жоспарлау",
     scheduleDesc: "Ыңғайлы уақытты таңдау үшін күнтізбені пайдаланыңыз.",
     scheduleBtn: "Күнтізбені ашу",
+    pricingTitle: "Бағалық бағдар",
+    pricing: [
+      ["Сайт / лендинг", "100 000 ₸ бастап", "1–3 апта"],
+      ["MVP өнім", "500 000 ₸ бастап", "4–8 апта"],
+      ["Интеграциялар және API", "150 000 ₸ бастап", "1–3 апта"],
+      ["Қауіпсіздік аудиті", "120 000 ₸ бастап", "1–2 апта"],
+      ["Автоматтандыру", "150 000 ₸ бастап", "1–4 апта"],
+      ["IT-кеңес", "40 000 ₸ бастап / сессия", "сұрау бойынша"]
+    ],
+    pricingNote: "Қорытынды құны тапсырманың көлемі мен күрделілігіне байланысты. Өтініш жіберіңіз — жеке есептеме жіберейік.",
+    linkedinTitle: "LinkedIn",
+    instagramTitle: "Instagram",
 
   },
   en: {
@@ -307,6 +331,18 @@ const langs = {
     scheduleTitle: "Schedule a consultation",
     scheduleDesc: "Use our calendar to pick a convenient time.",
     scheduleBtn: "Open calendar",
+    pricingTitle: "Pricing guide",
+    pricing: [
+      ["Website / landing", "from $200", "1–3 wks"],
+      ["MVP product", "from $1 000", "4–8 wks"],
+      ["Integrations / API", "from $350", "1–3 wks"],
+      ["Security audit", "from $300", "1–2 wks"],
+      ["Automation", "from $350", "1–4 wks"],
+      ["IT consulting", "from $100 / session", "on request"]
+    ],
+    pricingNote: "Final cost depends on scope and complexity. Send a request — we will send a personalised estimate.",
+    linkedinTitle: "LinkedIn",
+    instagramTitle: "Instagram",
 
     
   }
@@ -707,6 +743,14 @@ function setLang(lang) {
   setElText('scheduleTitle', l.scheduleTitle);
   setElText('scheduleDesc', l.scheduleDesc);
   const schedBtn=document.getElementById('scheduleBtn'); if(schedBtn) schedBtn.innerText = l.scheduleBtn;
+  setElText('pricingTitle', l.pricingTitle || '');
+  const pricingListEl = document.getElementById('pricingList');
+  if (pricingListEl && l.pricing) {
+    pricingListEl.innerHTML = l.pricing.map(([name, price, time]) =>
+      `<div class="pricing-row"><span class="pricing-name">${name}</span><span class="pricing-price">${price}</span><span class="pricing-time">${time}</span></div>`
+    ).join('');
+  }
+  setElText('pricingNote', l.pricingNote || '');
   setElText('formMsg', l.formSuccess);
   setQuickBarLocale(lang);
   setNavToggleLocale(lang);
@@ -722,9 +766,20 @@ const yearEls = document.querySelectorAll('#year, #year2, #year3');
 yearEls.forEach(el => el.innerText = new Date().getFullYear());
 const gCal = document.getElementById('gCal');
 if(gCal){
-  gCal.src = `https://calendar.google.com/calendar/embed?src=${window.CALENDAR_ID}&ctz=Asia%2FAlmaty`;
-  const ics = document.getElementById('icsLink');
-  if(ics) ics.href = `https://calendar.google.com/calendar/ical/${window.CALENDAR_ID}/public/basic.ics`;
+  if (window.CALENDAR_ID && window.CALENDAR_ID !== 'your_calendar_id') {
+    gCal.src = `https://calendar.google.com/calendar/embed?src=${window.CALENDAR_ID}&ctz=Asia%2FAlmaty`;
+    const ics = document.getElementById('icsLink');
+    if(ics) ics.href = `https://calendar.google.com/calendar/ical/${window.CALENDAR_ID}/public/basic.ics`;
+  } else {
+    const calSection = gCal.closest('section');
+    if (calSection) {
+      gCal.remove();
+      const placeholder = document.createElement('p');
+      placeholder.style.cssText = 'color:var(--text-soft);text-align:center;padding:24px 0';
+      placeholder.innerText = 'Календарь пока не настроен. Запишите нам в WhatsApp или Telegram — согласуем время вручную.';
+      calSection.appendChild(placeholder);
+    }
+  }
 }
 
 function renderQuestions(service){
@@ -760,6 +815,7 @@ function renderQuestions(service){
 function openModal(service) {
   modalFirstInputTracked = false;
   bindModalStepTracking();
+  initPhoneMask();
   trackEvent('modal_open', {
     page: getPublicPathname(),
     lang: curLang,
@@ -981,9 +1037,36 @@ const observer = new IntersectionObserver(entries => {
       const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
       const rawData = atob(base64);
       const outputArray = new Uint8Array(rawData.length);
-      for (let i = 0; i < rawData.length; ++i) {
-        outputArray[i] = rawData.charCodeAt(i);
-      }
       return outputArray;
     }
 
+// Phone mask
+function initPhoneMask() {
+  const input = document.getElementById('phoneInput');
+  if (!input || input.dataset.maskBound) return;
+  input.dataset.maskBound = 'true';
+  input.addEventListener('input', function () {
+    let digits = this.value.replace(/\D/g, '');
+    if (digits.startsWith('8')) digits = '7' + digits.slice(1);
+    let formatted = '';
+    if (digits.startsWith('7') && digits.length > 1) {
+      formatted = '+7';
+      if (digits.length > 1) formatted += ' (' + digits.slice(1, 4);
+      if (digits.length > 4) formatted += ') ' + digits.slice(4, 7);
+      if (digits.length > 7) formatted += '-' + digits.slice(7, 9);
+      if (digits.length > 9) formatted += '-' + digits.slice(9, 11);
+    } else if (digits.length > 0) {
+      formatted = '+' + digits.slice(0, 15);
+    }
+    this.value = formatted;
+  });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Backspace' && this.value.length <= 3) this.value = '';
+  });
+}
+
+// Yandex Metrica (conditional — only when YM_ID is configured)
+if (window.YM_ID && window.YM_ID !== '') {
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+  ym(Number(window.YM_ID), 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+}

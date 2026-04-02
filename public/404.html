@@ -2,17 +2,48 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Страница не найдена</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Страница не найдена — AliQ Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="/logo.png">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-  <div class="container" style="text-align:center">
-    <h1>Страница не найдена</h1>
-    <p>Возможно, страница перемещена или удалена.</p>
-    <p><a href="/">На главную</a> | <a href="/sitemap.xml">Карта сайта</a></p>
-    <p><a href="/" class="hero-action">Связаться с нами</a></p>
+  <div class="container">
+    <header class="header">
+      <div class="header-flex">
+        <a href="/"><img src="/logo.png" alt="AliQ Group logo" class="logo"></a>
+        <a href="/" class="site-title" style="text-decoration:none;">AliQ Group</a>
+      </div>
+      <nav class="nav" style="display:flex;" aria-label="Navigation">
+        <a href="/">Главная</a>
+        <a href="/services.html">Услуги</a>
+        <a href="/#contactsBlock">Контакты</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section fade-in" style="text-align:center;margin-top:40px;padding:48px 32px;">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:5rem;font-weight:700;color:#f3dfb0;line-height:1;">404</div>
+        <h1 style="margin:16px 0 8px;font-size:1.5rem;">Страница не найдена</h1>
+        <p style="color:var(--text-soft);margin-bottom:28px;">Возможно, страница перемещена или удалена.</p>
+        <div class="hero-action" style="justify-content:center;">
+          <a href="/" class="">На главную</a>
+          <a href="/services.html" class="hero-action-secondary">Услуги</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      © <span id="year"></span> AliQ Group
+    </footer>
   </div>
-  <script src="/config.js"></script>
-  <script src="/main.js"></script>
+  <script>document.getElementById('year').innerText = new Date().getFullYear();</script>
+  <script>
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.1});
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>

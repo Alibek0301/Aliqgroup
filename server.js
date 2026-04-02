@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const express = require('express');
 const nodemailer = require('nodemailer');
 const multer = require('multer');
@@ -46,6 +47,34 @@ app.use(cors({
 }));
 app.use(morgan('combined'));
 
+// HTTPS redirect (for reverse-proxy environments like Heroku / Render)
+app.use((req, res, next) => {
+  if (req.get('x-forwarded-proto') === 'http') {
+    return res.redirect(301, 'https://' + req.get('host') + req.url);
+  }
+  next();
+});
+
+// Security headers
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader(
+    'Content-Security-Policy',
+    "default-src 'self'; " +
+    "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://mc.yandex.ru https://*.tawk.to https://cdn.jsdelivr.net; " +
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; " +
+    "font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; " +
+    "img-src 'self' data: https://mc.yandex.ru https://*.tawk.to; " +
+    "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://*.tawk.to; " +
+    "frame-src https://calendar.google.com https://*.tawk.to; " +
+    "object-src 'none'; " +
+    "base-uri 'self';"
+  );
+  next();
+});
+
 const rateMap = {};
 const LIMIT = 3;
 const WINDOW = 10 * 60 * 1000;
@@ -61,6 +90,7 @@ const TAWK_ID = process.env.TAWK_ID || 'YOUR_ID';
 const VAPID_PUBLIC_KEY = process.env.VAPID_PUBLIC_KEY || '';
 const VAPID_PRIVATE_KEY = process.env.VAPID_PRIVATE_KEY || '';
 const GA_ID = process.env.GA_ID || 'GA_MEASUREMENT_ID';
+const YM_ID = process.env.YM_ID || '';
 const CALENDAR_ID = process.env.CALENDAR_ID || 'your_calendar_id';
 const NOTIFY_TOKEN = process.env.NOTIFY_TOKEN || '';
 
@@ -83,7 +113,7 @@ if (VAPID_PUBLIC_KEY && VAPID_PRIVATE_KEY) {
   webpush.setVapidDetails('mailto:admin@aliqgroup.kz', VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY);
 }
 
-const subscriptions = [];
+let subscriptions = [];
 
 function isValidSubscription(sub) {
   return !!(
@@ -95,6 +125,27 @@ function isValidSubscription(sub) {
     typeof sub.keys.p256dh === 'string' &&
     typeof sub.keys.auth === 'string'
   );
+}
+
+const SUBSCRIPTIONS_FILE = path.join(__dirname, 'data', 'subscriptions.json');
+
+function saveSubscriptions() {
+  try {
+    fs.mkdirSync(path.dirname(SUBSCRIPTIONS_FILE), { recursive: true });
+    fs.writeFileSync(SUBSCRIPTIONS_FILE, JSON.stringify(subscriptions));
+  } catch (e) {
+    console.error('Failed to save subscriptions:', e.message);
+  }
+}
+
+try {
+  const raw = fs.readFileSync(SUBSCRIPTIONS_FILE, 'utf8');
+  const loaded = JSON.parse(raw);
+  if (Array.isArray(loaded)) {
+    subscriptions.push(...loaded.filter(isValidSubscription));
+  }
+} catch (_) {
+  // File does not exist yet — start with empty array
 }
 
 
@@ -125,8 +176,9 @@ setInterval(() => {
 
 app.get('/config.js', (req, res) => {
   res.type('application/javascript').send(
-    `window.TAWK_ID=${JSON.stringify(TAWK_ID)};\n`+
-    `window.GA_ID=${JSON.stringify(GA_ID)};\n`+
+    `window.TAWK_ID=${JSON.stringify(TAWK_ID)};\n` +
+    `window.GA_ID=${JSON.stringify(GA_ID)};\n` +
+    `window.YM_ID=${JSON.stringify(YM_ID)};\n` +
     `window.CALENDAR_ID=${JSON.stringify(CALENDAR_ID)};`);
 });
 
@@ -159,6 +211,7 @@ app.post('/subscribe', express.json(), (req, res) => {
   }
   if (!subscriptions.some(s => s.endpoint === req.body.endpoint)) {
     subscriptions.push(req.body);
+    saveSubscriptions();
   }
   res.json({ ok: true });
 });

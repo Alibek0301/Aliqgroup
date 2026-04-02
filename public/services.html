@@ -4,28 +4,21 @@
   <meta charset="UTF-8">
   <title>Услуги — AliQ Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AliQ Group предоставляет услуги разработки цифровых продуктов, интеграции сервисов и информационной безопасности.">
+  <meta name="description" content="Все IT-услуги AliQ Group: MVP, интеграции, сайты, автоматизация, IT-консалтинг и информационная безопасность. Быстрый старт и прозрачная работа.">
   <meta name="keywords" content="IT, безопасность, разработка, интеграция, AliQ Group">
-    <meta property="og:title" content="AliQ Group — IT Solutions">
-    <meta property="og:description" content="Молодая ИТ‑компания, запускающая цифровые продукты и обеспечивающая безопасность бизнеса.">
-    <meta property="og:url" content="https://aliqgroup.kz/">
+    <meta property="og:title" content="Услуги — AliQ Group">
+    <meta property="og:description" content="IT-услуги для бизнеса: MVP, интеграции, автоматизация, аудит безопасности. Быстрый старт без лишней бюрократии.">
+    <meta property="og:url" content="https://aliqgroup.kz/services.html">
     <meta property="og:image" content="https://aliqgroup.kz/logo.png">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3EA%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="manifest" href="manifest.json">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="styles.css">
   <!-- Иконки соцсетей через CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <!-- Yandex.Metrica counter -->
-  <script type="text/javascript">
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    ym(12345678, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true });
-  </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/12345678" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrica counter -->
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=" id="gaScript"></script>
     <script>
@@ -44,12 +37,19 @@
         <div class="header-flex"><img src="logo.png" alt="AliQ Group logo" class="logo">
           <span class="site-title" id="siteTitle">AliQ Group</span>
         </div>
-        <nav class="nav">
-          <a href="#servicesBlock" id="navAnchorServices">Услуги</a>
-          <a href="#processBlock" id="navAnchorProcess">Процесс</a>
-          <a href="#contactsBlock" id="navAnchorContacts">Контакты</a>
-        </nav>
-        <button class="lang-btn" id="langBtn">Қазақша</button>
+        <div class="header-right">
+          <button class="lang-btn" id="langBtn">Қазақша</button>
+          <div class="nav-burger">
+            <button class="burger-btn" id="burgerBtn" aria-label="Меню" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="burgerDropdown">
+              <a href="#servicesBlock" id="navAnchorServices">Услуги</a>
+              <a href="#processBlock" id="navAnchorProcess">Процесс</a>
+              <a href="#contactsBlock" id="navAnchorContacts">Контакты</a>
+            </nav>
+          </div>
+        </div>
       </header>
 
     <main>
@@ -151,7 +151,12 @@
           <li>Возможность начать с небольшого этапа без лишнего риска</li>
         </ul>
       </section>
-      <section class="section fade-in" id="ctaBlock">
+      <section class="section fade-in" id="pricingBlock">
+        <div class="section-title" id="pricingTitle">Ценовые ориентиры</div>
+        <div class="pricing-table" id="pricingList"></div>
+        <p class="pricing-note" id="pricingNote">Итоговая стоимость зависит от объёма и сложности задачи. Оставьте заявку — пришлём персональный расчёт.</p>
+      </section>
+    </section>
         <div class="section-title" id="ctaTitle">Выберите удобный способ старта</div>
         <p class="cta-copy" id="ctaCopy">Можно начать с короткого описания задачи, отдельной услуги или запроса на консультацию. Мы предложим ближайший разумный шаг.</p>
         <div class="cta-panel">
@@ -183,7 +188,14 @@
         <span class="contact-label">Telegram:</span>
         <a href="https://t.me/aliqgroup" target="_blank" class="contact-social"><i class="bi bi-telegram"></i> @aliqgroup</a>
       </div>
-      <div class="contact-sla" id="contactSla">Отвечаем в течение 30 минут в рабочее время (Пн-Пт, 09:00-19:00).</div>
+      <div class="contact-block">
+        <span class="contact-label" id="linkedinLabel">LinkedIn:</span>
+        <a href="https://linkedin.com/company/aliqgroup" target="_blank" rel="noopener" class="contact-social"><i class="bi bi-linkedin"></i> AliQ Group</a>
+      </div>
+      <div class="contact-block">
+        <span class="contact-label" id="instagramLabel">Instagram:</span>
+        <a href="https://instagram.com/aliqgroup" target="_blank" rel="noopener" class="contact-social"><i class="bi bi-instagram"></i> @aliqgroup</a>
+      </div> id="contactSla">Отвечаем в течение 30 минут в рабочее время (Пн-Пт, 09:00-19:00).</div>
     <div class="form-trust-note" id="formTrustNote">Без спама и навязчивых продаж. Только ответ по задаче и следующий рабочий шаг.</div>
     <div class="bottom-action">
       <a href="#" onclick="openModal();return false;" id="requestBtn2" class="hero-action">Оставить заявку</a>
