@@ -111,8 +111,6 @@ const langs = {
       ["IT-консалтинг", "от 40 000 ₸ / сессия", "по запросу"]
     ],
     pricingNote: "Итоговая стоимость зависит от объёма и сложности задачи. Оставьте заявку — пришлём персональный расчёт.",
-    linkedinTitle: "LinkedIn",
-    instagramTitle: "Instagram",
     
   },
   kz: {
@@ -226,8 +224,6 @@ const langs = {
       ["IT-кеңес", "40 000 ₸ бастап / сессия", "сұрау бойынша"]
     ],
     pricingNote: "Қорытынды құны тапсырманың көлемі мен күрделілігіне байланысты. Өтініш жіберіңіз — жеке есептеме жіберейік.",
-    linkedinTitle: "LinkedIn",
-    instagramTitle: "Instagram",
 
   },
   en: {
@@ -341,8 +337,6 @@ const langs = {
       ["IT consulting", "from $100 / session", "on request"]
     ],
     pricingNote: "Final cost depends on scope and complexity. Send a request — we will send a personalised estimate.",
-    linkedinTitle: "LinkedIn",
-    instagramTitle: "Instagram",
 
     
   }
