@@ -1,102 +1,102 @@
-    // Языки
+// Языки
 const langs = {
   ru: {
-        siteTitle: "AliQ Group",
-      navAnchorServices: "Услуги",
-      navAnchorProcess: "Процесс",
-      navAnchorContacts: "Контакты",
-      heroEyebrow: "План цифрового запуска за 24 часа",
-        slogan: "Запускаем MVP, автоматизацию, интеграции и аудит безопасности без лишней бюрократии.",
-      heroDesc: "Помогаем быстро понять объём работ, следующий шаг и техническую основу проекта, чтобы вы принимали решения без хаоса и лишнего риска.",
-        heroProof: [
-          ["24 часа", "на первичный план запуска"],
-          ["30 минут", "на ответ в рабочее время"],
-          ["NDA", "при необходимости с первого контакта"]
-        ],
-        heroPills: [
-          "MVP и быстрый запуск",
-          "Интеграции и автоматизация",
-          "Безопасность по умолчанию"
-        ],
-        heroCards: [
-          ["Быстрый старт", "Собираем рабочий план запуска без длинной бюрократии и лишних этапов."],
-          ["Понятный результат", "Фокусируемся на решении конкретной бизнес-задачи, а не на абстрактной разработке."],
-          ["Техническая опора", "Закладываем масштабируемость, интеграции и базовую защиту с самого начала."]
-        ],
-        heroPrimaryCta: "Получить план запуска за 24 часа",
-        heroSecondaryCta: "Обсудить задачу в WhatsApp",
-        heroBriefTitle: "Что вы получите после первого контакта",
-        heroBrief: [
-          "Короткий разбор задачи и ограничений",
-          "Предварительный вариант решения",
-          "Оценку сроков и ближайших шагов"
-        ],
-        trustMetrics: [
-          ["24 часа", "на первичный план запуска"],
-          ["3 этапа", "от запроса до понятного плана работ"],
-          ["Безопасно", "NDA, ограничение доступов и рабочая прозрачность"]
-        ],
-        requestBtn: "Получить оценку и следующий шаг",
-        servicesTitle: "Наши услуги",
-        services: [
-          "Разработка MVP (цифровых продуктов)",
-          "Интеграция сервисов (CRM, облако, чаты, API)",
-          "Создание современных сайтов и лендингов",
-          "IT-консалтинг и аудит",
-          "Автоматизация бизнес-процессов",
-          "Информбезопасность и защита данных"
-        ],
-        projectsTitle: "Как мы работаем",
-        projects: [
-          "Уточняем задачу, ограничения и приоритеты проекта.",
-          "Предлагаем понятное решение, этапы и ожидаемый результат.",
-          "Запускаем разработку, интеграции или аудит в рабочем темпе.",
-          "Передаём результат, дорабатываем и помогаем масштабировать."
-        ],
-        advTitle: "Почему выбирают нас?",
-        adv: [
-          "Фокус на результате, а не на абстрактной разработке",
-          "Быстрый старт без перегруза процессом",
-          "Глубокое понимание ИТ, интеграций и безопасности",
-          "Прозрачная коммуникация по срокам и этапам",
-          "Можно начать с малого этапа и снизить риск"
-        ],
-        deliverablesTitle: "Что получает клиент",
-        deliverables: [
-          ["Понятный объём работ", "Фиксируем, что делаем сейчас, что позже и где точка результата."],
-          ["Оценку сроков", "Даем реалистичный диапазон сроков и ближайшие шаги без лишних обещаний."],
-          ["Техническую основу", "Сразу учитываем масштабирование, интеграции, доступы и базовую защиту."]
-        ],
-        securityTitle: "Как мы работаем безопасно",
-        security: [
-          "NDA и формализация договоренностей при необходимости",
-          "Доступы только по принципу минимальной необходимости",
-          "Рабочая прозрачность по этапам, срокам и изменениям",
-          "Без публикации внутренних данных клиента"
-        ],
-        ctaTitle: "С чего лучше начать",
-        ctaCopy: "Если задача еще не сформулирована до конца, начните с короткого запроса. Мы поможем собрать структуру проекта, определить риски и предложим следующий шаг.",
-        ctaPanelOneTitle: "Нужен быстрый старт",
-        ctaPanelOneText: "Оставьте заявку и получите первичный план запуска в течение 24 часов.",
-        ctaPanelTwoTitle: "Нужно быстро обсудить",
-        ctaPanelTwoText: "Напишите в WhatsApp или Telegram, если удобнее начать с короткого диалога.",
-        contactsTitle: "Контакты",
-        phoneLabel: "Телефон (WhatsApp):",
-        contactSla: "Отвечаем в течение 30 минут в рабочее время (Пн-Пт, 09:00-19:00).",
-        formTrustNote: "Без спама. Только ответ по вашему запросу и дальнейшая связь через выбранный канал.",
-        namePlaceholder: "Ваше имя",
-        phonePlaceholder: "Телефон",
-        emailPlaceholder: "Email (необязательно)",
-        serviceLabelText: "Услуга:",
-        questionPlaceholder: "Ваш вопрос",
-        messengerLabel: "Отправить через:",
-        submitBtn: "Отправить",
-        formSending: "Отправка...",
-        formSuccess: "Спасибо! Ваша заявка отправлена.",
-        formFail: "Не удалось отправить заявку. Попробуйте снова.",
-        formRateLimit: "Слишком много попыток. Повторите позже.",
-        formFileTooLarge: "Файл слишком большой. Максимум 5 МБ на файл.",
-        formTooManyFiles: "Можно прикрепить не более 3 файлов.",
+    siteTitle: "AliQ Group",
+    navAnchorServices: "Услуги",
+    navAnchorProcess: "Процесс",
+    navAnchorContacts: "Контакты",
+    heroEyebrow: "План цифрового запуска за 24 часа",
+    slogan: "Запускаем MVP, автоматизацию, интеграции и аудит безопасности без лишней бюрократии.",
+    heroDesc: "Помогаем быстро понять объём работ, следующий шаг и техническую основу проекта, чтобы вы принимали решения без хаоса и лишнего риска.",
+    heroProof: [
+      ["24 часа", "на первичный план запуска"],
+      ["30 минут", "на ответ в рабочее время"],
+      ["NDA", "при необходимости с первого контакта"]
+    ],
+    heroPills: [
+      "MVP и быстрый запуск",
+      "Интеграции и автоматизация",
+      "Безопасность по умолчанию"
+    ],
+    heroCards: [
+      ["Быстрый старт", "Собираем рабочий план запуска без длинной бюрократии и лишних этапов."],
+      ["Понятный результат", "Фокусируемся на решении конкретной бизнес-задачи, а не на абстрактной разработке."],
+      ["Техническая опора", "Закладываем масштабируемость, интеграции и базовую защиту с самого начала."]
+    ],
+    heroPrimaryCta: "Получить план запуска за 24 часа",
+    heroSecondaryCta: "Обсудить задачу в WhatsApp",
+    heroBriefTitle: "Что вы получите после первого контакта",
+    heroBrief: [
+      "Короткий разбор задачи и ограничений",
+      "Предварительный вариант решения",
+      "Оценку сроков и ближайших шагов"
+    ],
+    trustMetrics: [
+      ["24 часа", "на первичный план запуска"],
+      ["3 этапа", "от запроса до понятного плана работ"],
+      ["Безопасно", "NDA, ограничение доступов и рабочая прозрачность"]
+    ],
+    requestBtn: "Получить оценку и следующий шаг",
+    servicesTitle: "Наши услуги",
+    services: [
+      "Разработка MVP (цифровых продуктов)",
+      "Интеграция сервисов (CRM, облако, чаты, API)",
+      "Создание современных сайтов и лендингов",
+      "IT-консалтинг и аудит",
+      "Автоматизация бизнес-процессов",
+      "Информбезопасность и защита данных"
+    ],
+    projectsTitle: "Как мы работаем",
+    projects: [
+      "Уточняем задачу, ограничения и приоритеты проекта.",
+      "Предлагаем понятное решение, этапы и ожидаемый результат.",
+      "Запускаем разработку, интеграции или аудит в рабочем темпе.",
+      "Передаём результат, дорабатываем и помогаем масштабировать."
+    ],
+    advTitle: "Почему выбирают нас?",
+    adv: [
+      "Фокус на результате, а не на абстрактной разработке",
+      "Быстрый старт без перегруза процессом",
+      "Глубокое понимание ИТ, интеграций и безопасности",
+      "Прозрачная коммуникация по срокам и этапам",
+      "Можно начать с малого этапа и снизить риск"
+    ],
+    deliverablesTitle: "Что получает клиент",
+    deliverables: [
+      ["Понятный объём работ", "Фиксируем, что делаем сейчас, что позже и где точка результата."],
+      ["Оценку сроков", "Даем реалистичный диапазон сроков и ближайшие шаги без лишних обещаний."],
+      ["Техническую основу", "Сразу учитываем масштабирование, интеграции, доступы и базовую защиту."]
+    ],
+    securityTitle: "Как мы работаем безопасно",
+    security: [
+      "NDA и формализация договоренностей при необходимости",
+      "Доступы только по принципу минимальной необходимости",
+      "Рабочая прозрачность по этапам, срокам и изменениям",
+      "Без публикации внутренних данных клиента"
+    ],
+    ctaTitle: "С чего лучше начать",
+    ctaCopy: "Если задача еще не сформулирована до конца, начните с короткого запроса. Мы поможем собрать структуру проекта, определить риски и предложим следующий шаг.",
+    ctaPanelOneTitle: "Нужен быстрый старт",
+    ctaPanelOneText: "Оставьте заявку и получите первичный план запуска в течение 24 часов.",
+    ctaPanelTwoTitle: "Нужно быстро обсудить",
+    ctaPanelTwoText: "Напишите в WhatsApp или Telegram, если удобнее начать с короткого диалога.",
+    contactsTitle: "Контакты",
+    phoneLabel: "Телефон (WhatsApp):",
+    contactSla: "Отвечаем в течение 30 минут в рабочее время (Пн-Пт, 09:00-19:00).",
+    formTrustNote: "Без спама. Только ответ по вашему запросу и дальнейшая связь через выбранный канал.",
+    namePlaceholder: "Ваше имя",
+    phonePlaceholder: "Телефон",
+    emailPlaceholder: "Email (необязательно)",
+    serviceLabelText: "Услуга:",
+    questionPlaceholder: "Ваш вопрос",
+    messengerLabel: "Отправить через:",
+    submitBtn: "Отправить",
+    formSending: "Отправка...",
+    formSuccess: "Спасибо! Ваша заявка отправлена.",
+    formFail: "Не удалось отправить заявку. Попробуйте снова.",
+    formRateLimit: "Слишком много попыток. Повторите позже.",
+    formFileTooLarge: "Файл слишком большой. Максимум 5 МБ на файл.",
+    formTooManyFiles: "Можно прикрепить не более 3 файлов.",
     langBtn: "Қазақша",
     scheduleTitle: "Запланировать консультацию",
     scheduleDesc: "Используйте наш календарь, чтобы выбрать удобное время.",
@@ -111,106 +111,106 @@ const langs = {
       ["IT-консалтинг", "от 40 000 ₸ / сессия", "по запросу"]
     ],
     pricingNote: "Итоговая стоимость зависит от объёма и сложности задачи. Оставьте заявку — пришлём персональный расчёт.",
-    
+
   },
   kz: {
-        siteTitle: "AliQ Group",
-      navAnchorServices: "Қызметтер",
-      navAnchorProcess: "Процесс",
-      navAnchorContacts: "Байланыс",
-      heroEyebrow: "24 сағатта цифрлық іске қосу жоспары",
-        slogan: "MVP, автоматтандыру, интеграциялар және қауіпсіздік аудитін артық бюрократиясыз іске қосамыз.",
-      heroDesc: "Жобаның көлемін, келесі қадамын және техникалық негізін тез түсінуге көмектесеміз, сонда шешімді артық тәуекелсіз қабылдай аласыз.",
-        heroProof: [
-          ["24 сағат", "алғашқы іске қосу жоспарына"],
-          ["30 минут", "жұмыс уақытындағы жауапқа"],
-          ["NDA", "қажет болса алғашқы байланыстан"]
-        ],
-        heroPills: [
-          "MVP және жылдам іске қосу",
-          "Интеграциялар және автоматтандыру",
-          "Қауіпсіздік бастапқыдан"
-        ],
-        heroCards: [
-          ["Жылдам бастау", "Ұзақ бюрократиясыз және артық кезеңдерсіз нақты іске қосу жоспарын құрамыз."],
-          ["Түсінікті нәтиже", "Абстрактілі әзірлеуге емес, нақты бизнес-мәселені шешуге назар аударамыз."],
-          ["Техникалық тірек", "Басынан бастап масштабтау, интеграциялар және базалық қорғанысты ескереміз."]
-        ],
-        heroPrimaryCta: "24 сағатта іске қосу жоспарын алу",
-        heroSecondaryCta: "WhatsApp-та талқылау",
-        heroBriefTitle: "Алғашқы байланыстан кейін не аласыз",
-        heroBrief: [
-          "Міндет пен шектеулердің қысқа талдауы",
-          "Алдын ала шешім нұсқасы",
-          "Мерзімдер мен жақын қадамдар бағасы"
-        ],
-        trustMetrics: [
-          ["24 сағат", "алғашқы іске қосу жоспарына"],
-          ["3 кезең", "сұраныстан нақты жұмыс жоспарына дейін"],
-          ["Қауіпсіз", "NDA, қолжетімділікті шектеу және ашық жұмыс"]
-        ],
-        requestBtn: "Баға мен келесі қадамды алу",
-        servicesTitle: "Қызметтеріміз",
-        services: [
-          "MVP әзірлеу (цифрлық өнімдер)",
-          "Сервистерді біріктіру (CRM, бұлт, чаттар, API)",
-          "Заманауи сайттар мен лендингтер жасау",
-          "IT-кеңес және аудит",
-          "Бизнес-процестерді автоматтандыру",
-          "Информқауіпсіздік және деректерді қорғау"
-        ],
-        projectsTitle: "Біз қалай жұмыс істейміз",
-        projects: [
-          "Жобаның міндетін, шектеулерін және басымдықтарын нақтылаймыз.",
-          "Түсінікті шешім, кезеңдер және күтілетін нәтижені ұсынамыз.",
-          "Әзірлеу, интеграция немесе аудитті жұмыс ырғағымен бастаймыз.",
-          "Нәтижені тапсырып, жетілдіріп, масштабтауға көмектесеміз."
-        ],
-        advTitle: "Бізді не үшін таңдайды?",
-        adv: [
-          "Абстрактілі әзірлеуге емес, нақты нәтижеге назар",
-          "Процеске артық салмақ түсірмейтін жылдам бастау",
-          "IT, интеграциялар және қауіпсіздікті терең түсіну",
-          "Мерзімдер мен кезеңдер бойынша ашық коммуникация",
-          "Тәуекелді азайту үшін шағын кезеңнен бастауға болады"
-        ],
-        deliverablesTitle: "Клиент не алады",
-        deliverables: [
-          ["Жұмыс көлемінің анықтығы", "Қазір не істейтінімізді, кейін не болатынын және нәтиже нүктесін бекітеміз."],
-          ["Мерзім бағасы", "Артық уәде бермей, нақты мерзім диапазоны мен жақын қадамдарды айтамыз."],
-          ["Техникалық негіз", "Масштабтау, интеграциялар, қолжетімділік және базалық қорғанысты бірден ескереміз."]
-        ],
-        securityTitle: "Қауіпсіз қалай жұмыс істейміз",
-        security: [
-          "Қажет болса NDA және келісімдерді бекіту",
-          "Қолжетімділіктер тек минималды қажеттілік қағидасымен",
-          "Кезеңдер, мерзімдер және өзгерістер бойынша ашықтық",
-          "Клиенттің ішкі деректерін жарияламау"
-        ],
-        ctaTitle: "Неден бастаған дұрыс",
-        ctaCopy: "Егер міндет соңына дейін нақтыланбаған болса, қысқа сұраудан бастаңыз. Біз жоба құрылымын жинап, тәуекелдерді анықтап, келесі қадамды ұсынамыз.",
-        ctaPanelOneTitle: "Жылдам бастау керек",
-        ctaPanelOneText: "Өтініш қалдырыңыз және 24 сағат ішінде алғашқы іске қосу жоспарын алыңыз.",
-        ctaPanelTwoTitle: "Жылдам талқылау керек",
-        ctaPanelTwoText: "Қысқа диалогтан бастау ыңғайлы болса, WhatsApp немесе Telegram-ға жазыңыз.",
-        contactsTitle: "Байланыс",
-        phoneLabel: "Телефон (WhatsApp):",
-        contactSla: "Жұмыс уақытында 30 минут ішінде жауап береміз (Дс-Жм, 09:00-19:00).",
-        formTrustNote: "Спам жоқ. Тек сұранысыңызға жауап және таңдалған арна арқылы байланыс.",
-        namePlaceholder: "Атыңыз",
-        phonePlaceholder: "Телефон",
-        emailPlaceholder: "Email (міндетті емес)",
-        serviceLabelText: "Қызмет:",
-        questionPlaceholder: "Сұрағыңыз",
-        messengerLabel: "Қай мессенджер арқылы жіберу:",
-        submitBtn: "Жіберу",
-        formSending: "Жіберілуде...",
-        formSuccess: "Рақмет! Өтінішіңіз жіберілді.",
-        formFail: "Өтінішті жіберу мүмкін болмады. Қайталап көріңіз.",
-        formRateLimit: "Тым көп әрекет. Кейінірек қайталап көріңіз.",
-        formFileTooLarge: "Файл тым үлкен. Бір файлға максимум 5 МБ.",
-        formTooManyFiles: "3 файлдан артық тіркеуге болмайды.",
-    langBtn: "English",
+    siteTitle: "AliQ Group",
+    navAnchorServices: "Қызметтер",
+    navAnchorProcess: "Процесс",
+    navAnchorContacts: "Байланыс",
+    heroEyebrow: "24 сағатта цифрлық іске қосу жоспары",
+    slogan: "MVP, автоматтандыру, интеграциялар және қауіпсіздік аудитін артық бюрократиясыз іске қосамыз.",
+    heroDesc: "Жобаның көлемін, келесі қадамын және техникалық негізін тез түсінуге көмектесеміз, сонда шешімді артық тәуекелсіз қабылдай аласыз.",
+    heroProof: [
+      ["24 сағат", "алғашқы іске қосу жоспарына"],
+      ["30 минут", "жұмыс уақытындағы жауапқа"],
+      ["NDA", "қажет болса алғашқы байланыстан"]
+    ],
+    heroPills: [
+      "MVP және жылдам іске қосу",
+      "Интеграциялар және автоматтандыру",
+      "Қауіпсіздік бастапқыдан"
+    ],
+    heroCards: [
+      ["Жылдам бастау", "Ұзақ бюрократиясыз және артық кезеңдерсіз нақты іске қосу жоспарын құрамыз."],
+      ["Түсінікті нәтиже", "Абстрактілі әзірлеуге емес, нақты бизнес-мәселені шешуге назар аударамыз."],
+      ["Техникалық тірек", "Басынан бастап масштабтау, интеграциялар және базалық қорғанысты ескереміз."]
+    ],
+    heroPrimaryCta: "24 сағатта іске қосу жоспарын алу",
+    heroSecondaryCta: "WhatsApp-та талқылау",
+    heroBriefTitle: "Алғашқы байланыстан кейін не аласыз",
+    heroBrief: [
+      "Міндет пен шектеулердің қысқа талдауы",
+      "Алдын ала шешім нұсқасы",
+      "Мерзімдер мен жақын қадамдар бағасы"
+    ],
+    trustMetrics: [
+      ["24 сағат", "алғашқы іске қосу жоспарына"],
+      ["3 кезең", "сұраныстан нақты жұмыс жоспарына дейін"],
+      ["Қауіпсіз", "NDA, қолжетімділікті шектеу және ашық жұмыс"]
+    ],
+    requestBtn: "Баға мен келесі қадамды алу",
+    servicesTitle: "Қызметтеріміз",
+    services: [
+      "MVP әзірлеу (цифрлық өнімдер)",
+      "Сервистерді біріктіру (CRM, бұлт, чаттар, API)",
+      "Заманауи сайттар мен лендингтер жасау",
+      "IT-кеңес және аудит",
+      "Бизнес-процестерді автоматтандыру",
+      "Информқауіпсіздік және деректерді қорғау"
+    ],
+    projectsTitle: "Біз қалай жұмыс істейміз",
+    projects: [
+      "Жобаның міндетін, шектеулерін және басымдықтарын нақтылаймыз.",
+      "Түсінікті шешім, кезеңдер және күтілетін нәтижені ұсынамыз.",
+      "Әзірлеу, интеграция немесе аудитті жұмыс ырғағымен бастаймыз.",
+      "Нәтижені тапсырып, жетілдіріп, масштабтауға көмектесеміз."
+    ],
+    advTitle: "Бізді не үшін таңдайды?",
+    adv: [
+      "Абстрактілі әзірлеуге емес, нақты нәтижеге назар",
+      "Процеске артық салмақ түсірмейтін жылдам бастау",
+      "IT, интеграциялар және қауіпсіздікті терең түсіну",
+      "Мерзімдер мен кезеңдер бойынша ашық коммуникация",
+      "Тәуекелді азайту үшін шағын кезеңнен бастауға болады"
+    ],
+    deliverablesTitle: "Клиент не алады",
+    deliverables: [
+      ["Жұмыс көлемінің анықтығы", "Қазір не істейтінімізді, кейін не болатынын және нәтиже нүктесін бекітеміз."],
+      ["Мерзім бағасы", "Артық уәде бермей, нақты мерзім диапазоны мен жақын қадамдарды айтамыз."],
+      ["Техникалық негіз", "Масштабтау, интеграциялар, қолжетімділік және базалық қорғанысты бірден ескереміз."]
+    ],
+    securityTitle: "Қауіпсіз қалай жұмыс істейміз",
+    security: [
+      "Қажет болса NDA және келісімдерді бекіту",
+      "Қолжетімділіктер тек минималды қажеттілік қағидасымен",
+      "Кезеңдер, мерзімдер және өзгерістер бойынша ашықтық",
+      "Клиенттің ішкі деректерін жарияламау"
+    ],
+    ctaTitle: "Неден бастаған дұрыс",
+    ctaCopy: "Егер міндет соңына дейін нақтыланбаған болса, қысқа сұраудан бастаңыз. Біз жоба құрылымын жинап, тәуекелдерді анықтап, келесі қадамды ұсынамыз.",
+    ctaPanelOneTitle: "Жылдам бастау керек",
+    ctaPanelOneText: "Өтініш қалдырыңыз және 24 сағат ішінде алғашқы іске қосу жоспарын алыңыз.",
+    ctaPanelTwoTitle: "Жылдам талқылау керек",
+    ctaPanelTwoText: "Қысқа диалогтан бастау ыңғайлы болса, WhatsApp немесе Telegram-ға жазыңыз.",
+    contactsTitle: "Байланыс",
+    phoneLabel: "Телефон (WhatsApp):",
+    contactSla: "Жұмыс уақытында 30 минут ішінде жауап береміз (Дс-Жм, 09:00-19:00).",
+    formTrustNote: "Спам жоқ. Тек сұранысыңызға жауап және таңдалған арна арқылы байланыс.",
+    namePlaceholder: "Атыңыз",
+    phonePlaceholder: "Телефон",
+    emailPlaceholder: "Email (міндетті емес)",
+    serviceLabelText: "Қызмет:",
+    questionPlaceholder: "Сұрағыңыз",
+    messengerLabel: "Қай мессенджер арқылы жіберу:",
+    submitBtn: "Жіберу",
+    formSending: "Жіберілуде...",
+    formSuccess: "Рақмет! Өтінішіңіз жіберілді.",
+    formFail: "Өтінішті жіберу мүмкін болмады. Қайталап көріңіз.",
+    formRateLimit: "Тым көп әрекет. Кейінірек қайталап көріңіз.",
+    formFileTooLarge: "Файл тым үлкен. Бір файлға максимум 5 МБ.",
+    formTooManyFiles: "3 файлдан артық тіркеуге болмайды.",
+    langBtn: "Русский",
     scheduleTitle: "Кеңес жоспарлау",
     scheduleDesc: "Ыңғайлы уақытты таңдау үшін күнтізбені пайдаланыңыз.",
     scheduleBtn: "Күнтізбені ашу",
@@ -225,61 +225,62 @@ const langs = {
     ],
     pricingNote: "Қорытынды құны тапсырманың көлемі мен күрделілігіне байланысты. Өтініш жіберіңіз — жеке есептеме жіберейік.",
 
-  }};
+  }
+};
 // Вопросы по услугам
 const serviceQuestions = {
   ru: [
-    ['Описание проекта','Желаемые сроки','Предполагаемый бюджет','Контактное лицо','Дополнительная информация'],
-    ['Текущие системы','Планируемые интеграции','Сроки внедрения','Ответственный специалист','Комментарии'],
-    ['Тип сайта (корпоративный, лендинг и др.)','Предпочтительный дизайн','Примеры сайтов','Контакты и доп. пожелания'],
-    ['Область аудита (инфраструктура, процессы и др.)','Цели консультации','Желаемые результаты','Время для проведения'],
-    ['Основные задачи/процессы','Используемые инструменты','Проблемы, которые требуется решить','Сроки','Контактное лицо'],
-    ['Текущая IT‑инфраструктура','Приоритетные риски/угрозы','Требуемые меры защиты','Контакты для связи']
+    ['Описание проекта', 'Желаемые сроки', 'Предполагаемый бюджет', 'Контактное лицо', 'Дополнительная информация'],
+    ['Текущие системы', 'Планируемые интеграции', 'Сроки внедрения', 'Ответственный специалист', 'Комментарии'],
+    ['Тип сайта (корпоративный, лендинг и др.)', 'Предпочтительный дизайн', 'Примеры сайтов', 'Контакты и доп. пожелания'],
+    ['Область аудита (инфраструктура, процессы и др.)', 'Цели консультации', 'Желаемые результаты', 'Время для проведения'],
+    ['Основные задачи/процессы', 'Используемые инструменты', 'Проблемы, которые требуется решить', 'Сроки', 'Контактное лицо'],
+    ['Текущая IT‑инфраструктура', 'Приоритетные риски/угрозы', 'Требуемые меры защиты', 'Контакты для связи']
   ],
   kz: [
-    ['Жоба сипаттамасы','Қалаған мерзім','Болжамды бюджет','Байланыс тұлғасы','Қосымша ақпарат'],
-    ['Қолданыстағы жүйелер','Жоспарланған біріктірулер','Енгізу мерзімі','Жауапты маман','Пікірлер'],
-    ['Сайт түрі (корпоративтік, лендинг т.б.)','Қалаған дизайн','Сайт үлгілері','Байланыс және қосымша тілектер'],
-    ['Аудит саласы (инфрақұрылым, процестер және т.б.)','Консультация мақсаты','Күтілетін нәтиже','Өткізу уақыты'],
-    ['Негізгі міндеттер/процестер','Қолданылатын құралдар','Шешілуі тиіс мәселелер','Мерзімдер','Байланыс тұлғасы'],
-    ['Қолданыстағы IT-инфрақұрылым','Маңызды қауіп-қатерлер','Қажетті қорғау шаралары','Байланыс үшін деректер']
+    ['Жоба сипаттамасы', 'Қалаған мерзім', 'Болжамды бюджет', 'Байланыс тұлғасы', 'Қосымша ақпарат'],
+    ['Қолданыстағы жүйелер', 'Жоспарланған біріктірулер', 'Енгізу мерзімі', 'Жауапты маман', 'Пікірлер'],
+    ['Сайт түрі (корпоративтік, лендинг т.б.)', 'Қалаған дизайн', 'Сайт үлгілері', 'Байланыс және қосымша тілектер'],
+    ['Аудит саласы (инфрақұрылым, процестер және т.б.)', 'Консультация мақсаты', 'Күтілетін нәтиже', 'Өткізу уақыты'],
+    ['Негізгі міндеттер/процестер', 'Қолданылатын құралдар', 'Шешілуі тиіс мәселелер', 'Мерзімдер', 'Байланыс тұлғасы'],
+    ['Қолданыстағы IT-инфрақұрылым', 'Маңызды қауіп-қатерлер', 'Қажетті қорғау шаралары', 'Байланыс үшін деректер']
   ]
-  };
+};
 
 
 const serviceIcons = ['bi-lightning', 'bi-diagram-3', 'bi-window', 'bi-puzzle', 'bi-gear', 'bi-shield-lock'];
 const serviceUrls = [
-    'services/mvp.html',
-    'services/integration.html',
-    'services/websites.html',
-    'services/consulting.html',
-    'services/automation.html',
-    'services/security.html'
+  'services/mvp.html',
+  'services/integration.html',
+  'services/websites.html',
+  'services/consulting.html',
+  'services/automation.html',
+  'services/security.html'
 ];
 
 const serviceDescriptions = {
-    ru: [
-        'Создаём минимально жизнеспособные продукты для проверки гипотез и быстрого выхода на рынок. Прототипируем интерфейсы и подбираем оптимальный стек технологий. Помогаем собрать обратную связь и дорабатываем проект до полноценного решения.',
-        'Интегрируем CRM, облачные сервисы и API для повышения эффективности. Настраиваем обмен данными между системами и автоматизируем цепочки процессов. Помогаем избавиться от ручных операций и контролировать бизнес в реальном времени.',
-        'Разрабатываем сайты и лендинги под современные стандарты. Оптимизируем скорость загрузки, внедряем адаптивный дизайн и готовим площадку к продвижению. Управлять контентом просто, а конверсия растёт.',
-        'Помогаем оптимизировать IT-инфраструктуру и проводим аудит. Анализируем текущие процессы, выявляем узкие места и формируем стратегию развития. Сопровождаем внедрение новых технологий и даём рекомендации по безопасности.',
-        'Автоматизируем процессы и повышаем производительность. Пишем скрипты, подключаем сторонние сервисы и строим отчётность. Снижаем количество ошибок и высвобождаем время сотрудников.',
-        'Обеспечиваем защиту данных и информационную безопасность. Разрабатываем политики доступа, внедряем системы мониторинга и шифрования. Проводим тесты на проникновение и обучаем персонал.'
-    ],
-    kz: [
-        'Гипотезаларды тексеру үшін MVP әзірлейміз.',
-        'CRM және басқа сервистерді біріктіреміз.',
-        'Заманауи сайттар жасаймыз.',
-        'IT-аудит және кеңес береміз.',
-        'Бизнес процесстерді автоматтандырамыз.',
-        'Деректерді және ақпараттық қауіпсіздікті қамтамасыз етеміз.'
-    ]
+  ru: [
+    'Создаём минимально жизнеспособные продукты для проверки гипотез и быстрого выхода на рынок. Прототипируем интерфейсы и подбираем оптимальный стек технологий. Помогаем собрать обратную связь и дорабатываем проект до полноценного решения.',
+    'Интегрируем CRM, облачные сервисы и API для повышения эффективности. Настраиваем обмен данными между системами и автоматизируем цепочки процессов. Помогаем избавиться от ручных операций и контролировать бизнес в реальном времени.',
+    'Разрабатываем сайты и лендинги под современные стандарты. Оптимизируем скорость загрузки, внедряем адаптивный дизайн и готовим площадку к продвижению. Управлять контентом просто, а конверсия растёт.',
+    'Помогаем оптимизировать IT-инфраструктуру и проводим аудит. Анализируем текущие процессы, выявляем узкие места и формируем стратегию развития. Сопровождаем внедрение новых технологий и даём рекомендации по безопасности.',
+    'Автоматизируем процессы и повышаем производительность. Пишем скрипты, подключаем сторонние сервисы и строим отчётность. Снижаем количество ошибок и высвобождаем время сотрудников.',
+    'Обеспечиваем защиту данных и информационную безопасность. Разрабатываем политики доступа, внедряем системы мониторинга и шифрования. Проводим тесты на проникновение и обучаем персонал.'
+  ],
+  kz: [
+    'Гипотезаларды тексеру үшін MVP әзірлейміз.',
+    'CRM және басқа сервистерді біріктіреміз.',
+    'Заманауи сайттар жасаймыз.',
+    'IT-аудит және кеңес береміз.',
+    'Бизнес процесстерді автоматтандырамыз.',
+    'Деректерді және ақпараттық қауіпсіздікті қамтамасыз етеміз.'
+  ]
 };
 
 let curLang = 'ru';
 try {
-    const saved = localStorage.getItem('aliq_lang');
-    if (saved === 'kz' || saved === 'ru') curLang = saved;
+  const saved = localStorage.getItem('aliq_lang');
+  if (saved === 'kz' || saved === 'ru') curLang = saved;
 } catch (e) { }
 
 function setElText(id, html) { const el = document.getElementById(id); if (el) el.innerHTML = html; }
@@ -289,172 +290,172 @@ const ATTR_QUERY_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_conten
 let modalFirstInputTracked = false;
 
 function getAttribution() {
-    let stored = {};
-    try {
-        stored = JSON.parse(sessionStorage.getItem(ATTR_STORAGE_KEY) || '{}');
-    } catch (_) {
-        stored = {};
-    }
+  let stored = {};
+  try {
+    stored = JSON.parse(sessionStorage.getItem(ATTR_STORAGE_KEY) || '{}');
+  } catch (_) {
+    stored = {};
+  }
 
-    const url = new URL(window.location.href);
-    const search = url.searchParams;
-    const queryData = {};
-    ATTR_QUERY_KEYS.forEach(key => {
-        const value = search.get(key);
-        if (value) queryData[key] = value;
-    });
+  const url = new URL(window.location.href);
+  const search = url.searchParams;
+  const queryData = {};
+  ATTR_QUERY_KEYS.forEach(key => {
+    const value = search.get(key);
+    if (value) queryData[key] = value;
+  });
 
-    const baseData = {
-        landing_path: stored.landing_path || (window.location.pathname || '/'),
-        first_seen_at: stored.first_seen_at || new Date().toISOString(),
-        referrer_url: stored.referrer_url || document.referrer || 'direct'
-    };
+  const baseData = {
+    landing_path: stored.landing_path || (window.location.pathname || '/'),
+    first_seen_at: stored.first_seen_at || new Date().toISOString(),
+    referrer_url: stored.referrer_url || document.referrer || 'direct'
+  };
 
-    const merged = { ...stored, ...baseData, ...queryData };
-    try {
-        sessionStorage.setItem(ATTR_STORAGE_KEY, JSON.stringify(merged));
-    } catch (_) {
-        // ignore storage errors (private mode or quota)
-    }
-    return merged;
+  const merged = { ...stored, ...baseData, ...queryData };
+  try {
+    sessionStorage.setItem(ATTR_STORAGE_KEY, JSON.stringify(merged));
+  } catch (_) {
+    // ignore storage errors (private mode or quota)
+  }
+  return merged;
 }
 
 function withAttribution(params = {}) {
-    return { ...params, ...getAttribution() };
+  return { ...params, ...getAttribution() };
 }
 
 function trackEvent(eventName, params = {}) {
-    if (typeof window.gtag !== 'function') return;
-    window.gtag('event', eventName, withAttribution(params));
+  if (typeof window.gtag !== 'function') return;
+  window.gtag('event', eventName, withAttribution(params));
 }
 
 function bindModalStepTracking() {
-    const form = document.querySelector('#modalBg form');
-    if (!form || form.dataset.funnelBound === 'true') return;
+  const form = document.querySelector('#modalBg form');
+  if (!form || form.dataset.funnelBound === 'true') return;
 
-    form.addEventListener('input', e => {
-        if (modalFirstInputTracked) return;
-        const target = e.target;
-        if (!(target instanceof HTMLElement)) return;
-        const field = target.id || target.getAttribute('name') || target.className || 'unknown';
-        trackEvent('form_step', {
-            page: getPublicPathname(),
-            lang: curLang,
-            step: 'first_input',
-            field
-        });
-        modalFirstInputTracked = true;
+  form.addEventListener('input', e => {
+    if (modalFirstInputTracked) return;
+    const target = e.target;
+    if (!(target instanceof HTMLElement)) return;
+    const field = target.id || target.getAttribute('name') || target.className || 'unknown';
+    trackEvent('form_step', {
+      page: getPublicPathname(),
+      lang: curLang,
+      step: 'first_input',
+      field
     });
+    modalFirstInputTracked = true;
+  });
 
-    const messengerSelect = document.getElementById('messengerSelect');
-    if (messengerSelect) {
-        messengerSelect.addEventListener('change', () => {
-            trackEvent('form_step', {
-                page: getPublicPathname(),
-                lang: curLang,
-                step: 'messenger_selected',
-                messenger: messengerSelect.value
-            });
-        });
-    }
+  const messengerSelect = document.getElementById('messengerSelect');
+  if (messengerSelect) {
+    messengerSelect.addEventListener('change', () => {
+      trackEvent('form_step', {
+        page: getPublicPathname(),
+        lang: curLang,
+        step: 'messenger_selected',
+        messenger: messengerSelect.value
+      });
+    });
+  }
 
-    const fileInput = document.getElementById('fileInput');
-    if (fileInput) {
-        fileInput.addEventListener('change', () => {
-            trackEvent('form_step', {
-                page: getPublicPathname(),
-                lang: curLang,
-                step: 'attachments_selected',
-                files_count: fileInput.files ? fileInput.files.length : 0
-            });
-        });
-    }
+  const fileInput = document.getElementById('fileInput');
+  if (fileInput) {
+    fileInput.addEventListener('change', () => {
+      trackEvent('form_step', {
+        page: getPublicPathname(),
+        lang: curLang,
+        step: 'attachments_selected',
+        files_count: fileInput.files ? fileInput.files.length : 0
+      });
+    });
+  }
 
-    form.dataset.funnelBound = 'true';
+  form.dataset.funnelBound = 'true';
 }
 
 function bindAnalyticsHandlers() {
-    const ctaMap = [
-        ['requestBtn', 'hero_primary_modal'],
-        ['requestBtn2', 'bottom_modal'],
-        ['quickConsultBtn', 'hero_secondary_whatsapp']
-    ];
-    ctaMap.forEach(([id, label]) => {
-        const el = document.getElementById(id);
-        if (!el || el.dataset.analyticsBound === 'true') return;
-        el.addEventListener('click', () => {
-            trackEvent('cta_click', { label, page: getPublicPathname(), lang: curLang });
-        });
-        el.dataset.analyticsBound = 'true';
+  const ctaMap = [
+    ['requestBtn', 'hero_primary_modal'],
+    ['requestBtn2', 'bottom_modal'],
+    ['quickConsultBtn', 'hero_secondary_whatsapp']
+  ];
+  ctaMap.forEach(([id, label]) => {
+    const el = document.getElementById(id);
+    if (!el || el.dataset.analyticsBound === 'true') return;
+    el.addEventListener('click', () => {
+      trackEvent('cta_click', { label, page: getPublicPathname(), lang: curLang });
     });
+    el.dataset.analyticsBound = 'true';
+  });
 
-    const quickBar = document.getElementById('mobileQuickBar');
-    if (quickBar && quickBar.dataset.analyticsBound !== 'true') {
-        quickBar.addEventListener('click', e => {
-            const action = e.target.closest('.quick-action');
-            if (!action) return;
-            const label = action.classList.contains('quick-action-primary') ? 'mobile_whatsapp' : 'mobile_secondary';
-            trackEvent('cta_click', { label, page: getPublicPathname(), lang: curLang });
-        });
-        quickBar.dataset.analyticsBound = 'true';
-    }
+  const quickBar = document.getElementById('mobileQuickBar');
+  if (quickBar && quickBar.dataset.analyticsBound !== 'true') {
+    quickBar.addEventListener('click', e => {
+      const action = e.target.closest('.quick-action');
+      if (!action) return;
+      const label = action.classList.contains('quick-action-primary') ? 'mobile_whatsapp' : 'mobile_secondary';
+      trackEvent('cta_click', { label, page: getPublicPathname(), lang: curLang });
+    });
+    quickBar.dataset.analyticsBound = 'true';
+  }
 }
 
 function initMobileNavToggle() {
-    const btn = document.getElementById('burgerBtn');
-    const dropdown = document.getElementById('burgerDropdown');
-    if (!btn || !dropdown) return;
+  const btn = document.getElementById('burgerBtn');
+  const dropdown = document.getElementById('burgerDropdown');
+  if (!btn || !dropdown) return;
 
-    btn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        const isOpen = dropdown.classList.toggle('open');
-        btn.setAttribute('aria-expanded', String(isOpen));
-    });
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    const isOpen = dropdown.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+  });
 
-    document.addEventListener('click', function (e) {
-        if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
-            dropdown.classList.remove('open');
-            btn.setAttribute('aria-expanded', 'false');
-        }
-    });
+  document.addEventListener('click', function (e) {
+    if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
 
-    dropdown.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', function () {
-            dropdown.classList.remove('open');
-            btn.setAttribute('aria-expanded', 'false');
-        });
+  dropdown.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      dropdown.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
     });
+  });
 }
 
 function getPublicPathname() {
-    const path = window.location.pathname || '/';
-    if (path.endsWith('/')) return 'index.html';
-    return path.split('/').pop() || 'index.html';
+  const path = window.location.pathname || '/';
+  if (path.endsWith('/')) return 'index.html';
+  return path.split('/').pop() || 'index.html';
 }
 
 function getSiteBasePath() {
-    const rawPath = window.location.pathname || '/';
-    const path = rawPath.replace(/\/+$/, '');
-    if (!path || path === '/') return '';
+  const rawPath = window.location.pathname || '/';
+  const path = rawPath.replace(/\/+$/, '');
+  if (!path || path === '/') return '';
 
-    const markers = [
-        '/services/',
-        '/index.html',
-        '/services.html',
-        '/faq.html',
-        '/schedule.html',
-        '/privacy.html',
-        '/404.html',
-        '/offline.html'
-    ];
+  const markers = [
+    '/services/',
+    '/index.html',
+    '/services.html',
+    '/faq.html',
+    '/schedule.html',
+    '/privacy.html',
+    '/404.html',
+    '/offline.html'
+  ];
 
-    for (const marker of markers) {
-        const idx = path.indexOf(marker);
-        if (idx >= 0) return path.slice(0, idx);
-    }
+  for (const marker of markers) {
+    const idx = path.indexOf(marker);
+    if (idx >= 0) return path.slice(0, idx);
+  }
 
-    const segments = path.split('/').filter(Boolean);
-    if (!path.includes('.') && segments.length === 1) return `/${segments[0]}`;
+  const segments = path.split('/').filter(Boolean);
+  if (!path.includes('.') && segments.length === 1) return `/${segments[0]}`;
   return '';
 }
 
@@ -533,7 +534,7 @@ function setNavToggleLocale(lang) {
 }
 
 function setLang(lang) {
-  try { localStorage.setItem('aliq_lang', lang); } catch(e) {}
+  try { localStorage.setItem('aliq_lang', lang); } catch (e) { }
   curLang = lang;
   document.documentElement.lang = lang;
   const l = langs[lang];
@@ -582,10 +583,10 @@ function setLang(lang) {
   }
   setElText('projectsTitle', l.projectsTitle);
   const projectsEl = document.getElementById('projectsList');
-  if(projectsEl) projectsEl.innerHTML = l.projects.map((p, idx)=>`<article class="process-item"><span class="process-index">0${idx + 1}</span><div>${p}</div></article>`).join('');
+  if (projectsEl) projectsEl.innerHTML = l.projects.map((p, idx) => `<article class="process-item"><span class="process-index">0${idx + 1}</span><div>${p}</div></article>`).join('');
   setElText('advTitle', l.advTitle);
   const advEl = document.getElementById('advList');
-  if(advEl) advEl.innerHTML = l.adv.map(a=>`<li>${a}</li>`).join('');
+  if (advEl) advEl.innerHTML = l.adv.map(a => `<li>${a}</li>`).join('');
   setElText('deliverablesTitle', l.deliverablesTitle);
   const deliverablesEl = document.getElementById('deliverablesList');
   if (deliverablesEl && l.deliverables) deliverablesEl.innerHTML = l.deliverables.map(([title, text]) => `<article class="deliverable-item"><h3>${title}</h3><p>${text}</p></article>`).join('');
@@ -602,17 +603,17 @@ function setLang(lang) {
   setElText('phoneLabel', l.phoneLabel);
   setElText('contactSla', l.contactSla);
   setElText('formTrustNote', l.formTrustNote);
-  const nameInput=document.getElementById('nameInput'); if(nameInput) nameInput.placeholder = l.namePlaceholder;
-  const phoneInput=document.getElementById('phoneInput'); if(phoneInput) phoneInput.placeholder = l.phonePlaceholder;
-  const emailInput=document.getElementById('emailInput'); if(emailInput) emailInput.placeholder = l.emailPlaceholder;
-  const qInput=document.getElementById('questionInput'); if(qInput) qInput.placeholder = l.questionPlaceholder;
-  const servLabel=document.getElementById('serviceLabel'); if(servLabel) servLabel.innerText = l.serviceLabelText;
+  const nameInput = document.getElementById('nameInput'); if (nameInput) nameInput.placeholder = l.namePlaceholder;
+  const phoneInput = document.getElementById('phoneInput'); if (phoneInput) phoneInput.placeholder = l.phonePlaceholder;
+  const emailInput = document.getElementById('emailInput'); if (emailInput) emailInput.placeholder = l.emailPlaceholder;
+  const qInput = document.getElementById('questionInput'); if (qInput) qInput.placeholder = l.questionPlaceholder;
+  const servLabel = document.getElementById('serviceLabel'); if (servLabel) servLabel.innerText = l.serviceLabelText;
   setElText('messengerLabel', l.messengerLabel);
-  const submit=document.getElementById('submitBtn'); if(submit) submit.innerText = l.submitBtn;
-  const langBtn=document.getElementById('langBtn'); if(langBtn) langBtn.innerText = l.langBtn;
+  const submit = document.getElementById('submitBtn'); if (submit) submit.innerText = l.submitBtn;
+  const langBtn = document.getElementById('langBtn'); if (langBtn) langBtn.innerText = l.langBtn;
   setElText('scheduleTitle', l.scheduleTitle);
   setElText('scheduleDesc', l.scheduleDesc);
-  const schedBtn=document.getElementById('scheduleBtn'); if(schedBtn) schedBtn.innerText = l.scheduleBtn;
+  const schedBtn = document.getElementById('scheduleBtn'); if (schedBtn) schedBtn.innerText = l.scheduleBtn;
   setElText('pricingTitle', l.pricingTitle || '');
   const pricingListEl = document.getElementById('pricingList');
   if (pricingListEl && l.pricing) {
@@ -626,22 +627,22 @@ function setLang(lang) {
   setNavToggleLocale(lang);
   bindAnalyticsHandlers();
 }
-    const langBtnEl = document.getElementById('langBtn');
-    if (langBtnEl) langBtnEl.onclick = function() {
-      const order = ['ru','kz'];
-      let idx = order.indexOf(curLang);
-      if (idx < 0) idx = 0;
-      setLang(order[(idx+1)%order.length]);
-    };
+const langBtnEl = document.getElementById('langBtn');
+if (langBtnEl) langBtnEl.onclick = function () {
+  const order = ['ru', 'kz'];
+  let idx = order.indexOf(curLang);
+  if (idx < 0) idx = 0;
+  setLang(order[(idx + 1) % order.length]);
+};
 document.addEventListener('DOMContentLoaded', () => { if (curLang !== 'ru') setLang(curLang); });
 const yearEls = document.querySelectorAll('#year, #year2, #year3');
 yearEls.forEach(el => el.innerText = new Date().getFullYear());
 const gCal = document.getElementById('gCal');
-if(gCal){
+if (gCal) {
   if (window.CALENDAR_ID && window.CALENDAR_ID !== 'your_calendar_id') {
     gCal.src = `https://calendar.google.com/calendar/embed?src=${window.CALENDAR_ID}&ctz=Asia%2FAlmaty`;
     const ics = document.getElementById('icsLink');
-    if(ics) ics.href = `https://calendar.google.com/calendar/ical/${window.CALENDAR_ID}/public/basic.ics`;
+    if (ics) ics.href = `https://calendar.google.com/calendar/ical/${window.CALENDAR_ID}/public/basic.ics`;
   } else {
     const calSection = gCal.closest('section');
     if (calSection) {
@@ -654,12 +655,12 @@ if(gCal){
   }
 }
 
-function renderQuestions(service){
+function renderQuestions(service) {
   const fieldsEl = document.getElementById('dynamicFields');
   const qInput = document.getElementById('questionInput');
   if (!fieldsEl || !qInput) return;
   fieldsEl.innerHTML = '';
-  if(!service){
+  if (!service) {
     qInput.style.display = 'block';
     qInput.required = true;
     return;
@@ -673,17 +674,17 @@ function renderQuestions(service){
     });
   }
   const list = serviceQuestions[curLang][idx] || [];
-  if(list.length===0){
+  if (list.length === 0) {
     qInput.style.display = 'block';
     qInput.required = true;
     return;
   }
   qInput.style.display = 'none';
   qInput.required = false;
-  fieldsEl.innerHTML = list.map(l=>`<input type="text" data-label="${l}" placeholder="${l}" class="dyn-field">`).join('');
+  fieldsEl.innerHTML = list.map(l => `<input type="text" data-label="${l}" placeholder="${l}" class="dyn-field">`).join('');
 }
 
-    // Модалка
+// Модалка
 function openModal(service) {
   modalFirstInputTracked = false;
   bindModalStepTracking();
@@ -701,216 +702,216 @@ function openModal(service) {
   document.getElementById('serviceInput').value = service || '';
   renderQuestions(service);
 }
-    function closeModal() {
-      document.getElementById('modalBg').style.display = 'none';
+function closeModal() {
+  document.getElementById('modalBg').style.display = 'none';
+}
+function showService(idx) {
+  const info = document.getElementById('infoContent');
+  if (info) {
+    info.innerText = serviceDescriptions[curLang][idx];
+    const btn = document.getElementById('infoRequest');
+    if (btn) {
+      btn.innerText = langs[curLang].requestBtn;
+      btn.onclick = function () { openModal(langs[curLang].services[idx]); };
     }
-      function showService(idx){
-        const info=document.getElementById('infoContent');
-        if(info){
-          info.innerText=serviceDescriptions[curLang][idx];
-          const btn=document.getElementById('infoRequest');
-          if(btn){
-            btn.innerText=langs[curLang].requestBtn;
-            btn.onclick=function(){openModal(langs[curLang].services[idx]);};
-          }
-          document.getElementById('infoBg').style.display='flex';
-        }
-      }
-    function closeInfo(){ document.getElementById('infoBg').style.display='none'; }
-    window.openModal = openModal; window.closeModal = closeModal; window.showService=showService; window.closeInfo=closeInfo;
+    document.getElementById('infoBg').style.display = 'flex';
+  }
+}
+function closeInfo() { document.getElementById('infoBg').style.display = 'none'; }
+window.openModal = openModal; window.closeModal = closeModal; window.showService = showService; window.closeInfo = closeInfo;
 
-    const modalBgEl=document.getElementById('modalBg');
-    if(modalBgEl) modalBgEl.addEventListener('click',e=>{ if(e.target===modalBgEl) closeModal(); });
-    const infoBgEl=document.getElementById('infoBg');
-    if(infoBgEl) infoBgEl.addEventListener('click',e=>{ if(e.target===infoBgEl) closeInfo(); });
+const modalBgEl = document.getElementById('modalBg');
+if (modalBgEl) modalBgEl.addEventListener('click', e => { if (e.target === modalBgEl) closeModal(); });
+const infoBgEl = document.getElementById('infoBg');
+if (infoBgEl) infoBgEl.addEventListener('click', e => { if (e.target === infoBgEl) closeInfo(); });
 
-    // Отправка формы и переход в мессенджер
-    async function sendForm(e) {
-      e.preventDefault();
-      const name = document.getElementById('nameInput').value;
-      const phone = document.getElementById('phoneInput').value;
-      const email = document.getElementById('emailInput').value;
-      const service = document.getElementById('serviceInput').value;
-      const questionInputEl = document.getElementById('questionInput');
-      const extra = Array.from(document.querySelectorAll('#dynamicFields .dyn-field'))
-        .map(f => `${f.dataset.label}: ${f.value}`)
-        .filter(Boolean)
-        .join('\n');
-      const question = [extra, questionInputEl.value].filter(Boolean).join('\n');
-      const messenger = document.getElementById('messengerSelect').value;
-      const msgEl = document.getElementById('formMsg');
-      const submitBtn = document.getElementById('submitBtn');
-      const submitLabel = langs[curLang].submitBtn;
-      msgEl.style.display = 'block';
-      msgEl.style.color = '#c8d5e1';
-      msgEl.innerText = langs[curLang].formSending;
-      trackEvent('form_submit_attempt', {
-        page: getPublicPathname(),
-        lang: curLang,
-        service: service || 'general',
-        messenger,
-        files: document.querySelectorAll('#fileInput')[0]?.files?.length || 0
-      });
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerText = langs[curLang].formSending;
-      }
-      let wasSent = false;
-      try {
-        const fd = new FormData();
-        const attribution = getAttribution();
-        fd.append('name', name);
-        fd.append('phone', phone);
-        fd.append('email', email);
-        fd.append('service', service);
-        fd.append('question', question);
-        fd.append('messenger', messenger);
-        Object.entries(attribution).forEach(([key, value]) => {
-          if (value) fd.append(key, String(value));
-        });
-        const fileEl = document.getElementById('fileInput');
-        if (fileEl && fileEl.files && fileEl.files.length) {
-          Array.from(fileEl.files).forEach(file => fd.append('files', file));
-        }
-        const res = await fetch('/api/feedback', {
-          method: 'POST',
-          body: fd
-        });
-        if (!res.ok) {
-          if (res.status === 429) {
-            msgEl.style.color = '#ffb347';
-            msgEl.innerText = langs[curLang].formRateLimit;
-            trackEvent('form_submit_result', {
-              page: getPublicPathname(),
-              lang: curLang,
-              status: 'rate_limit'
-            });
-            return;
-          }
-          if (res.status === 413) {
-            const data = await res.json().catch(() => ({}));
-            msgEl.style.color = '#ffb347';
-            msgEl.innerText = data.error === 'too_many_files'
-              ? langs[curLang].formTooManyFiles
-              : langs[curLang].formFileTooLarge;
-            trackEvent('form_submit_result', {
-              page: getPublicPathname(),
-              lang: curLang,
-              status: data.error === 'too_many_files' ? 'too_many_files' : 'file_too_large'
-            });
-            return;
-          }
-          throw new Error('fail');
-        }
-        wasSent = true;
-        msgEl.style.color = '#37ff86';
-        msgEl.innerText = langs[curLang].formSuccess;
-        trackEvent('form_submit_result', {
-          page: getPublicPathname(),
-          lang: curLang,
-          status: 'success'
-        });
-      } catch (err) {
-        console.error(err);
+// Отправка формы и переход в мессенджер
+async function sendForm(e) {
+  e.preventDefault();
+  const name = document.getElementById('nameInput').value;
+  const phone = document.getElementById('phoneInput').value;
+  const email = document.getElementById('emailInput').value;
+  const service = document.getElementById('serviceInput').value;
+  const questionInputEl = document.getElementById('questionInput');
+  const extra = Array.from(document.querySelectorAll('#dynamicFields .dyn-field'))
+    .map(f => `${f.dataset.label}: ${f.value}`)
+    .filter(Boolean)
+    .join('\n');
+  const question = [extra, questionInputEl.value].filter(Boolean).join('\n');
+  const messenger = document.getElementById('messengerSelect').value;
+  const msgEl = document.getElementById('formMsg');
+  const submitBtn = document.getElementById('submitBtn');
+  const submitLabel = langs[curLang].submitBtn;
+  msgEl.style.display = 'block';
+  msgEl.style.color = '#c8d5e1';
+  msgEl.innerText = langs[curLang].formSending;
+  trackEvent('form_submit_attempt', {
+    page: getPublicPathname(),
+    lang: curLang,
+    service: service || 'general',
+    messenger,
+    files: document.querySelectorAll('#fileInput')[0]?.files?.length || 0
+  });
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerText = langs[curLang].formSending;
+  }
+  let wasSent = false;
+  try {
+    const fd = new FormData();
+    const attribution = getAttribution();
+    fd.append('name', name);
+    fd.append('phone', phone);
+    fd.append('email', email);
+    fd.append('service', service);
+    fd.append('question', question);
+    fd.append('messenger', messenger);
+    Object.entries(attribution).forEach(([key, value]) => {
+      if (value) fd.append(key, String(value));
+    });
+    const fileEl = document.getElementById('fileInput');
+    if (fileEl && fileEl.files && fileEl.files.length) {
+      Array.from(fileEl.files).forEach(file => fd.append('files', file));
+    }
+    const res = await fetch('/api/feedback', {
+      method: 'POST',
+      body: fd
+    });
+    if (!res.ok) {
+      if (res.status === 429) {
         msgEl.style.color = '#ffb347';
-        msgEl.innerText = langs[curLang].formFail;
+        msgEl.innerText = langs[curLang].formRateLimit;
         trackEvent('form_submit_result', {
           page: getPublicPathname(),
           lang: curLang,
-          status: 'fail'
+          status: 'rate_limit'
         });
-      } finally {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerText = submitLabel;
-        }
+        return;
       }
-
-      if (wasSent) {
-        const text = encodeURIComponent(`Имя: ${name}\nТелефон: ${phone}\nEmail: ${email}\nУслуга: ${service}\nВопрос: ${question}`);
-        let url = '';
-        if (messenger === 'whatsapp') {
-          url = `https://wa.me/77052546613?text=${text}`;
-        } else {
-          url = `https://t.me/aliqgroup?text=${text}`;
-        }
-        trackEvent('messenger_redirect', {
+      if (res.status === 413) {
+        const data = await res.json().catch(() => ({}));
+        msgEl.style.color = '#ffb347';
+        msgEl.innerText = data.error === 'too_many_files'
+          ? langs[curLang].formTooManyFiles
+          : langs[curLang].formFileTooLarge;
+        trackEvent('form_submit_result', {
           page: getPublicPathname(),
           lang: curLang,
-          messenger,
-          service: service || 'general'
+          status: data.error === 'too_many_files' ? 'too_many_files' : 'file_too_large'
         });
-        window.open(url, '_blank');
-
-        document.querySelector('#modalBg form').reset();
-        setTimeout(closeModal, 1800);
+        return;
       }
+      throw new Error('fail');
     }
-    window.sendForm = sendForm;
+    wasSent = true;
+    msgEl.style.color = '#37ff86';
+    msgEl.innerText = langs[curLang].formSuccess;
+    trackEvent('form_submit_result', {
+      page: getPublicPathname(),
+      lang: curLang,
+      status: 'success'
+    });
+  } catch (err) {
+    console.error(err);
+    msgEl.style.color = '#ffb347';
+    msgEl.innerText = langs[curLang].formFail;
+    trackEvent('form_submit_result', {
+      page: getPublicPathname(),
+      lang: curLang,
+      status: 'fail'
+    });
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerText = submitLabel;
+    }
+  }
 
-    // Первичная установка языка
-  normalizeHeaderNavLinks();
-  markActiveNav();
-    initMobileNavToggle();
-    setLang(curLang);
-  createMobileQuickBar();
-  bindAnalyticsHandlers();
+  if (wasSent) {
+    const text = encodeURIComponent(`Имя: ${name}\nТелефон: ${phone}\nEmail: ${email}\nУслуга: ${service}\nВопрос: ${question}`);
+    let url = '';
+    if (messenger === 'whatsapp') {
+      url = `https://wa.me/77052546613?text=${text}`;
+    } else {
+      url = `https://t.me/aliqgroup?text=${text}`;
+    }
+    trackEvent('messenger_redirect', {
+      page: getPublicPathname(),
+      lang: curLang,
+      messenger,
+      service: service || 'general'
+    });
+    window.open(url, '_blank');
+
+    document.querySelector('#modalBg form').reset();
+    setTimeout(closeModal, 1800);
+  }
+}
+window.sendForm = sendForm;
+
+// Первичная установка языка
+normalizeHeaderNavLinks();
+markActiveNav();
+initMobileNavToggle();
+setLang(curLang);
+createMobileQuickBar();
+bindAnalyticsHandlers();
 
 const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if(e.isIntersecting) e.target.classList.add('visible');
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
 
-    const ga = document.getElementById('gaScript');
-    if (ga && window.GA_ID && window.GA_ID !== 'GA_MEASUREMENT_ID') {
-      ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
-      if (typeof window.gtag === 'function') {
-        window.gtag('config', window.GA_ID);
-      }
-    }
+const ga = document.getElementById('gaScript');
+if (ga && window.GA_ID && window.GA_ID !== 'GA_MEASUREMENT_ID') {
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
+  if (typeof window.gtag === 'function') {
+    window.gtag('config', window.GA_ID);
+  }
+}
 
-    if('serviceWorker' in navigator){
-      navigator.serviceWorker.register('/service-worker.js').then(reg => {
-        if('PushManager' in window){
-          navigator.serviceWorker.ready.then(r => r.pushManager.getSubscription()).then(sub => {
-            if(!sub){
-              const btn = document.createElement('button');
-              btn.innerText = 'Подписаться на уведомления';
-              btn.className = 'color-btn';
-              btn.onclick = async () => {
-                try {
-                  const resp = await fetch('/vapidPublicKey');
-                  const { key } = await resp.json();
-                    if (!key) return;
-                  const subscription = await reg.pushManager.subscribe({
-                    userVisibleOnly: true,
-                    applicationServerKey: urlB64ToUint8Array(key)
-                  });
-                  await fetch('/subscribe', {
-                    method: 'POST',
-                    headers: {'Content-Type':'application/json'},
-                    body: JSON.stringify(subscription)
-                  });
-                  btn.remove();
-                } catch(e){ console.error(e); }
-              };
-              document.body.appendChild(btn);
-            }
-          });
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js').then(reg => {
+    if ('PushManager' in window) {
+      navigator.serviceWorker.ready.then(r => r.pushManager.getSubscription()).then(sub => {
+        if (!sub) {
+          const btn = document.createElement('button');
+          btn.innerText = 'Подписаться на уведомления';
+          btn.className = 'color-btn';
+          btn.onclick = async () => {
+            try {
+              const resp = await fetch('/vapidPublicKey');
+              const { key } = await resp.json();
+              if (!key) return;
+              const subscription = await reg.pushManager.subscribe({
+                userVisibleOnly: true,
+                applicationServerKey: urlB64ToUint8Array(key)
+              });
+              await fetch('/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(subscription)
+              });
+              btn.remove();
+            } catch (e) { console.error(e); }
+          };
+          document.body.appendChild(btn);
         }
       });
     }
+  });
+}
 
-    function urlB64ToUint8Array(base64String) {
-      const padding = '='.repeat((4 - base64String.length % 4) % 4);
-      const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
-      const rawData = atob(base64);
-      const outputArray = new Uint8Array(rawData.length);
-      return outputArray;
-    }
+function urlB64ToUint8Array(base64String) {
+  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+  const rawData = atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+  return outputArray;
+}
 
 // Phone mask
 function initPhoneMask() {
@@ -939,6 +940,6 @@ function initPhoneMask() {
 
 // Yandex Metrica (conditional — only when YM_ID is configured)
 if (window.YM_ID && window.YM_ID !== '') {
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+  (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) }; m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0]; k.async = 1; k.src = r; a.parentNode.insertBefore(k, a) })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
   ym(Number(window.YM_ID), 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true });
 }
