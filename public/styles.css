@@ -1254,6 +1254,7 @@ body::before {
 .site-title {
   background: linear-gradient(to right, #ffffff, #cbd5e1);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 800;
   letter-spacing: 0.5px;
@@ -1262,7 +1263,8 @@ body::before {
 
 .hero-slogan {
   background: linear-gradient(135deg, #fff 0%, #94a3b8 100%) !important;
-  -webkit-background-clip: text !important;
+  -webkit-background-clip: text;
+  background-clip: text; !important;
   -webkit-text-fill-color: transparent !important;
   font-weight: 800;
   letter-spacing: -1px;
@@ -1271,6 +1273,7 @@ body::before {
 .section-title {
   background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
   margin-bottom: 2rem;
