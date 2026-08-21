@@ -225,122 +225,7 @@ const langs = {
     ],
     pricingNote: "Қорытынды құны тапсырманың көлемі мен күрделілігіне байланысты. Өтініш жіберіңіз — жеке есептеме жіберейік.",
 
-  },
-  en: {
-    siteTitle: "AliQ Group",
-    navAnchorServices: "Services",
-    navAnchorProcess: "Process",
-    navAnchorContacts: "Contacts",
-    heroEyebrow: "Digital launch plan in 24 hours",
-    slogan: "We launch MVPs, automation, integrations, and security audits without unnecessary bureaucracy.",
-    heroDesc: "We help you quickly understand scope, next step, and technical foundation so you can make decisions with less chaos and less risk.",
-    heroProof: [
-      ["24 hours", "for an initial launch plan"],
-      ["30 minutes", "for a reply during working hours"],
-      ["NDA", "from the first contact if needed"]
-    ],
-    heroPills: [
-      "MVP and fast launch",
-      "Integrations and automation",
-      "Security by default"
-    ],
-    heroCards: [
-      ["Fast start", "We shape a practical launch plan without long bureaucracy or unnecessary phases."],
-      ["Clear outcome", "We focus on solving a concrete business problem, not on abstract development."],
-      ["Technical backbone", "We build in scalability, integrations, and baseline security from the start."]
-    ],
-    heroPrimaryCta: "Get a launch plan in 24 hours",
-    heroSecondaryCta: "Discuss on WhatsApp",
-    heroBriefTitle: "What you get after the first contact",
-    heroBrief: [
-      "A short review of the task and constraints",
-      "A preliminary solution direction",
-      "Estimated timing and next steps"
-    ],
-    trustMetrics: [
-      ["24 hours", "for an initial launch plan"],
-      ["3 stages", "from request to a clear work plan"],
-      ["Secure", "NDA, limited access, and transparent work process"]
-    ],
-    requestBtn: "Get estimate and next step",
-    servicesTitle: "Our services",
-    services: [
-      "MVP development",
-      "Service integration (CRM, cloud, chats, API)",
-      "Modern websites and landing pages",
-      "IT consulting and audit",
-      "Business process automation",
-      "Information security"
-    ],
-    projectsTitle: "How we work",
-    projects: [
-      "We clarify the task, constraints, and project priorities.",
-      "We propose a clear solution, stages, and expected outcome.",
-      "We launch development, integrations, or audit at a working pace.",
-      "We deliver, refine, and help scale the result."
-    ],
-    advTitle: "Why choose us?",
-    adv: [
-      "Focus on business outcome, not abstract development",
-      "Fast start without process overload",
-      "Strong understanding of IT, integrations, and security",
-      "Transparent communication on timing and stages",
-      "Easy to start with a small phase and reduce risk"
-    ],
-    deliverablesTitle: "What the client gets",
-    deliverables: [
-      ["Clear scope", "We define what is done now, what comes later, and where the result point is."],
-      ["Timing estimate", "We provide a realistic timing range and immediate next steps without overpromising."],
-      ["Technical foundation", "We account for scale, integrations, access, and baseline protection from the start."]
-    ],
-    securityTitle: "How we work securely",
-    security: [
-      "NDA and formalized agreements when needed",
-      "Access only on a minimum-necessary basis",
-      "Transparency on stages, timing, and changes",
-      "No publication of internal client data"
-    ],
-    ctaTitle: "Best way to start",
-    ctaCopy: "If the task is not fully defined yet, start with a short request. We will help structure the project, identify risks, and suggest the next practical step.",
-    ctaPanelOneTitle: "Need a fast start",
-    ctaPanelOneText: "Leave a request and get an initial launch plan within 24 hours.",
-    ctaPanelTwoTitle: "Need a quick discussion",
-    ctaPanelTwoText: "Message us on WhatsApp or Telegram if it is easier to start with a short conversation.",
-    contactsTitle: "Contacts",
-    phoneLabel: "Phone (WhatsApp):",
-    contactSla: "We reply within 30 minutes during working hours (Mon-Fri, 09:00-19:00).",
-    formTrustNote: "No spam. Only a reply to your request and follow-up via the channel you choose.",
-    namePlaceholder: "Your name",
-    phonePlaceholder: "Phone",
-    emailPlaceholder: "Email (optional)",
-    serviceLabelText: "Service:",
-    questionPlaceholder: "Your question",
-    messengerLabel: "Send via:",
-    submitBtn: "Send",
-    formSending: "Sending...",
-    formSuccess: "Thank you! Your request has been sent.",
-    formFail: "Failed to send your request. Please try again.",
-    formRateLimit: "Too many attempts. Please try again later.",
-    formFileTooLarge: "File is too large. Maximum 5 MB per file.",
-    formTooManyFiles: "You can attach up to 3 files.",
-    langBtn: "Русский",
-    scheduleTitle: "Schedule a consultation",
-    scheduleDesc: "Use our calendar to pick a convenient time.",
-    scheduleBtn: "Open calendar",
-    pricingTitle: "Pricing guide",
-    pricing: [
-      ["Website / landing", "from $200", "1–3 wks"],
-      ["MVP product", "from $1 000", "4–8 wks"],
-      ["Integrations / API", "from $350", "1–3 wks"],
-      ["Security audit", "from $300", "1–2 wks"],
-      ["Automation", "from $350", "1–4 wks"],
-      ["IT consulting", "from $100 / session", "on request"]
-    ],
-    pricingNote: "Final cost depends on scope and complexity. Send a request — we will send a personalised estimate.",
-
-    
-  }
-};
+  }};
 // Вопросы по услугам
 const serviceQuestions = {
   ru: [
@@ -358,228 +243,218 @@ const serviceQuestions = {
     ['Аудит саласы (инфрақұрылым, процестер және т.б.)','Консультация мақсаты','Күтілетін нәтиже','Өткізу уақыты'],
     ['Негізгі міндеттер/процестер','Қолданылатын құралдар','Шешілуі тиіс мәселелер','Мерзімдер','Байланыс тұлғасы'],
     ['Қолданыстағы IT-инфрақұрылым','Маңызды қауіп-қатерлер','Қажетті қорғау шаралары','Байланыс үшін деректер']
-  ],
-  en: [
-    ['Project description','Desired timeline','Estimated budget','Contact person','Additional info'],
-    ['Current systems','Planned integrations','Implementation timeframe','Responsible specialist','Comments'],
-    ['Type of site (corporate, landing, etc.)','Preferred design','Example sites','Contacts and wishes'],
-    ['Audit scope (infrastructure, processes, etc.)','Consultation goals','Desired results','Time for conducting'],
-    ['Key tasks/processes','Tools in use','Problems to solve','Timeline','Contact person'],
-    ['Current IT infrastructure','Priority risks/threats','Required protection measures','Contact details']
-  ],
-};
+  ]
+  };
 
-const serviceIcons = ['bi-lightning','bi-diagram-3','bi-window','bi-puzzle','bi-gear','bi-shield-lock'];
+
+const serviceIcons = ['bi-lightning', 'bi-diagram-3', 'bi-window', 'bi-puzzle', 'bi-gear', 'bi-shield-lock'];
 const serviceUrls = [
-  'services/mvp.html',
-  'services/integration.html',
-  'services/websites.html',
-  'services/consulting.html',
-  'services/automation.html',
-  'services/security.html'
+    'services/mvp.html',
+    'services/integration.html',
+    'services/websites.html',
+    'services/consulting.html',
+    'services/automation.html',
+    'services/security.html'
 ];
 
 const serviceDescriptions = {
-  ru: [
-    'Создаём минимально жизнеспособные продукты для проверки гипотез и быстрого выхода на рынок. Прототипируем интерфейсы и подбираем оптимальный стек технологий. Помогаем собрать обратную связь и дорабатываем проект до полноценного решения.',
-    'Интегрируем CRM, облачные сервисы и API для повышения эффективности. Настраиваем обмен данными между системами и автоматизируем цепочки процессов. Помогаем избавиться от ручных операций и контролировать бизнес в реальном времени.',
-    'Разрабатываем сайты и лендинги под современные стандарты. Оптимизируем скорость загрузки, внедряем адаптивный дизайн и готовим площадку к продвижению. Управлять контентом просто, а конверсия растёт.',
-    'Помогаем оптимизировать IT-инфраструктуру и проводим аудит. Анализируем текущие процессы, выявляем узкие места и формируем стратегию развития. Сопровождаем внедрение новых технологий и даём рекомендации по безопасности.',
-    'Автоматизируем процессы и повышаем производительность. Пишем скрипты, подключаем сторонние сервисы и строим отчётность. Снижаем количество ошибок и высвобождаем время сотрудников.',
-    'Обеспечиваем защиту данных и информационную безопасность. Разрабатываем политики доступа, внедряем системы мониторинга и шифрования. Проводим тесты на проникновение и обучаем персонал.'
-  ],
-  kz: [
-    'Гипотезаларды тексеру үшін MVP әзірлейміз.',
-    'CRM және басқа сервистерді біріктіреміз.',
-    'Заманауи сайттар жасаймыз.',
-    'IT-аудит және кеңес береміз.',
-    'Бизнес процесстерді автоматтандырамыз.',
-    'Деректерді және ақпараттық қауіпсіздікті қамтамасыз етеміз.'
-  ],
-  en: [
-    'We build MVPs to quickly test ideas.',
-    'Integrate CRM, cloud and other services.',
-    'Create modern websites and landings.',
-    'Provide IT consulting and audit.',
-    'Automate business processes.',
-    'Ensure information security.'
-  ],
+    ru: [
+        'Создаём минимально жизнеспособные продукты для проверки гипотез и быстрого выхода на рынок. Прототипируем интерфейсы и подбираем оптимальный стек технологий. Помогаем собрать обратную связь и дорабатываем проект до полноценного решения.',
+        'Интегрируем CRM, облачные сервисы и API для повышения эффективности. Настраиваем обмен данными между системами и автоматизируем цепочки процессов. Помогаем избавиться от ручных операций и контролировать бизнес в реальном времени.',
+        'Разрабатываем сайты и лендинги под современные стандарты. Оптимизируем скорость загрузки, внедряем адаптивный дизайн и готовим площадку к продвижению. Управлять контентом просто, а конверсия растёт.',
+        'Помогаем оптимизировать IT-инфраструктуру и проводим аудит. Анализируем текущие процессы, выявляем узкие места и формируем стратегию развития. Сопровождаем внедрение новых технологий и даём рекомендации по безопасности.',
+        'Автоматизируем процессы и повышаем производительность. Пишем скрипты, подключаем сторонние сервисы и строим отчётность. Снижаем количество ошибок и высвобождаем время сотрудников.',
+        'Обеспечиваем защиту данных и информационную безопасность. Разрабатываем политики доступа, внедряем системы мониторинга и шифрования. Проводим тесты на проникновение и обучаем персонал.'
+    ],
+    kz: [
+        'Гипотезаларды тексеру үшін MVP әзірлейміз.',
+        'CRM және басқа сервистерді біріктіреміз.',
+        'Заманауи сайттар жасаймыз.',
+        'IT-аудит және кеңес береміз.',
+        'Бизнес процесстерді автоматтандырамыз.',
+        'Деректерді және ақпараттық қауіпсіздікті қамтамасыз етеміз.'
+    ]
 };
 
 let curLang = 'ru';
-function setElText(id, html){ const el = document.getElementById(id); if(el) el.innerHTML = html; }
+try {
+    const saved = localStorage.getItem('aliq_lang');
+    if (saved === 'kz' || saved === 'ru') curLang = saved;
+} catch (e) { }
+
+function setElText(id, html) { const el = document.getElementById(id); if (el) el.innerHTML = html; }
 
 const ATTR_STORAGE_KEY = 'aliqgroup_attribution_v1';
 const ATTR_QUERY_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
 let modalFirstInputTracked = false;
 
 function getAttribution() {
-  let stored = {};
-  try {
-    stored = JSON.parse(sessionStorage.getItem(ATTR_STORAGE_KEY) || '{}');
-  } catch (_) {
-    stored = {};
-  }
+    let stored = {};
+    try {
+        stored = JSON.parse(sessionStorage.getItem(ATTR_STORAGE_KEY) || '{}');
+    } catch (_) {
+        stored = {};
+    }
 
-  const url = new URL(window.location.href);
-  const search = url.searchParams;
-  const queryData = {};
-  ATTR_QUERY_KEYS.forEach(key => {
-    const value = search.get(key);
-    if (value) queryData[key] = value;
-  });
+    const url = new URL(window.location.href);
+    const search = url.searchParams;
+    const queryData = {};
+    ATTR_QUERY_KEYS.forEach(key => {
+        const value = search.get(key);
+        if (value) queryData[key] = value;
+    });
 
-  const baseData = {
-    landing_path: stored.landing_path || (window.location.pathname || '/'),
-    first_seen_at: stored.first_seen_at || new Date().toISOString(),
-    referrer_url: stored.referrer_url || document.referrer || 'direct'
-  };
+    const baseData = {
+        landing_path: stored.landing_path || (window.location.pathname || '/'),
+        first_seen_at: stored.first_seen_at || new Date().toISOString(),
+        referrer_url: stored.referrer_url || document.referrer || 'direct'
+    };
 
-  const merged = { ...stored, ...baseData, ...queryData };
-  try {
-    sessionStorage.setItem(ATTR_STORAGE_KEY, JSON.stringify(merged));
-  } catch (_) {
-    // ignore storage errors (private mode or quota)
-  }
-  return merged;
+    const merged = { ...stored, ...baseData, ...queryData };
+    try {
+        sessionStorage.setItem(ATTR_STORAGE_KEY, JSON.stringify(merged));
+    } catch (_) {
+        // ignore storage errors (private mode or quota)
+    }
+    return merged;
 }
 
 function withAttribution(params = {}) {
-  return { ...params, ...getAttribution() };
+    return { ...params, ...getAttribution() };
 }
 
 function trackEvent(eventName, params = {}) {
-  if (typeof window.gtag !== 'function') return;
-  window.gtag('event', eventName, withAttribution(params));
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', eventName, withAttribution(params));
 }
 
 function bindModalStepTracking() {
-  const form = document.querySelector('#modalBg form');
-  if (!form || form.dataset.funnelBound === 'true') return;
+    const form = document.querySelector('#modalBg form');
+    if (!form || form.dataset.funnelBound === 'true') return;
 
-  form.addEventListener('input', e => {
-    if (modalFirstInputTracked) return;
-    const target = e.target;
-    if (!(target instanceof HTMLElement)) return;
-    const field = target.id || target.getAttribute('name') || target.className || 'unknown';
-    trackEvent('form_step', {
-      page: getPublicPathname(),
-      lang: curLang,
-      step: 'first_input',
-      field
+    form.addEventListener('input', e => {
+        if (modalFirstInputTracked) return;
+        const target = e.target;
+        if (!(target instanceof HTMLElement)) return;
+        const field = target.id || target.getAttribute('name') || target.className || 'unknown';
+        trackEvent('form_step', {
+            page: getPublicPathname(),
+            lang: curLang,
+            step: 'first_input',
+            field
+        });
+        modalFirstInputTracked = true;
     });
-    modalFirstInputTracked = true;
-  });
 
-  const messengerSelect = document.getElementById('messengerSelect');
-  if (messengerSelect) {
-    messengerSelect.addEventListener('change', () => {
-      trackEvent('form_step', {
-        page: getPublicPathname(),
-        lang: curLang,
-        step: 'messenger_selected',
-        messenger: messengerSelect.value
-      });
-    });
-  }
+    const messengerSelect = document.getElementById('messengerSelect');
+    if (messengerSelect) {
+        messengerSelect.addEventListener('change', () => {
+            trackEvent('form_step', {
+                page: getPublicPathname(),
+                lang: curLang,
+                step: 'messenger_selected',
+                messenger: messengerSelect.value
+            });
+        });
+    }
 
-  const fileInput = document.getElementById('fileInput');
-  if (fileInput) {
-    fileInput.addEventListener('change', () => {
-      trackEvent('form_step', {
-        page: getPublicPathname(),
-        lang: curLang,
-        step: 'attachments_selected',
-        files_count: fileInput.files ? fileInput.files.length : 0
-      });
-    });
-  }
+    const fileInput = document.getElementById('fileInput');
+    if (fileInput) {
+        fileInput.addEventListener('change', () => {
+            trackEvent('form_step', {
+                page: getPublicPathname(),
+                lang: curLang,
+                step: 'attachments_selected',
+                files_count: fileInput.files ? fileInput.files.length : 0
+            });
+        });
+    }
 
-  form.dataset.funnelBound = 'true';
+    form.dataset.funnelBound = 'true';
 }
 
 function bindAnalyticsHandlers() {
-  const ctaMap = [
-    ['requestBtn', 'hero_primary_modal'],
-    ['requestBtn2', 'bottom_modal'],
-    ['quickConsultBtn', 'hero_secondary_whatsapp']
-  ];
-  ctaMap.forEach(([id, label]) => {
-    const el = document.getElementById(id);
-    if (!el || el.dataset.analyticsBound === 'true') return;
-    el.addEventListener('click', () => {
-      trackEvent('cta_click', { label, page: getPublicPathname(), lang: curLang });
+    const ctaMap = [
+        ['requestBtn', 'hero_primary_modal'],
+        ['requestBtn2', 'bottom_modal'],
+        ['quickConsultBtn', 'hero_secondary_whatsapp']
+    ];
+    ctaMap.forEach(([id, label]) => {
+        const el = document.getElementById(id);
+        if (!el || el.dataset.analyticsBound === 'true') return;
+        el.addEventListener('click', () => {
+            trackEvent('cta_click', { label, page: getPublicPathname(), lang: curLang });
+        });
+        el.dataset.analyticsBound = 'true';
     });
-    el.dataset.analyticsBound = 'true';
-  });
 
-  const quickBar = document.getElementById('mobileQuickBar');
-  if (quickBar && quickBar.dataset.analyticsBound !== 'true') {
-    quickBar.addEventListener('click', e => {
-      const action = e.target.closest('.quick-action');
-      if (!action) return;
-      const label = action.classList.contains('quick-action-primary') ? 'mobile_whatsapp' : 'mobile_secondary';
-      trackEvent('cta_click', { label, page: getPublicPathname(), lang: curLang });
-    });
-    quickBar.dataset.analyticsBound = 'true';
-  }
+    const quickBar = document.getElementById('mobileQuickBar');
+    if (quickBar && quickBar.dataset.analyticsBound !== 'true') {
+        quickBar.addEventListener('click', e => {
+            const action = e.target.closest('.quick-action');
+            if (!action) return;
+            const label = action.classList.contains('quick-action-primary') ? 'mobile_whatsapp' : 'mobile_secondary';
+            trackEvent('cta_click', { label, page: getPublicPathname(), lang: curLang });
+        });
+        quickBar.dataset.analyticsBound = 'true';
+    }
 }
 
 function initMobileNavToggle() {
-  const btn = document.getElementById('burgerBtn');
-  const dropdown = document.getElementById('burgerDropdown');
-  if (!btn || !dropdown) return;
+    const btn = document.getElementById('burgerBtn');
+    const dropdown = document.getElementById('burgerDropdown');
+    if (!btn || !dropdown) return;
 
-  btn.addEventListener('click', function (e) {
-    e.stopPropagation();
-    const isOpen = dropdown.classList.toggle('open');
-    btn.setAttribute('aria-expanded', String(isOpen));
-  });
-
-  document.addEventListener('click', function (e) {
-    if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
-      dropdown.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  dropdown.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      dropdown.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
+    btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(isOpen));
     });
-  });
+
+    document.addEventListener('click', function (e) {
+        if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    dropdown.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+            dropdown.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+        });
+    });
 }
 
 function getPublicPathname() {
-  const path = window.location.pathname || '/';
-  if (path.endsWith('/')) return 'index.html';
-  return path.split('/').pop() || 'index.html';
+    const path = window.location.pathname || '/';
+    if (path.endsWith('/')) return 'index.html';
+    return path.split('/').pop() || 'index.html';
 }
 
 function getSiteBasePath() {
-  const rawPath = window.location.pathname || '/';
-  const path = rawPath.replace(/\/+$/, '');
-  if (!path || path === '/') return '';
+    const rawPath = window.location.pathname || '/';
+    const path = rawPath.replace(/\/+$/, '');
+    if (!path || path === '/') return '';
 
-  const markers = [
-    '/services/',
-    '/index.html',
-    '/services.html',
-    '/faq.html',
-    '/schedule.html',
-    '/privacy.html',
-    '/404.html',
-    '/offline.html'
-  ];
+    const markers = [
+        '/services/',
+        '/index.html',
+        '/services.html',
+        '/faq.html',
+        '/schedule.html',
+        '/privacy.html',
+        '/404.html',
+        '/offline.html'
+    ];
 
-  for (const marker of markers) {
-    const idx = path.indexOf(marker);
-    if (idx >= 0) return path.slice(0, idx);
-  }
+    for (const marker of markers) {
+        const idx = path.indexOf(marker);
+        if (idx >= 0) return path.slice(0, idx);
+    }
 
-  const segments = path.split('/').filter(Boolean);
-  if (!path.includes('.') && segments.length === 1) return `/${segments[0]}`;
+    const segments = path.split('/').filter(Boolean);
+    if (!path.includes('.') && segments.length === 1) return `/${segments[0]}`;
   return '';
 }
 
@@ -643,11 +518,11 @@ function setQuickBarLocale(lang) {
 
   const labels = {
     ru: ['WhatsApp', 'Заявка'],
-    kz: ['WhatsApp', 'Өтініш'],
-    en: ['WhatsApp', 'Request']
+    kz: ['WhatsApp', 'Өтініш']
   };
 
-  const [waText, thirdText] = labels[lang] || labels.en;
+  const [waText, thirdText] = labels[lang] || labels.ru;
+
   const items = bar.querySelectorAll('.quick-action span');
   if (items[0]) items[0].innerText = waText;
   if (items[1]) items[1].innerText = thirdText;
@@ -658,6 +533,7 @@ function setNavToggleLocale(lang) {
 }
 
 function setLang(lang) {
+  try { localStorage.setItem('aliq_lang', lang); } catch(e) {}
   curLang = lang;
   document.documentElement.lang = lang;
   const l = langs[lang];
@@ -752,10 +628,12 @@ function setLang(lang) {
 }
     const langBtnEl = document.getElementById('langBtn');
     if (langBtnEl) langBtnEl.onclick = function() {
-      const order = ['ru','kz','en'];
-      const idx = order.indexOf(curLang);
+      const order = ['ru','kz'];
+      let idx = order.indexOf(curLang);
+      if (idx < 0) idx = 0;
       setLang(order[(idx+1)%order.length]);
     };
+document.addEventListener('DOMContentLoaded', () => { if (curLang !== 'ru') setLang(curLang); });
 const yearEls = document.querySelectorAll('#year, #year2, #year3');
 yearEls.forEach(el => el.innerText = new Date().getFullYear());
 const gCal = document.getElementById('gCal');

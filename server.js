@@ -6,6 +6,8 @@ const multer = require('multer');
 const cors = require('cors');
 const webpush = require('web-push');
 const morgan = require('morgan');
+const rateLimit = require('express-rate-limit');
+const xss = require('xss');
 
 const app = express();
 const upload = multer({
@@ -75,9 +77,6 @@ app.use((req, res, next) => {
   next();
 });
 
-const rateMap = {};
-const LIMIT = 3;
-const WINDOW = 10 * 60 * 1000;
 
 const EMAIL_FROM = process.env.EMAIL_FROM || 'no-reply@aliqgroup.kz';
 const EMAIL_TO = process.env.EMAIL_TO || 'aliqgroup.kz@gmail.com';
@@ -129,10 +128,10 @@ function isValidSubscription(sub) {
 
 const SUBSCRIPTIONS_FILE = path.join(__dirname, 'data', 'subscriptions.json');
 
-function saveSubscriptions() {
+async function saveSubscriptions() {
   try {
-    fs.mkdirSync(path.dirname(SUBSCRIPTIONS_FILE), { recursive: true });
-    fs.writeFileSync(SUBSCRIPTIONS_FILE, JSON.stringify(subscriptions));
+    await fs.promises.mkdir(path.dirname(SUBSCRIPTIONS_FILE), { recursive: true });
+    await fs.promises.writeFile(SUBSCRIPTIONS_FILE, JSON.stringify(subscriptions));
   } catch (e) {
     console.error('Failed to save subscriptions:', e.message);
   }
@@ -149,30 +148,20 @@ try {
 }
 
 
-app.use('/api/feedback', (req, res, next) => {
-  const ip = req.ip;
-  const now = Date.now();
-  if (!rateMap[ip]) rateMap[ip] = [];
-  rateMap[ip] = rateMap[ip].filter(t => now - t < WINDOW);
-  if (rateMap[ip].length >= LIMIT) {
-    console.warn('Rate limit exceeded for', ip);
+const feedbackLimiter = rateLimit({
+  windowMs: 10 * 60 * 1000,
+  max: 3,
+  handler: (req, res) => {
+    console.warn('Rate limit exceeded for', req.ip);
     if(subscriptions.length) {
       const payload = JSON.stringify({ title: 'AliQ Group', body: 'Превышен лимит отправки заявок' });
       subscriptions.forEach(s => webpush.sendNotification(s, payload).catch(()=>{}));
     }
     return res.status(429).json({ error: 'rate_limit' });
   }
-  rateMap[ip].push(now);
-  next();
 });
 
-setInterval(() => {
-  const now = Date.now();
-  for (const ip in rateMap) {
-    rateMap[ip] = rateMap[ip].filter(t => now - t < WINDOW);
-    if (rateMap[ip].length === 0) delete rateMap[ip];
-  }
-}, WINDOW);
+app.use('/api/feedback', feedbackLimiter);
 
 app.get('/config.js', (req, res) => {
   res.type('application/javascript').send(
@@ -224,10 +213,18 @@ app.post('/notify', async (req, res) => {
     return res.status(400).json({ error: 'push_not_configured' });
   }
   const payload = JSON.stringify({ title: req.body.title, body: req.body.body });
+  let outdatedCount = 0;
   const results = await Promise.all(
-    subscriptions.map(s => webpush.sendNotification(s, payload).catch(() => null))
+    subscriptions.map(s => webpush.sendNotification(s, payload).catch((err) => {
+      if (err.statusCode === 410 || err.statusCode === 404) {
+        subscriptions = subscriptions.filter(sub => sub.endpoint !== s.endpoint);
+        outdatedCount++;
+      }
+      return null;
+    }))
   );
-  res.json({ sent: results.length });
+  if (outdatedCount > 0) saveSubscriptions();
+  res.json({ sent: results.filter(Boolean).length, outdated_removed: outdatedCount });
 });
 
 app.post('/api/feedback', uploadFeedback, async (req, res) => {
@@ -267,13 +264,13 @@ app.post('/api/feedback', uploadFeedback, async (req, res) => {
     .map(([key, value]) => `${key}: ${value}`);
 
   const text = [
-    `Имя: ${name}`,
-    `Телефон: ${phone}`,
-    `Email: ${email || ''}`,
-    `Услуга: ${service || ''}`,
-    `Вопрос: ${question}`,
-    `Мессенджер: ${messenger}`,
-    attributionLines.length ? `\nАтрибуция:\n${attributionLines.join('\n')}` : ''
+    `Имя: ${xss(name)}`,
+    `Телефон: ${xss(phone)}`,
+    `Email: ${email ? xss(email) : ''}`,
+    `Услуга: ${service ? xss(service) : ''}`,
+    `Вопрос: ${xss(question)}`,
+    `Мессенджер: ${messenger ? xss(messenger) : ''}`,
+    attributionLines.length ? `\nАтрибуция:\n${attributionLines.map(line => xss(line)).join('\n')}` : ''
   ].join('\n');
   try {
     const transporter = createMailTransport();
